@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>AddressBook Level 3 - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>EzWatchlist - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>AddressBook Level 3 - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>EzWatchlist - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
+<p>By: <code>Team CS2103T-F13-4</code>      Since: <code>Sept 2019</code>      Licence: <code>NUS</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
@@ -13,16 +13,9 @@
 <li><a href="#quick-start">2. Quick Start</a></li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
-<li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></li>
-<li><a href="#listing-all-persons-code-list-code">3.3. Listing all persons : <code>list</code></a></li>
-<li><a href="#editing-a-person-code-edit-code">3.4. Editing a person : <code>edit</code></a></li>
-<li><a href="#locating-persons-by-name-code-find-code">3.5. Locating persons by name: <code>find</code></a></li>
-<li><a href="#deleting-a-person-code-delete-code">3.6. Deleting a person : <code>delete</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">3.7. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.8. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.9. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.10. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#user-interface">3.1. User-Interface</a></li>
+<li><a href="#user-commands">3.2. User Commands</a></li>
+<li><a href="#advanced-features">3.3. Advanced Features</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -34,7 +27,7 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>AddressBook Level 3 (AB3) is for those who <strong>prefer to use a desktop app for managing contacts</strong>. More importantly, AB3 is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, AB3 can get your contact management tasks done faster than traditional GUI apps. Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
+<p>EzWatchList is for those who <strong>prefer to use a desktop app for managing movies and tv series watchlist</strong>. More importantly, EzWatchList is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, EzWatchList can get your watchlist faster than traditional GUI apps. Interested? Jump to the Section 2, <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
 </div>
 </div>
 </div>
@@ -47,10 +40,10 @@
 <p>Ensure you have Java <code>11</code> or above installed in your Computer.</p>
 </li>
 <li>
-<p>Download the latest <code>addressbook.jar</code> <a href="https://github.com/se-edu/addressbook-level3/releases">here</a>.</p>
+<p>Download the latest <code>ezwatchlist.jar</code> <a href="https://github.com/AY1920S1-CS2103T-F13-4/main.git/releases">here</a>.</p>
 </li>
 <li>
-<p>Copy the file to the folder you want to use as the home folder for your Address Book.</p>
+<p>Copy the file to the folder you want to use as the home folder for your watchlist.</p>
 </li>
 <li>
 <p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
@@ -69,13 +62,13 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>list</code></strong> : lists all contacts</p>
+<p><strong><code>add</code></strong><code>Titanic</code> : adds the movie named <code>Titanic</code> to the Watchlist.</p>
 </li>
 <li>
-<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a contact named <code>John Doe</code> to the Address Book.</p>
+<p><strong><code>search</code></strong><code>Titanic</code> : Searched for movie named <code>Titanic</code> in all movies</p>
 </li>
 <li>
-<p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd contact shown in the current list</p>
+<p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd movie shown in the current list</p>
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
@@ -93,6 +86,99 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="sect1">
 <h2 id="Features"><a class="link" href="#Features">3. Features</a></h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="user-interface"><a class="link" href="#user-interface">3.1. User-Interface</a></h3>
+<div class="sect3">
+<h4 id="watchlist-page"><a class="link" href="#watchlist-page">3.1.1. Watchlist Page</a></h4>
+<div class="paragraph">
+<p>The watchlist is the default page that is opened upon start-up of ezwatchlist. It shows the user’s unwatched movies and television series. The watchlist page also contains a command bar to allow the user to input commands.</p>
+</div>
+<div class="paragraph">
+<p><strong>Characteristics of the watchlist page:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Shows that are added more recently are at the bottom of the list</p>
+</li>
+<li>
+<p>Each show has the following visible characteristics:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Movie/TV show poster</p>
+</li>
+<li>
+<p>Name of show (and year in brackets?)</p>
+</li>
+<li>
+<p>Remarks</p>
+</li>
+<li>
+<p>Progress bar showing number of episodes watched (For TV series)</p>
+</li>
+<li>
+<p>Checkbox to indicate if the show has been watched</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/watchlist_page.png" alt="watchlist page" width="790">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="watched-list"><a class="link" href="#watched-list">3.1.2. Watched List</a></h4>
+<div class="paragraph">
+<p>The user has the option to view the list of shows that have been marked as watched in the watched list. The user can navigate to this list by clicking the “Watched” tab on the side bar or by using the keyboard short-cut <code>ctrl + tab</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="search-page"><a class="link" href="#search-page">3.1.3. Search Page</a></h4>
+<div class="paragraph">
+<p>The user can navigate to the search page to find a specific movie or television by searching for its name.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/search_page.png" alt="search page" width="790">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="statistics-page"><a class="link" href="#statistics-page">3.1.4. Statistics Page</a></h4>
+<div class="paragraph">
+<p>The user can navigate to the statistics page to find a summary of his watching habits, preferences and history according to what is present in his lists. Examples include: Ten most recent movies he watched, ten favourite movies of the user etc.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/statistics_page.png" alt="statistics page" width="790">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sidebar"><a class="link" href="#sidebar">3.1.5. Sidebar</a></h4>
+<div class="paragraph">
+<p>Ezwatchlist gives users the ability to navigate easily through the <strong>Watchlist, Watchedlist, Search page and Statistics pages</strong> through the use of the graphical user interface at the left of the main page. Alternatively, the user can also make use of keyboard shortcut <code>ctrl + tab</code> to scroll through the different pages.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="details-page"><a class="link" href="#details-page">3.1.6. Details Page</a></h4>
+<div class="paragraph">
+<p>Upon clicking a movie or tv show title, a pop-up window will emerge, with a detailed view of the movie or tv show. This page provides the user with more information about the show, like the year, cast and ratings. The user also has the ability to edit the details here.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/details_page.png" alt="details page" width="790">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="user-commands"><a class="link" href="#user-commands">3.2. User Commands</a></h3>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
@@ -101,32 +187,32 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/MOVIE_NAME</code>, <code>MOVIE_NAME</code> is a parameter which can be used as <code>add n/The Angry Birds Movie 2</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.</p>
+<p>Items in square brackets are optional e.g <code>n/MOVIE_NAME [t/TAG]</code> can be used as <code>n/The Angry Birds Movie 2 t/Oscar-worthy</code> or as <code>n/The Angry Birds Movie</code>.</p>
 </li>
 <li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
+<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/Oscar-worthy</code>, <code>t/Tear-jerking t/Good for kids</code> etc.</p>
 </li>
 <li>
-<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
+<p>Parameters can be in any order e.g. if the command specifies <code>n/MOVIE_NAME t/TAG</code>, <code>t/TAG n/MOVIE_NAME</code> is also acceptable.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></h3>
+<div class="sect3">
+<h4 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.2.1. Viewing help : <code>help</code></a></h4>
 <div class="paragraph">
 <p>Format: <code>help</code></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></h3>
+<div class="sect3">
+<h4 id="adding-a-show-code-add-code"><a class="link" href="#adding-a-show-code-add-code">3.2.2. Adding a show: <code>add</code></a></h4>
 <div class="paragraph">
-<p>Adds a person to the address book<br>
-Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
+<p>Adds a show to the watchlist<br>
+Format: <code>add n/MOVIE_NAME [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -135,7 +221,7 @@ Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;<
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-A person can have any number of tags (including 0)
+A show can have any number of tags (including 0)
 </td>
 </tr>
 </table>
@@ -146,33 +232,33 @@ A person can have any number of tags (including 0)
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code></p>
+<p><code>add n/Titanic t/Romance t/Drama</code></p>
 </li>
 <li>
-<p><code>add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal</code></p>
+<p><code>add n/The Angry Birds Movie 2</code></p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">3.3. Listing all persons : <code>list</code></a></h3>
+<div class="sect3">
+<h4 id="mark-as-watched-code-watch-code"><a class="link" href="#mark-as-watched-code-watch-code">3.2.3. Mark as watched : <code>watch</code></a></h4>
 <div class="paragraph">
-<p>Shows a list of all persons in the address book.<br>
-Format: <code>list</code></p>
+<p>Marks an unwatched show in the watchlist as watched.<br>
+Format: <code>watch INDEX</code></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">3.4. Editing a person : <code>edit</code></a></h3>
+<div class="sect3">
+<h4 id="editing-a-show-s-details-code-edit-code"><a class="link" href="#editing-a-show-s-details-code-edit-code">3.2.4. Editing a show&#8217;s details : <code>edit</code></a></h4>
 <div class="paragraph">
-<p>Edits an existing person in the address book.<br>
-Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
+<p>Edits an existing show in the list<br>
+Format: <code>edit INDEX [n/NAME] [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Edits the person at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed person list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>Edits the show at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed watchlist. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
 </li>
 <li>
 <p>At least one of the optional fields must be provided.</p>
@@ -181,10 +267,10 @@ Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;
 <p>Existing values will be updated to the input values.</p>
 </li>
 <li>
-<p>When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.</p>
+<p>When editing tags, the existing tags of the show will be removed i.e adding of tags is not cumulative.</p>
 </li>
 <li>
-<p>You can remove all the person&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+<p>You can remove all the show&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
 </li>
 </ul>
 </div>
@@ -196,21 +282,21 @@ Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit 1 p/91234567 e/johndoe@example.com</code><br>
-Edits the phone number and email address of the 1st person to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
+<p><code>edit 1 n/Titanic t/Favourites</code><br>
+Edits the name and tag of the 1st show in the list to be <code>Titanic</code> and <code>Favourites</code> respectively.</p>
 </li>
 <li>
-<p><code>edit 2 n/Betsy Crower t/</code><br>
-Edits the name of the 2nd person to be <code>Betsy Crower</code> and clears all existing tags.</p>
+<p><code>edit 2 t/</code><br>
+Clears all existing tags of the 2nd show in the list.</p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">3.5. Locating persons by name: <code>find</code></a></h3>
+<div class="sect3">
+<h4 id="search-for-a-show-by-name-code-search-code"><a class="link" href="#search-for-a-show-by-name-code-search-code">3.2.5. Search for a show by name: <code>search</code></a></h4>
 <div class="paragraph">
-<p>Finds persons whose names contain any of the given keywords.<br>
-Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+<p>Finds shows whose names contain any of the given keywords.<br>
+Format: <code>search KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -241,20 +327,20 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>find John</code><br>
-Returns <code>john</code> and <code>John Doe</code></p>
+<p><code>search Angry</code><br>
+Returns <code>The Angry Birds Movie 2</code></p>
 </li>
 <li>
-<p><code>find Betsy Tim John</code><br>
-Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
+<p><code>search John Angry</code><br>
+Returns any person having names <code>John</code> or <code>Angry</code></p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">3.6. Deleting a person : <code>delete</code></a></h3>
+<div class="sect3">
+<h4 id="deleting-a-show-code-delete-code"><a class="link" href="#deleting-a-show-code-delete-code">3.2.6. Deleting a show : <code>delete</code></a></h4>
 <div class="paragraph">
-<p>Deletes the specified person from the address book.<br>
+<p>Deletes the specified show from the watchlist.<br>
 Format: <code>delete INDEX</code></p>
 </div>
 <div class="sidebarblock">
@@ -262,10 +348,10 @@ Format: <code>delete INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes the person at the specified <code>INDEX</code>.</p>
+<p>Deletes the show at the specified <code>INDEX</code>.</p>
 </li>
 <li>
-<p>The index refers to the index number shown in the displayed person list.</p>
+<p>The index refers to the index number shown in the displayed watchlist.</p>
 </li>
 <li>
 <p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
@@ -277,46 +363,54 @@ Format: <code>delete INDEX</code></p>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code><br>
-<code>delete 2</code><br>
-Deletes the 2nd person in the address book.</p>
-</li>
-<li>
-<p><code>find Betsy</code><br>
-<code>delete 1</code><br>
-Deletes the 1st person in the results of the <code>find</code> command.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.7. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
-<p>Clears all entries from the address book.<br>
-Format: <code>clear</code></p>
+<p>*<code>delete 2</code><br>
+Deletes the 2nd show in the watchlist.
+* <code>search Angry</code><br>
+<code>delete 1</code><br>
+Deletes the 1st show in the results of the <code>search</code> command.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.8. Exiting the program : <code>exit</code></a></h3>
+<div class="sect3">
+<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.2.7. Exiting the program : <code>exit</code></a></h4>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.9. Saving the data</a></h3>
+<div class="sect3">
+<h4 id="saving-the-data"><a class="link" href="#saving-the-data">3.2.8. Saving the data</a></h4>
 <div class="paragraph">
-<p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
+<p>Ezwatchlist data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.10. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<div class="sect3">
+<h4 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.2.9. Encrypting data files <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="advanced-features"><a class="link" href="#advanced-features">3.3. Advanced Features</a></h3>
+<div class="sect3">
+<h4 id="parsing-of-movie-information"><a class="link" href="#parsing-of-movie-information">3.3.1. Parsing of Movie Information</a></h4>
+<div class="paragraph">
+<p>In ezwatchlist, we access a movie database so that we can get information about your movies and tv series that you want to watch and have watched. This means that pictures and information will be readily available to you with a proper internet connection.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="recommendations"><a class="link" href="#recommendations">3.3.2. Recommendations</a></h4>
+<div class="paragraph">
+<p>Ezwatchlist will recommend movies to you based on your ratings and your existing watchlist to create a personalized recommendation just for you.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="auto-correct"><a class="link" href="#auto-correct">3.3.3. Auto-Correct</a></h4>
+<div class="paragraph">
+<p>All typing in the application will be spell-checked and corrected for you to help ease you into the application.</p>
+</div>
 </div>
 </div>
 </div>
@@ -326,7 +420,7 @@ There is no need to save manually.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
-<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Ezwatchlist folder.</p>
 </div>
 </div>
 </div>
@@ -336,26 +430,26 @@ There is no need to save manually.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague</code></p>
+<p><strong>Add</strong> <code>add n/MOVIE_NAME [t/TAG]&#8230;&#8203;</code><br>
+e.g. <code>add n/John Wick t/action t/puppies</code></p>
 </li>
 <li>
-<p><strong>Clear</strong> : <code>clear</code></p>
+<p><strong>Watch</strong> : <code>watch INDEX</code></p>
 </li>
 <li>
 <p><strong>Delete</strong> : <code>delete INDEX</code><br>
 e.g. <code>delete 3</code></p>
 </li>
 <li>
-<p><strong>Edit</strong> : <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
+<p><strong>Edit</strong> : <code>edit INDEX [n/MOVIE_NAME] [t/TAG]&#8230;&#8203;</code><br>
+e.g. <code>edit 2 n/John Wick t/favourite movie</code></p>
 </li>
 <li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>find James Jake</code></p>
+<p><strong>Search</strong> : <code>search KEYWORD [MORE_KEYWORDS]</code><br>
+e.g. <code>search John</code></p>
 </li>
 <li>
-<p><strong>List</strong> : <code>list</code></p>
+<p><strong>Exit</strong> : <code>exit</code></p>
 </li>
 <li>
 <p><strong>Help</strong> : <code>help</code></p>
@@ -363,4 +457,4 @@ e.g. <code>find James Jake</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-09-24 14:39:24 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-09-25 11:34:03 UTC</div></div></div></body></html>
