@@ -11,17 +11,19 @@ import seedu.address.model.actor.Actor;
  */
 public class TvShow extends Show {
 
+    public final String TAG = "TvShow";
     private int numOfEpisodesWatched;
     private ArrayList<TvSeason> tvSeasons;
     private final int totalNumOfEpisodes;
 
-    public TvShow(Name name, Description description, boolean isWatched,
+    public TvShow(Name name, Description description, IsWatched isWatched,
                   Date dateOfRelease, RunningTime runningTime, Set<Actor> actors,
                   int numOfEpisodesWatched, int totalNumOfEpisodes, ArrayList<TvSeason> tvSeasons) {
         super(name, description, isWatched, dateOfRelease, runningTime, actors);
         this.numOfEpisodesWatched = numOfEpisodesWatched;
         this.totalNumOfEpisodes = totalNumOfEpisodes;
         this.tvSeasons = tvSeasons;
+        super.TAG = "TvShow";
     }
 
     public int getNumOfEpisodesWatched() {
