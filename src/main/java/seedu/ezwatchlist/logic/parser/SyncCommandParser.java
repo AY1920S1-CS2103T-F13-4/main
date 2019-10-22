@@ -2,6 +2,7 @@ package seedu.ezwatchlist.logic.parser;
 
 import seedu.ezwatchlist.api.exceptions.OnlineConnectionException;
 import seedu.ezwatchlist.commons.core.Messages;
+import seedu.ezwatchlist.commons.core.index.Index;
 import seedu.ezwatchlist.logic.commands.AddCommand;
 import seedu.ezwatchlist.logic.commands.SyncCommand;
 import seedu.ezwatchlist.logic.parser.exceptions.ParseException;
@@ -25,24 +26,13 @@ public class SyncCommandParser implements Parser<SyncCommand> {
      */
     @Override
     public SyncCommand parse(String args) throws ParseException, OnlineConnectionException {
-        ArgumentMultimap argMultimap =
-                ArgumentTokenizer.tokenize(args, PREFIX_NAME);
-
-        if (!arePrefixesPresent(argMultimap, PREFIX_NAME)
-                || !argMultimap.getPreamble().isEmpty()) {
-            throw new ParseException(String.format(Messages.MESSAGE_INVALID_COMMAND_FORMAT, SyncCommand.MESSAGE_USAGE));
+        try {
+            Index index = ParserUtil.parseIndex(args);
+            return new SyncCommand(index);
+        } catch (ParseException e) {
+            throw new ParseException(
+                    String.format(Messages.MESSAGE_INVALID_COMMAND_FORMAT, SyncCommand.MESSAGE_USAGE), e);
         }
-
-        Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME).get());
-
-        return new SyncCommand(new ApiMain().getMovieByName(name.showName));
     }
 
-    /**
-     * Returns true if none of the prefixes contains empty {@code Optional} values in the given
-     * {@code ArgumentMultimap}.
-     */
-    private static boolean arePrefixesPresent(ArgumentMultimap argumentMultimap, Prefix... prefixes) {
-        return Stream.of(prefixes).allMatch(prefix -> argumentMultimap.getValue(prefix).isPresent());
-    }
 }
