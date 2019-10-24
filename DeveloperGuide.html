@@ -23,11 +23,12 @@
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#feature-mark-unmark-as-watched-feature">3.1. [Feature] Mark/unmark as watched feature</a></li>
-<li><a href="#proposed-undo-redo-feature">3.2. [Proposed] Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">3.3. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">3.4. Logging</a></li>
-<li><a href="#online-data">3.5. Online Data</a></li>
-<li><a href="#Implementation-Configuration">3.6. Configuration</a></li>
+<li><a href="#proposed-statistics-feature">3.2. [Proposed] Statistics feature</a></li>
+<li><a href="#proposed-undo-redo-feature">3.3. [Proposed] Undo/Redo feature</a></li>
+<li><a href="#proposed-data-encryption">3.4. [Proposed] Data Encryption</a></li>
+<li><a href="#logging">3.5. Logging</a></li>
+<li><a href="#online-data">3.6. Online Data</a></li>
+<li><a href="#Implementation-Configuration">3.7. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -448,9 +449,146 @@ The un-marking of a show as watched is similar, except that the <code>isWatched<
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">3.2. [Proposed] Undo/Redo feature</a></h3>
+<h3 id="proposed-statistics-feature"><a class="link" href="#proposed-statistics-feature">3.2. [Proposed] Statistics feature</a></h3>
 <div class="sect3">
 <h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">3.2.1. Proposed Implementation</a></h4>
+<div class="paragraph">
+<p>The statistics feature is facilitated by <code>Statistics</code> object. It extends <code>Ezwatchlist</code> with a summary of the users' personal
+preferences and footprint including the most watched genre, shows that you might have forgotten to watch, and the
+recommendations generated for you. It is stored internally as an <code>Statistics</code> object containing a <code>ModelManager</code>.
+Additionally, it implements the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Statistics#getFavouriteGenre()</code>&#8201;&#8212;&#8201;Gives the genre that appears the most number of times in the list of watched shows.</p>
+</li>
+<li>
+<p><code>Statistics#getForgotten()</code>&#8201;&#8212;&#8201;Gives the 3 shows that were added the earliest but have not been watched.</p>
+</li>
+<li>
+<p><code>Statistics#getRecommendation()</code>&#8201;&#8212;&#8201;Gives 3 recommendations according to the watched shows.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Given below is a usage scenario of a user checking his/her statistics page.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application. The Statistics object will be initialized with ModelManager
+containing the current watchlist and watched list. Behind the scenes, the 3 statistics will be calculated and the
+statistics panel will be populated with the result.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user clicks on the statistic button and sees the content.</p>
+</div>
+<div class="paragraph">
+<p>This is the sequence diagram of <code>getFavouriteGenre()</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/getFavouriteGenre.png" alt="getFavouriteGenre">
+</div>
+</div>
+<div class="paragraph">
+<p>This is the sequence diagram of <code>getForgotten()</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/getForgotten.png" alt="getForgotten">
+</div>
+</div>
+<div class="paragraph">
+<p>This is the sequence diagram of <code>getRecommendation()</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/getRecommendation.png" alt="getRecommendation">
+</div>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes the workflow of Statistics:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/activityDiagram.png" alt="activityDiagram">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-statistics-stores-the-watchlist-and-watched-list"><a class="link" href="#aspect-how-statistics-stores-the-watchlist-and-watched-list">Aspect: How Statistics stores the watchlist and watched list</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Saves the whole ModelManager as a field.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement and make use of.</p>
+</li>
+<li>
+<p>Cons: More dependency on ModelManager.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Saves the watchlist and watched list as fields respectively.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Less dependency on ModelManager.</p>
+</li>
+<li>
+<p>Cons: Less potential functionality and the lists might not be up-to-date.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-when-the-results-are-calculated"><a class="link" href="#aspect-when-the-results-are-calculated">Aspect: When the results are calculated</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Calculate when the application starts and update when there are changes.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: It appears more responsive in terms of navigating around the application.</p>
+</li>
+<li>
+<p>Cons: Need to constantly recalculate and update the results.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Calculate when the user navigate to Statistics panel.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Less calculation needed.</p>
+</li>
+<li>
+<p>Cons: Appear less responsive.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">3.3. [Proposed] Undo/Redo feature</a></h3>
+<div class="sect3">
+<h4 id="proposed-implementation-2"><a class="link" href="#proposed-implementation-2">3.3.1. Proposed Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
 It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
@@ -592,7 +730,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.2. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.3.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -662,20 +800,20 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.3. [Proposed] Data Encryption</a></h3>
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.4. [Proposed] Data Encryption</a></h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.4. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.5. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.6, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.7, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -706,12 +844,12 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="online-data"><a class="link" href="#online-data">3.5. Online Data</a></h3>
+<h3 id="online-data"><a class="link" href="#online-data">3.6. Online Data</a></h3>
 <div class="paragraph">
 <p>We are using <a href="https://www.themoviedb.org/documentation/api">The Movie Database (TMDB)</a> to retrieve information on movies and tv shows.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation-3"><a class="link" href="#implementation-3">3.5.1. Implementation</a></h4>
+<h4 id="implementation-3"><a class="link" href="#implementation-3">3.6.1. Implementation</a></h4>
 <div class="paragraph">
 <p>All interactions with the third party library are facilitated by the interface <code>ApiInterface</code>. Methods in <code>ApiInterface</code> are the main
 way the application retrieves any online information from the database.</p>
@@ -777,7 +915,7 @@ At any point the application might fail due to the application not being connect
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.5.2. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.6.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="why-this-implementation-was-chosen"><a class="link" href="#why-this-implementation-was-chosen">Why this implementation was chosen</a></h5>
 <div class="ulist">
@@ -876,7 +1014,7 @@ amount of memory used.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.6. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.7. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1703,4 +1841,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-24 02:58:24 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-24 07:54:24 UTC</div></div></div></body></html>
