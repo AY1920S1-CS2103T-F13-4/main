@@ -1042,6 +1042,21 @@ amount of memory used.</p>
 <div class="paragraph">
 <p>Step 4. The <code>SearchCommand#execute()</code> method is called, referencing the current model.</p>
 </div>
+<div class="paragraph">
+<p>Step 5. The <code>SearchCommand#searchByName()</code> method is called, referencing the current model.</p>
+</div>
+<div class="paragraph">
+<p>Step 6. The <code>SearchCommand#addShowFromWatchListIfSameNameAs()</code> method is called, referencing the current model and name of search to be searched from the list of names.</p>
+</div>
+<div class="paragraph">
+<p>Step 7. The <code>Model#getShowIfHasName()</code> method is called and any show with the name to be searched is added to the <code>filteredShowList</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 8. The <code>SearchCommand#addShowToSearchResult()</code> method is called and shows from the <code>filteredShowList</code> is added to the <code>searchResult</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 9. The <code>SearchCommand#addShowFromOnlineIfSameNameAs()</code> method is also called, referencing the name of show to be searched from the list of names.</p>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1055,10 +1070,67 @@ If the user is not connected online, a new <code>OnlineConnectionException</code
 </table>
 </div>
 <div class="paragraph">
-<p>Step 5.</p>
+<p>Step 10. The <code>SearchCommand#addOnlineMovieSearchedByNameToResults()</code> method is called, referencing the name of show to be searched.</p>
 </div>
 <div class="paragraph">
-<p>The following sequence diagram shows how the search operation works:</p>
+<p>The following activity diagram summarises the workflow of Search:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SearchActivityDiagram.png" alt="SearchActivityDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 2: Activity Diagram of `SearchCommand`</em></p>
+</div>
+<div class="paragraph">
+<p>In Figure 2, the user first launches the app. After the user input a search command, the program runs and shows the list of shows found in the search page.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">3.8.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-code-searchcommand-code-takes-in-the-information-to-be-searched-for"><a class="link" href="#aspect-how-code-searchcommand-code-takes-in-the-information-to-be-searched-for">Aspect: How <code>SearchCommand</code> takes in the information to be searched for</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Current choice: Takes in a hash map from <code>SearchCommandParser</code> and gets the list of information to be searched for.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement and make use of.</p>
+</li>
+<li>
+<p>Cons: Certain list might be redundant as there might have no information in them.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-how-search-searches-for-the-shows"><a class="link" href="#aspect-how-search-searches-for-the-shows">Aspect: How Search searches for the shows</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Current choice: Checks if the user choose to search by name, actor or both, then filter them accordingly.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement and make use of.</p>
+</li>
+<li>
+<p>Cons: User has to input either a name or actor to be searched.</p>
+</li>
+<li>
+<p>Cons: Logic is repetitive when searching based on actor or name.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -1884,4 +1956,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-24 15:54:29 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-25 05:16:36 UTC</div></div></div></body></html>
