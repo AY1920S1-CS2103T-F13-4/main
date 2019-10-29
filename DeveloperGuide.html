@@ -30,6 +30,7 @@
 <li><a href="#online-data">3.6. Online Data</a></li>
 <li><a href="#Implementation-Configuration">3.7. Configuration</a></li>
 <li><a href="#Implementation">3.8. [Feature] Search feature</a></li>
+<li><a href="#Implementation">3.9. [Feature] Add feature</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -1134,6 +1135,72 @@ If the user is not connected online, a new <code>OnlineConnectionException</code
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="Implementation"><a class="link" href="#Implementation">3.9. [Feature] Add feature</a></h3>
+<div class="sect3">
+<h4 id="implementation-5"><a class="link" href="#implementation-5">3.9.1. Implementation</a></h4>
+<div class="paragraph">
+<p>The <code>AddCommand</code> extends <code>Command</code> and uses <code>AddCommandParser</code> to process the command entered by the user.</p>
+</div>
+<div class="paragraph">
+<p>There are two different ways of using add feature and both have different outcome.
+1. Adding show in the WatchList.
+2. Adding show found from online search.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage of scenario 1 and how the add mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application and executes <code>add n/Joker&#8230;&#8203;</code> command to add a show in the WatchList with the name "Joker".</p>
+</div>
+<div class="paragraph">
+<p>Step 2. Entering the command calls AddCommandParser#parse().</p>
+</div>
+<div class="paragraph">
+<p>Step 3. A new <code>AddCommand</code> is created, with the show to be added in AddCommand.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. The <code>AddCommand#execute()</code> method is called, referencing the current model and add the show given by user to the <code>filteredShowList</code> found in model.</p>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarises the workflow of Add:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddActivityDiagram.png" alt="AddActivityDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 3: Activity Diagram of `AddCommand`</em></p>
+</div>
+<div class="paragraph">
+<p>In Figure 3, the user first launches the app. After the user input a add command, the program runs and add the show input by user into WatchList.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">3.9.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-code-addcommand-code-executes"><a class="link" href="#aspect-how-code-addcommand-code-executes">Aspect: How <code>AddCommand</code> executes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Current choice: Create a show object and add it to a <code>filteredShowList</code> found in ModelManager.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement and make use of.</p>
+</li>
+<li>
+<p>Cons: May have performance issues in terms of memory usage.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1956,4 +2023,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-29 02:18:14 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-29 03:00:34 UTC</div></div></div></body></html>
