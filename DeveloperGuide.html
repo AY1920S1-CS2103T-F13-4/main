@@ -1143,9 +1143,17 @@ If the user is not connected online, a new <code>OnlineConnectionException</code
 <p>The <code>AddCommand</code> extends <code>Command</code> and uses <code>AddCommandParser</code> to process the command entered by the user.</p>
 </div>
 <div class="paragraph">
-<p>There are two different ways of using add feature and both have different outcome.
-1. Adding show in the WatchList.
-2. Adding show found from online search.</p>
+<p>There are two different ways of using add feature and both have different outcome.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding show in the WatchList.</p>
+</li>
+<li>
+<p>Adding show found from online search.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage of scenario 1 and how the add mechanism behaves at each step.</p>
@@ -1185,6 +1193,58 @@ If the user is not connected online, a new <code>OnlineConnectionException</code
 <ul>
 <li>
 <p>Current choice: Create a show object and add it to a <code>filteredShowList</code> found in ModelManager.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement and make use of.</p>
+</li>
+<li>
+<p>Cons: May have performance issues in terms of memory usage.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage of scenario 2 and how the add mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user uses the search(Online) command and executes <code>add INDEX</code> command to add a show from search result page of INDEX in the WatchList.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. Entering the command calls AddCommandParser#parse().</p>
+</div>
+<div class="paragraph">
+<p>Step 3. A new <code>AddCommand</code> is created, with the show to be added in AddCommand.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. The <code>AddCommand#execute()</code> method is called, referencing the current model and add the show given by user to the <code>searchList</code> of INDEX found in model.</p>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarises the workflow of Add:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddActivityDiagram2.png" alt="AddActivityDiagram2">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4: Activity Diagram of `AddCommand`</em></p>
+</div>
+<div class="paragraph">
+<p>In Figure 4, User input search(online) command. User then input <code>add INDEX</code> command. Show of INDEX found in search result page is added to WatchList.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-7"><a class="link" href="#design-considerations-7">3.9.3. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-code-addcommand-code-executes-2"><a class="link" href="#aspect-how-code-addcommand-code-executes-2">Aspect: How <code>AddCommand</code> executes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Current choice: Retrieve the show object found in <code>searchList</code> of INDEX from ModelManager and add it to <code>filteredShowList</code>.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -2023,4 +2083,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 14:11:12 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 14:35:01 UTC</div></div></div></body></html>
