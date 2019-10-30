@@ -190,13 +190,13 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/MOVIE_NAME</code>, <code>MOVIE_NAME</code> is a parameter which can be used as <code>add n/The Angry Birds Movie 2</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>n/MOVIE_NAME [t/TAG]</code> can be used as <code>n/The Angry Birds Movie 2 t/Oscar-worthy</code> or as <code>n/The Angry Birds Movie</code>.</p>
+<p>Items in square brackets are optional e.g <code>n/MOVIE_NAME [a/ACTOR]</code> can be used as <code>n/The Angry Birds Movie 2 a/Johnny Depp or as `n/The Angry Birds Movie</code>.</p>
 </li>
 <li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/Oscar-worthy</code>, <code>t/Tear-jerking t/Good for kids</code> etc.</p>
+<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[a/ACTOR]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>a/Leonardo DiCaprio a/Robert Downey, Jr. a/Johnny Depp</code> etc.</p>
 </li>
 <li>
-<p>Parameters can be in any order e.g. if the command specifies <code>n/MOVIE_NAME t/TAG</code>, <code>t/TAG n/MOVIE_NAME</code> is also acceptable.</p>
+<p>Parameters can be in any order e.g. if the command specifies <code>n/MOVIE_NAME a/ACTOR</code>, <code>a/MOVIE n/MOVIE_NAME</code> is also acceptable.</p>
 </li>
 </ul>
 </div>
@@ -211,8 +211,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="sect3">
 <h4 id="adding-a-show-code-add-code"><a class="link" href="#adding-a-show-code-add-code">3.2.2. Adding a show: <code>add</code></a></h4>
 <div class="paragraph">
-<p>Adds a show to the watchlist<br>
-Format: <code>add n/MOVIE_NAME [t/TAG]&#8230;&#8203;</code></p>
+<p>Adds a show to the watchlist<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>add n/MOVIE_NAME t/TYPE d/DATE_OF_RELEASE w/WATCHED r/RUNNING_TIME s/DESCRIPTION [a/ACTOR_NAME]</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -221,7 +223,7 @@ Format: <code>add n/MOVIE_NAME [t/TAG]&#8230;&#8203;</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-A show can have any number of tags (including 0)
+A show can have any number of actors (including 0)
 </td>
 </tr>
 </table>
@@ -232,26 +234,64 @@ A show can have any number of tags (including 0)
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/Titanic t/Romance t/Drama</code></p>
+<p><code>add n/John Wick t/movie d/24 OCTOBER 2014 w/false r/101 s/An ex-hit-man comes out of retirement to track down the gangsters that killed his dog and took everything from him. a/Keanu Reeves</code></p>
 </li>
 <li>
-<p><code>add n/The Angry Birds Movie 2</code></p>
+<p><code>add n/Joker t/movie d/3 OCTOBER 2019 w/false r/122 s/In Gotham City, mentally-troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: "The Joker". a/Joaquin Phoenix</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="mark-as-watched-code-watch-code"><a class="link" href="#mark-as-watched-code-watch-code">3.2.3. Mark as watched : <code>watch</code></a></h4>
+<h4 id="adding-a-show-from-search-result-page-code-add-code"><a class="link" href="#adding-a-show-from-search-result-page-code-add-code">3.2.3. Adding a show from search result page: <code>add</code></a></h4>
+<div class="paragraph">
+<p>Adds a show from search result page after user has already search for show<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>add INDEX</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+This add command can only be used if user has already search for show using the search online command.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add 2</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="clear-the-watchlist-code-clear-code"><a class="link" href="#clear-the-watchlist-code-clear-code">3.2.4. Clear the WatchList: <code>clear</code></a></h4>
+<div class="paragraph">
+<p>Clear the WatchList<br>
+Format: <code>clear</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mark-as-watched-code-watch-code"><a class="link" href="#mark-as-watched-code-watch-code">3.2.5. Mark as watched : <code>watch</code></a></h4>
 <div class="paragraph">
 <p>Marks an unwatched show in the watchlist as watched.<br>
 Format: <code>watch INDEX</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-show-s-details-code-edit-code"><a class="link" href="#editing-a-show-s-details-code-edit-code">3.2.4. Editing a show&#8217;s details : <code>edit</code></a></h4>
+<h4 id="editing-a-show-s-details-code-edit-code"><a class="link" href="#editing-a-show-s-details-code-edit-code">3.2.6. Editing a show&#8217;s details : <code>edit</code></a></h4>
 <div class="paragraph">
 <p>Edits an existing show in the list<br>
-Format: <code>edit INDEX [n/NAME] [t/TAG]&#8230;&#8203;</code></p>
+Format: <code>edit INDEX [n/MOVIE_NAME] [t/TYPE] [d/DATE_OF_RELEASE] [w/WATCHED] [r/RUNNING_TIME] [s/DESCRIPTION] [a/ACTOR]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -267,10 +307,10 @@ Format: <code>edit INDEX [n/NAME] [t/TAG]&#8230;&#8203;</code></p>
 <p>Existing values will be updated to the input values.</p>
 </li>
 <li>
-<p>When editing tags, the existing tags of the show will be removed i.e adding of tags is not cumulative.</p>
+<p>When editing actors, the existing actors of the show will be removed i.e adding of actors is not cumulative.</p>
 </li>
 <li>
-<p>You can remove all the show&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+<p>You can remove all the show&#8217;s actors by typing <code>a/</code> without specifying any actors after it.</p>
 </li>
 </ul>
 </div>
@@ -282,18 +322,18 @@ Format: <code>edit INDEX [n/NAME] [t/TAG]&#8230;&#8203;</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit 1 n/Titanic t/Favourites</code><br>
-Edits the name and tag of the 1st show in the list to be <code>Titanic</code> and <code>Favourites</code> respectively.</p>
+<p><code>edit 1 n/Batman a/Joaquin Phoenix</code><br>
+Edits the name and actor name of the 1st show in the list to be <code>Titanic</code> and <code>Joaquin Phoenix</code> respectively.</p>
 </li>
 <li>
-<p><code>edit 2 t/</code><br>
-Clears all existing tags of the 2nd show in the list.</p>
+<p><code>edit 2 a/</code><br>
+Clears all existing actors of the 2nd show in the list.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="search-for-a-show-by-name-code-search-code"><a class="link" href="#search-for-a-show-by-name-code-search-code">3.2.5. Search for a show by name: <code>search</code></a></h4>
+<h4 id="search-for-a-show-by-name-code-search-code"><a class="link" href="#search-for-a-show-by-name-code-search-code">3.2.7. Search for a show by name: <code>search</code></a></h4>
 <div class="paragraph">
 <p>Finds shows whose names contain any of the given keywords from the watchlist, watched list and online.<br>
 Format: <code>search n/KEYWORD [MORE_KEYWORDS]</code></p>
@@ -338,7 +378,7 @@ Returns any actor having names <code>John</code> or <code>Angry</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-show-code-delete-code"><a class="link" href="#deleting-a-show-code-delete-code">3.2.6. Deleting a show : <code>delete</code></a></h4>
+<h4 id="deleting-a-show-code-delete-code"><a class="link" href="#deleting-a-show-code-delete-code">3.2.8. Deleting a show : <code>delete</code></a></h4>
 <div class="paragraph">
 <p>Deletes the specified show from the watchlist.<br>
 Format: <code>delete INDEX</code></p>
@@ -378,21 +418,21 @@ Deletes the 1st show in the results of the <code>search</code> command.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.2.7. Exiting the program : <code>exit</code></a></h4>
+<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.2.9. Exiting the program : <code>exit</code></a></h4>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="saving-the-data"><a class="link" href="#saving-the-data">3.2.8. Saving the data</a></h4>
+<h4 id="saving-the-data"><a class="link" href="#saving-the-data">3.2.10. Saving the data</a></h4>
 <div class="paragraph">
 <p>Ezwatchlist data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.2.9. Encrypting data files <code>[coming in v2.0]</code></a></h4>
+<h4 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.2.11. Encrypting data files <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
@@ -436,8 +476,15 @@ There is no need to save manually.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add</strong> <code>add n/MOVIE_NAME [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>add n/John Wick t/action t/puppies</code></p>
+<p><strong>Add</strong> <code>add n/MOVIE_NAME t/TYPE d/DATE_OF_RELEASE w/WATCHED r/RUNNING_TIME s/DESCRIPTION [a/ACTOR_NAME]</code><br>
+e.g. <code>add n/John Wick t/movie d/24 OCTOBER 2014 w/false r/101 s/An ex-hit-man comes out of retirement to track down the gangsters that killed his dog and took everything from him. a/Keanu Reeves</code></p>
+</li>
+<li>
+<p><strong>Add from search result page</strong> <code>add INDEX</code><br>
+e.g. <code>add 1</code></p>
+</li>
+<li>
+<p><strong>CLEAR</strong> <code>clear</code></p>
 </li>
 <li>
 <p><strong>Watch</strong> : <code>watch INDEX</code></p>
@@ -447,12 +494,16 @@ e.g. <code>add n/John Wick t/action t/puppies</code></p>
 e.g. <code>delete 3</code></p>
 </li>
 <li>
-<p><strong>Edit</strong> : <code>edit INDEX [n/MOVIE_NAME] [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>edit 2 n/John Wick t/favourite movie</code></p>
+<p><strong>Edit</strong> : <code>edit INDEX [n/MOVIE_NAME] [t/TYPE] [d/DATE_OF_RELEASE] [w/WATCHED] [r/RUNNING_TIME] [s/DESCRIPTION] [a/ACTOR]&#8230;&#8203;</code><br>
+e.g. <code>edit 2 n/John Wick a/Johnny Depp</code></p>
 </li>
 <li>
 <p><strong>Search</strong> : <code>search KEYWORD [MORE_KEYWORDS]</code><br>
 e.g. <code>search John</code></p>
+</li>
+<li>
+<p><strong>Search (ONLINE)</strong> <code>search n/MOVIE_NAME</code><br>
+e.g. <code>search n/Harry potter</code></p>
 </li>
 <li>
 <p><strong>Exit</strong> : <code>exit</code></p>
@@ -463,4 +514,4 @@ e.g. <code>search John</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 10:55:04 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 14:11:12 UTC</div></div></div></body></html>
