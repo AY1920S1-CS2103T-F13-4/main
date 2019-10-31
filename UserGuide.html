@@ -49,7 +49,7 @@
 <p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/UI.PNG" alt="UI" width="790">
+<img src="images/Ui.PNG" alt="Ui" width="790">
 </div>
 </div>
 </li>
@@ -393,26 +393,39 @@ Clears all existing actors of the 2nd show in the list.</p>
 <h4 id="search-for-a-show-by-name-code-search-code"><a class="link" href="#search-for-a-show-by-name-code-search-code">3.2.7. Search for a show by name: <code>search</code></a></h4>
 <div class="paragraph">
 <p>Finds shows whose names contain any of the given keywords from the watchlist, watched list and online.<br>
-Format: <code>search n/KEYWORD [MORE_KEYWORDS]</code></p>
+Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>by name: <code>search n/SHOW_NAME&#8230;&#8203; [g/GENRE]&#8230;&#8203; [a/ACTOR_NAME]&#8230;&#8203; [i/IS_INTERNAL] [t/TYPE] [w/IS_WATCH]</code></p>
+</li>
+<li>
+<p>by genre: <code>search g/GENRE&#8230;&#8203; [n/SHOW_NAME]&#8230;&#8203; [a/ACTOR_NAME]&#8230;&#8203; [i/IS_INTERNAL] [t/TYPE] [w/IS_WATCH]</code></p>
+</li>
+<li>
+<p>by actor (from watchlist): <code>search a/ACTOR_NAME&#8230;&#8203; [n/SHOW_NAME]&#8230;&#8203; [g/GENRE]&#8230;&#8203; [t/TYPE] [w/IS_WATCH]</code></p>
+</li>
+</ul>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
+<p>The search is case insensitive. e.g "avengers" will match "Avengers"</p>
 </li>
 <li>
-<p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
+<p>The order of the keywords matter. e.g. "Chris Evans" will not match "Evans Chris"</p>
 </li>
 <li>
-<p>Only the name is searched.</p>
+<p>Not only full words will be matched. e.g. "Joke" will also match with "Joker"</p>
 </li>
 <li>
-<p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
+<p>When searching based on actor, only shows from the watchlist will be searched.</p>
 </li>
 <li>
-<p>Shows matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
+<p>When searching based on genre online, only movies will be searched.</p>
 </li>
 </ul>
 </div>
@@ -424,12 +437,41 @@ Format: <code>search n/KEYWORD [MORE_KEYWORDS]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>search n/Angry</code><br>
-Returns <code>The Angry Birds Movie 2</code></p>
+<p>By name:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>search n/Joker i/yes</code><br>
+Returns shows with the name "Joker" within the watchlist</p>
 </li>
 <li>
-<p><code>search n/John Angry</code><br>
-Returns any actor having names <code>John</code> or <code>Angry</code></p>
+<p><code>search n/Avengers g/Science Fiction t/movie n/Spiderman</code><br>
+Returns movies with the name "Avenger" or "Spiderman" and movies with "Science Fiction" as genre</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>By genre:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>search g/Action t/movie</code><br>
+Returns movies with the genre "Action"</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>By actor:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>search a/Tom w/no</code><br>
+Returns shows within the watchlist with actor named "Tom"</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -595,12 +637,23 @@ e.g. <code>delete 3</code></p>
 e.g. <code>edit 2 n/John Wick a/Johnny Depp</code></p>
 </li>
 <li>
-<p><strong>Search</strong> : <code>search KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>search John</code></p>
+<p><strong>Search</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>by name</strong> : <code>search n/SHOW_NAME&#8230;&#8203; [g/GENRE]&#8230;&#8203; [a/ACTOR_NAME]&#8230;&#8203; [i/IS_INTERNAL] [t/TYPE] [w/IS_WATCH]</code><br>
+e.g. <code>search n/Joker i/yes</code> searches for shows with the name 'Joker' within the watchlist</p>
 </li>
 <li>
-<p><strong>Search (ONLINE)</strong> <code>search n/SHOW_NAME</code><br>
-e.g. <code>search n/Harry potter</code></p>
+<p><strong>by genre</strong> <code>search g/GENRE&#8230;&#8203; [n/SHOW_NAME]&#8230;&#8203; [a/ACTOR_NAME]&#8230;&#8203; [i/IS_INTERNAL] [t/TYPE] [w/IS_WATCH]</code><br>
+e.g. <code>search g/Action t/movie</code> searches for movies with the genre 'Action'</p>
+</li>
+<li>
+<p><strong>by actor from watchlist</strong> <code>search a/ACTOR_NAME&#8230;&#8203; [n/SHOW_NAME]&#8230;&#8203; [g/GENRE]&#8230;&#8203; [t/TYPE] [w/IS_WATCH]</code><br>
+e.g. <code>search a/Tom</code> searches from shows within the watchlist with actor named 'Tom'</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><strong>Exit</strong> : <code>exit</code></p>
@@ -611,4 +664,4 @@ e.g. <code>search n/Harry potter</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-31 08:14:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-31 12:39:02 UTC</div></div></div></body></html>
