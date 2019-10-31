@@ -15,8 +15,11 @@
 <ul class="sectlevel2">
 <li><a href="#user-interface">3.1. User-Interface</a></li>
 <li><a href="#UserCommands">3.2. User Commands</a></li>
+<li><a href="#advanced-features">3.3. Advanced Features</a></li>
 </ul>
 </li>
+<li><a href="#faq">4. FAQ</a></li>
+<li><a href="#command-summary">5. Command Summary</a></li>
 </ul>
 </div>
 </div>
@@ -199,15 +202,16 @@ The user can navigate to this list by clicking the “Watched” tab on the side
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>==== Viewing help : <code>help</code></p>
 </div>
+</div>
+<div class="sect3">
+<h4 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.2.1. Viewing help : <code>help</code></a></h4>
 <div class="paragraph">
 <p>Format: <code>help</code></p>
 </div>
-<div class="paragraph">
-<p>==== Adding a show: <code>add</code></p>
 </div>
+<div class="sect3">
+<h4 id="adding-a-show-code-add-code"><a class="link" href="#adding-a-show-code-add-code">3.2.2. Adding a show: <code>add</code></a></h4>
 <div class="paragraph">
 <p>Adds a show to the watchlist<br></p>
 </div>
@@ -245,9 +249,9 @@ A show can have any number of actors (including 0)
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>==== Adding a show from search result page: <code>add</code></p>
 </div>
+<div class="sect3">
+<h4 id="adding-a-show-from-search-result-page-code-add-code"><a class="link" href="#adding-a-show-from-search-result-page-code-add-code">3.2.3. Adding a show from search result page: <code>add</code></a></h4>
 <div class="paragraph">
 <p>Adds a show from search result page after user has already search for show<br></p>
 </div>
@@ -276,16 +280,16 @@ This add command can only be used if user has already search for show using the 
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>==== Clear the WatchList: <code>clear</code></p>
 </div>
+<div class="sect3">
+<h4 id="clear-the-watchlist-code-clear-code"><a class="link" href="#clear-the-watchlist-code-clear-code">3.2.4. Clear the WatchList: <code>clear</code></a></h4>
 <div class="paragraph">
 <p>Clear the WatchList<br>
 Format: <code>clear</code></p>
 </div>
-<div class="paragraph">
-<p>==== Mark as watched : <code>watch</code></p>
 </div>
+<div class="sect3">
+<h4 id="mark-as-watched-code-watch-code"><a class="link" href="#mark-as-watched-code-watch-code">3.2.5. Mark as watched : <code>watch</code></a></h4>
 <div class="paragraph">
 <p>Marks an unwatched show in the watchlist as watched.<br>
 Format: <code>watch INDEX [e/EPISODE_NUMBER] [s/SEASON_NUMBER]</code></p>
@@ -339,9 +343,9 @@ Marks all episodes including the second episode of the fifth season of the third
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>==== Editing a show&#8217;s details : <code>edit</code></p>
 </div>
+<div class="sect3">
+<h4 id="editing-a-show-s-details-code-edit-code"><a class="link" href="#editing-a-show-s-details-code-edit-code">3.2.6. Editing a show&#8217;s details : <code>edit</code></a></h4>
 <div class="paragraph">
 <p>Edits an existing show in the list<br>
 Format: <code>edit INDEX [n/SHOW_NAME] [d/DATE_OF_RELEASE] [w/WATCHED] [r/RUNNING_TIME] [s/DESCRIPTION] [a/ACTOR]&#8230;&#8203;</code></p>
@@ -384,9 +388,9 @@ Clears all existing actors of the 2nd show in the list.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>==== Search for a show by name: <code>search</code></p>
 </div>
+<div class="sect3">
+<h4 id="search-for-a-show-by-name-code-search-code"><a class="link" href="#search-for-a-show-by-name-code-search-code">3.2.7. Search for a show by name: <code>search</code></a></h4>
 <div class="paragraph">
 <p>Finds shows whose names contain any of the given keywords from the watchlist, watched list and online.<br>
 Format: <code>search n/KEYWORD [MORE_KEYWORDS]</code></p>
@@ -429,9 +433,9 @@ Returns any actor having names <code>John</code> or <code>Angry</code></p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>==== Deleting a show : <code>delete</code></p>
 </div>
+<div class="sect3">
+<h4 id="deleting-a-show-code-delete-code"><a class="link" href="#deleting-a-show-code-delete-code">3.2.8. Deleting a show : <code>delete</code></a></h4>
 <div class="paragraph">
 <p>Deletes the specified show from the watchlist.<br>
 Format: <code>delete INDEX</code></p>
@@ -469,32 +473,34 @@ Deletes the 1st show in the results of the <code>search</code> command.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>==== Exiting the program : <code>exit</code></p>
 </div>
+<div class="sect3">
+<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.2.9. Exiting the program : <code>exit</code></a></h4>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
-<div class="paragraph">
-<p>==== Saving the data</p>
 </div>
+<div class="sect3">
+<h4 id="saving-the-data"><a class="link" href="#saving-the-data">3.2.10. Saving the data</a></h4>
 <div class="paragraph">
 <p>Ezwatchlist data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
-<div class="paragraph">
-<p>==== Encrypting data files <code>[coming in v2.0]</code></p>
 </div>
+<div class="sect3">
+<h4 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.2.11. Encrypting data files <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
-<div class="paragraph">
-<p>=== Advanced Features</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="advanced-features"><a class="link" href="#advanced-features">3.3. Advanced Features</a></h3>
+<div class="sect3">
+<h4 id="parsing-of-movie-and-tv-show-information"><a class="link" href="#parsing-of-movie-and-tv-show-information">3.3.1. Parsing of Movie and Tv Show Information</a></h4>
 <div class="paragraph">
-<p>==== Parsing of Movie and Tv Show Information
-In Ezwatchlist, an online database is accessed so that all the information about your favourite Movies and
+<p>In Ezwatchlist, an online database is accessed so that all the information about your favourite Movies and
 Television Shows is updated, informative, and concise. What this means for you is that:</p>
 </div>
 <div class="ulist">
@@ -519,9 +525,11 @@ the minor details for you.</p>
 </div>
 </div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="movie-and-tv-show-recommendations"><a class="link" href="#movie-and-tv-show-recommendations">3.3.2. Movie and Tv Show Recommendations</a></h4>
 <div class="paragraph">
-<p>==== Movie and Tv Show Recommendations
-Ezwatchlist has the ability to recommend Movies and TvShows to you based on
+<p>Ezwatchlist has the ability to recommend Movies and TvShows to you based on
 your Ezwatchlist usage. Ezwatchlist will create your own personalized recommendations for you.</p>
 </div>
 <div class="sidebarblock">
@@ -532,9 +540,11 @@ just find your next favourite!</p>
 </div>
 </div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="auto-correct-coming-in-v2-0"><a class="link" href="#auto-correct-coming-in-v2-0">3.3.3. Auto-Correct (Coming in v2.0)</a></h4>
 <div class="paragraph">
-<p>==== Auto-Correct (Coming in v2.0)
-Ezwatchlist aims to provide a smooth experience for our typing users. All typing in Ezwatchlist will be automatically
+<p>Ezwatchlist aims to provide a smooth experience for our typing users. All typing in Ezwatchlist will be automatically
 corrected for you when typing in your commands.</p>
 </div>
 <div class="sidebarblock">
@@ -544,16 +554,22 @@ corrected for you when typing in your commands.</p>
 </div>
 </div>
 </div>
-<div class="paragraph">
-<p>== FAQ</p>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="faq"><a class="link" href="#faq">4. FAQ</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
 <strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Ezwatchlist folder.</p>
 </div>
-<div class="paragraph">
-<p>== Command Summary</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
@@ -595,7 +611,4 @@ e.g. <code>search n/Harry potter</code></p>
 </ul>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-31 08:04:56 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-31 08:14:09 UTC</div></div></div></body></html>
