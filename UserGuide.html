@@ -15,11 +15,8 @@
 <ul class="sectlevel2">
 <li><a href="#user-interface">3.1. User-Interface</a></li>
 <li><a href="#UserCommands">3.2. User Commands</a></li>
-<li><a href="#advanced-features">3.3. Advanced Features</a></li>
 </ul>
 </li>
-<li><a href="#faq">4. FAQ</a></li>
-<li><a href="#command-summary">5. Command Summary</a></li>
 </ul>
 </div>
 </div>
@@ -62,7 +59,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>add</code></strong><code>n/Titanic</code> : adds the movie named <code>Titanic</code> to the Watchlist.</p>
+<p><strong><code>add</code></strong><code>n/Titanic t/movie</code> : adds the <code>movie</code> named <code>Titanic</code> to the Watchlist.</p>
 </li>
 <li>
 <p><strong><code>search</code></strong><code>n/Titanic</code> : Searched for movie named <code>Titanic</code> in all movies</p>
@@ -93,18 +90,12 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="paragraph">
 <p>The watchlist is the default page that is opened upon start-up of ezwatchlist.
 It shows the user’s unwatched movies and television series.
-The watchlist page also contains a command bar to allow the user to input commands.</p>
+The watchlist page also contains a command bar to allow the user to input commands.
+The user can navigate to this list by clicking the “Watched” tab on the side bar or by using the keyboard short-cut <code>1</code>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Characteristics of the watchlist page:</strong></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Shows that are added more recently are at the bottom of the list</p>
-</li>
-<li>
-<p>Each show has the following visible characteristics:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -114,18 +105,24 @@ The watchlist page also contains a command bar to allow the user to input comman
 <p>Name of show (and year in brackets?)</p>
 </li>
 <li>
-<p>Remarks</p>
+<p>Genres</p>
 </li>
 <li>
-<p>Progress bar showing number of episodes watched (For TV series)</p>
+<p>Actors</p>
+</li>
+<li>
+<p>Description of the show</p>
+</li>
+<li>
+<p>Running Time</p>
+</li>
+<li>
+<p>Last watched episode (For TV series that have been updated using the <code>watch</code> command)</p>
 </li>
 <li>
 <p>Checkbox to indicate if the show has been watched</p>
 </li>
 </ul>
-</div>
-</li>
-</ol>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -136,13 +133,13 @@ The watchlist page also contains a command bar to allow the user to input comman
 <div class="sect3">
 <h4 id="watched-list"><a class="link" href="#watched-list">3.1.2. Watched List</a></h4>
 <div class="paragraph">
-<p>The user has the option to view the list of shows that have been marked as watched in the watched list. The user can navigate to this list by clicking the “Watched” tab on the side bar or by using the keyboard short-cut <code>ctrl + tab</code>.</p>
+<p>The user has the option to view the list of shows that have been marked as watched in the watched list. The user can navigate to this list by clicking the “Watched” tab on the side bar or by using the keyboard short-cut <code>2</code>.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="search-page"><a class="link" href="#search-page">3.1.3. Search Page</a></h4>
 <div class="paragraph">
-<p>The user can navigate to the search page to find a specific movie or television by searching for its name.</p>
+<p>The user can navigate to the search page to find a specific movie or television by searching for its name. The user can navigate to this list by clicking the “Watched” tab on the side bar or by using the keyboard short-cut <code>3</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -153,7 +150,7 @@ The watchlist page also contains a command bar to allow the user to input comman
 <div class="sect3">
 <h4 id="statistics-page"><a class="link" href="#statistics-page">3.1.4. Statistics Page</a></h4>
 <div class="paragraph">
-<p>The user can navigate to the statistics page to find a summary of his watching habits, preferences and history according to what is present in his lists. Examples include: Ten most recent movies he watched, ten favourite movies of the user etc.</p>
+<p>The user can navigate to the statistics page to find a summary of his watching habits, preferences and history according to what is present in his lists. Examples include: Ten most recent movies he watched, ten favourite movies of the user etc. The user can navigate to this list by clicking the “Watched” tab on the side bar or by using the keyboard short-cut <code>4</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -164,7 +161,7 @@ The watchlist page also contains a command bar to allow the user to input comman
 <div class="sect3">
 <h4 id="sidebar"><a class="link" href="#sidebar">3.1.5. Sidebar</a></h4>
 <div class="paragraph">
-<p>Ezwatchlist gives users the ability to navigate easily through the <strong>Watchlist, Watchedlist, Search page and Statistics pages</strong> through the use of the graphical user interface at the left of the main page. Alternatively, the user can also make use of keyboard shortcut <code>ctrl + tab</code> to scroll through the different pages.</p>
+<p>Ezwatchlist gives users the ability to navigate easily through the <strong>Watchlist, Watchedlist, Search page and Statistics pages</strong> through the use of the graphical user interface at the left of the main page.</p>
 </div>
 </div>
 <div class="sect3">
@@ -189,34 +186,33 @@ The watchlist page also contains a command bar to allow the user to input comman
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/MOVIE_NAME</code>, <code>MOVIE_NAME</code> is a parameter which can be used as <code>add n/The Angry Birds Movie 2</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/SHOW_NAME t/SHOW_TYPE</code>, <code>SHOW_NAME</code> and <code>SHOW_TYPE</code> are parameters which can be used as <code>add n/The Angry Birds Movie 2 t/movie</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>n/MOVIE_NAME [a/ACTOR]</code> can be used as <code>n/The Angry Birds Movie 2 a/Johnny Depp or as `n/The Angry Birds Movie</code>.</p>
+<p>Items in square brackets are optional e.g <code>n/SHOW_NAME t/SHOW_TYPE [d/DESCRIPTION]</code> can be used as <code>n/The Angry Birds Movie t/movie 2 d/Oscar-worthy</code> or as <code>n/The Angry Birds Movie t/movie</code>.</p>
 </li>
 <li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[a/ACTOR]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>a/Leonardo DiCaprio a/Robert Downey, Jr. a/Johnny Depp</code> etc.</p>
+<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[a/ACTOR]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>a/Leonardo Di Carpio</code>, <code>a/Leonardo Di Carpio a/Christian Bale</code> etc.</p>
 </li>
 <li>
-<p>Parameters can be in any order e.g. if the command specifies <code>n/MOVIE_NAME a/ACTOR</code>, <code>a/MOVIE n/MOVIE_NAME</code> is also acceptable.</p>
+<p>Parameters can be in any order e.g. if the command specifies <code>n/SHOW_NAME t/SHOW_TYPE</code>, <code>t/SHOW_TYPE n/SHOW_NAME</code> is also acceptable.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>==== Viewing help : <code>help</code></p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.2.1. Viewing help : <code>help</code></a></h4>
 <div class="paragraph">
 <p>Format: <code>help</code></p>
 </div>
+<div class="paragraph">
+<p>==== Adding a show: <code>add</code></p>
 </div>
-<div class="sect3">
-<h4 id="adding-a-show-code-add-code"><a class="link" href="#adding-a-show-code-add-code">3.2.2. Adding a show: <code>add</code></a></h4>
 <div class="paragraph">
 <p>Adds a show to the watchlist<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>add n/MOVIE_NAME t/TYPE d/DATE_OF_RELEASE w/WATCHED r/RUNNING_TIME s/DESCRIPTION [a/ACTOR_NAME]</code></p>
+<p>Format: <code>add n/SHOW_NAME t/SHOW_TYPE [d/DATE_OF_RELEASE] [w/WATCHED] [r/RUNNING_TIME] [s/DESCRIPTION] [a/ACTOR_NAME]&#8230;&#8203;</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -236,6 +232,12 @@ A show can have any number of actors (including 0)
 <div class="ulist">
 <ul>
 <li>
+<p><code>add n/Titanic t/movie</code></p>
+</li>
+<li>
+<p><code>add n/Friends t/tv</code></p>
+</li>
+<li>
 <p><code>add n/John Wick t/movie d/24 OCTOBER 2014 w/false r/101 s/An ex-hit-man comes out of retirement to track down the gangsters that killed his dog and took everything from him. a/Keanu Reeves</code></p>
 </li>
 <li>
@@ -243,9 +245,9 @@ A show can have any number of actors (including 0)
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>==== Adding a show from search result page: <code>add</code></p>
 </div>
-<div class="sect3">
-<h4 id="adding-a-show-from-search-result-page-code-add-code"><a class="link" href="#adding-a-show-from-search-result-page-code-add-code">3.2.3. Adding a show from search result page: <code>add</code></a></h4>
 <div class="paragraph">
 <p>Adds a show from search result page after user has already search for show<br></p>
 </div>
@@ -274,26 +276,75 @@ This add command can only be used if user has already search for show using the 
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>==== Clear the WatchList: <code>clear</code></p>
 </div>
-<div class="sect3">
-<h4 id="clear-the-watchlist-code-clear-code"><a class="link" href="#clear-the-watchlist-code-clear-code">3.2.4. Clear the WatchList: <code>clear</code></a></h4>
 <div class="paragraph">
 <p>Clear the WatchList<br>
 Format: <code>clear</code></p>
 </div>
+<div class="paragraph">
+<p>==== Mark as watched : <code>watch</code></p>
 </div>
-<div class="sect3">
-<h4 id="mark-as-watched-code-watch-code"><a class="link" href="#mark-as-watched-code-watch-code">3.2.5. Mark as watched : <code>watch</code></a></h4>
 <div class="paragraph">
 <p>Marks an unwatched show in the watchlist as watched.<br>
-Format: <code>watch INDEX</code></p>
+Format: <code>watch INDEX [e/EPISODE_NUMBER] [s/SEASON_NUMBER]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Marks the show at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed watchlist. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>Any number of the optional fields may be provided.</p>
+</li>
+<li>
+<p>Having only the index of the show will mark/unmark the show as watched.</p>
+</li>
+<li>
+<p>Having the index and the episode number of the show will update the cumulative number of episodes of the show that are watched.</p>
+</li>
+<li>
+<p>Having the index and the season number of the show will update the cumulative number of seasons of the show that are watched.</p>
+</li>
+<li>
+<p>Having the index, season number and the episode number of the show will update the last watched episode to be the indicated episode of the indicated season of the show.</p>
+</li>
+</ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="editing-a-show-s-details-code-edit-code"><a class="link" href="#editing-a-show-s-details-code-edit-code">3.2.6. Editing a show&#8217;s details : <code>edit</code></a></h4>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>watch 1</code><br>
+Marks/un-marks the first show of the list as watched.</p>
+</li>
+<li>
+<p><code>watch 2 e/20</code><br>
+Marks the first 20 episodes of the second show of the list as watched.</p>
+</li>
+<li>
+<p><code>watch 2 s/5</code><br>
+Marks all episodes of the first 5 seasons of the second show to be watched.</p>
+</li>
+<li>
+<p><code>watch 3 s/5 e/2</code><br>
+Marks all episodes including the second episode of the fifth season of the third show in the list as watched.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>==== Editing a show&#8217;s details : <code>edit</code></p>
+</div>
 <div class="paragraph">
 <p>Edits an existing show in the list<br>
-Format: <code>edit INDEX [n/MOVIE_NAME] [t/TYPE] [d/DATE_OF_RELEASE] [w/WATCHED] [r/RUNNING_TIME] [s/DESCRIPTION] [a/ACTOR]&#8230;&#8203;</code></p>
+Format: <code>edit INDEX [n/SHOW_NAME] [d/DATE_OF_RELEASE] [w/WATCHED] [r/RUNNING_TIME] [s/DESCRIPTION] [a/ACTOR]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -333,9 +384,9 @@ Clears all existing actors of the 2nd show in the list.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>==== Search for a show by name: <code>search</code></p>
 </div>
-<div class="sect3">
-<h4 id="search-for-a-show-by-name-code-search-code"><a class="link" href="#search-for-a-show-by-name-code-search-code">3.2.7. Search for a show by name: <code>search</code></a></h4>
 <div class="paragraph">
 <p>Finds shows whose names contain any of the given keywords from the watchlist, watched list and online.<br>
 Format: <code>search n/KEYWORD [MORE_KEYWORDS]</code></p>
@@ -378,9 +429,9 @@ Returns any actor having names <code>John</code> or <code>Angry</code></p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>==== Deleting a show : <code>delete</code></p>
 </div>
-<div class="sect3">
-<h4 id="deleting-a-show-code-delete-code"><a class="link" href="#deleting-a-show-code-delete-code">3.2.8. Deleting a show : <code>delete</code></a></h4>
 <div class="paragraph">
 <p>Deletes the specified show from the watchlist.<br>
 Format: <code>delete INDEX</code></p>
@@ -418,34 +469,32 @@ Deletes the 1st show in the results of the <code>search</code> command.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>==== Exiting the program : <code>exit</code></p>
 </div>
-<div class="sect3">
-<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.2.9. Exiting the program : <code>exit</code></a></h4>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
+<div class="paragraph">
+<p>==== Saving the data</p>
 </div>
-<div class="sect3">
-<h4 id="saving-the-data"><a class="link" href="#saving-the-data">3.2.10. Saving the data</a></h4>
 <div class="paragraph">
 <p>Ezwatchlist data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
+<div class="paragraph">
+<p>==== Encrypting data files <code>[coming in v2.0]</code></p>
 </div>
-<div class="sect3">
-<h4 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.2.11. Encrypting data files <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="advanced-features"><a class="link" href="#advanced-features">3.3. Advanced Features</a></h3>
-<div class="sect3">
-<h4 id="parsing-of-movie-and-tv-show-information"><a class="link" href="#parsing-of-movie-and-tv-show-information">3.3.1. Parsing of Movie and Tv Show Information</a></h4>
 <div class="paragraph">
-<p>In Ezwatchlist, an online database is accessed so that all the information about your favourite Movies and
+<p>=== Advanced Features</p>
+</div>
+<div class="paragraph">
+<p>==== Parsing of Movie and Tv Show Information
+In Ezwatchlist, an online database is accessed so that all the information about your favourite Movies and
 Television Shows is updated, informative, and concise. What this means for you is that:</p>
 </div>
 <div class="ulist">
@@ -470,11 +519,9 @@ the minor details for you.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect3">
-<h4 id="movie-and-tv-show-recommendations"><a class="link" href="#movie-and-tv-show-recommendations">3.3.2. Movie and Tv Show Recommendations</a></h4>
 <div class="paragraph">
-<p>Ezwatchlist has the ability to recommend Movies and TvShows to you based on
+<p>==== Movie and Tv Show Recommendations
+Ezwatchlist has the ability to recommend Movies and TvShows to you based on
 your Ezwatchlist usage. Ezwatchlist will create your own personalized recommendations for you.</p>
 </div>
 <div class="sidebarblock">
@@ -485,11 +532,9 @@ just find your next favourite!</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect3">
-<h4 id="auto-correct-coming-in-v2-0"><a class="link" href="#auto-correct-coming-in-v2-0">3.3.3. Auto-Correct (Coming in v2.0)</a></h4>
 <div class="paragraph">
-<p>Ezwatchlist aims to provide a smooth experience for our typing users. All typing in Ezwatchlist will be automatically
+<p>==== Auto-Correct (Coming in v2.0)
+Ezwatchlist aims to provide a smooth experience for our typing users. All typing in Ezwatchlist will be automatically
 corrected for you when typing in your commands.</p>
 </div>
 <div class="sidebarblock">
@@ -499,26 +544,20 @@ corrected for you when typing in your commands.</p>
 </div>
 </div>
 </div>
+<div class="paragraph">
+<p>== FAQ</p>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="faq"><a class="link" href="#faq">4. FAQ</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
 <strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Ezwatchlist folder.</p>
 </div>
+<div class="paragraph">
+<p>== Command Summary</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
-<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add</strong> <code>add n/MOVIE_NAME t/TYPE d/DATE_OF_RELEASE w/WATCHED r/RUNNING_TIME s/DESCRIPTION [a/ACTOR_NAME]</code><br>
+<p><strong>Add</strong> <code>add n/SHOW_NAME t/SHOW_TYPE [d/DATE_OF_RELEASE] [w/WATCHED] [r/RUNNING_TIME] [s/DESCRIPTION] [a/ACTOR_NAME]</code><br>
 e.g. <code>add n/John Wick t/movie d/24 OCTOBER 2014 w/false r/101 s/An ex-hit-man comes out of retirement to track down the gangsters that killed his dog and took everything from him. a/Keanu Reeves</code></p>
 </li>
 <li>
@@ -529,14 +568,14 @@ e.g. <code>add 1</code></p>
 <p><strong>CLEAR</strong> <code>clear</code></p>
 </li>
 <li>
-<p><strong>Watch</strong> : <code>watch INDEX</code></p>
+<p><strong>Watch</strong> : <code>watch INDEX [e/EPISODE_NUMBER] [s/SEASON_NUMBER]</code></p>
 </li>
 <li>
 <p><strong>Delete</strong> : <code>delete INDEX</code><br>
 e.g. <code>delete 3</code></p>
 </li>
 <li>
-<p><strong>Edit</strong> : <code>edit INDEX [n/MOVIE_NAME] [t/TYPE] [d/DATE_OF_RELEASE] [w/WATCHED] [r/RUNNING_TIME] [s/DESCRIPTION] [a/ACTOR]&#8230;&#8203;</code><br>
+<p><strong>Edit</strong> : <code>edit INDEX [n/SHOW_NAME] [d/DATE_OF_RELEASE] [w/WATCHED] [r/RUNNING_TIME] [s/DESCRIPTION] [a/ACTOR]&#8230;&#8203;</code><br>
 e.g. <code>edit 2 n/John Wick a/Johnny Depp</code></p>
 </li>
 <li>
@@ -544,7 +583,7 @@ e.g. <code>edit 2 n/John Wick a/Johnny Depp</code></p>
 e.g. <code>search John</code></p>
 </li>
 <li>
-<p><strong>Search (ONLINE)</strong> <code>search n/MOVIE_NAME</code><br>
+<p><strong>Search (ONLINE)</strong> <code>search n/SHOW_NAME</code><br>
 e.g. <code>search n/Harry potter</code></p>
 </li>
 <li>
@@ -556,4 +595,7 @@ e.g. <code>search n/Harry potter</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-31 05:35:33 UTC</div></div></div></body></html>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-31 08:04:56 UTC</div></div></div></body></html>
