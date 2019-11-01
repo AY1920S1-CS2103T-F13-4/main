@@ -876,14 +876,14 @@ way the application retrieves any online information from the database.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p><code>ApiMain</code> is an implementation of <code>ApiInterface</code> and is done by using a <a href="https://github.com/holgerbrandl/themoviedbapi">java wrapper</a> for the TMDB api implemented by Holger Brandl.
+<p><code>ApiManager</code> is an implementation of <code>ApiInterface</code> and is done by using a <a href="https://github.com/holgerbrandl/themoviedbapi">java wrapper</a> for the TMDB api implemented by Holger Brandl.
 Allowing us to retrieve information in the java code.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example of how the application might want to retrieve movie information through <code>ApiInterface</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. First an instance of a class implementing <code>ApiInterface</code> has to be created for the methods to be called. When <code>ApiMain</code> is instantiated the class api
+<p>Step 1. First an instance of a class implementing <code>ApiInterface</code> has to be created for the methods to be called. When <code>ApiManager</code> is instantiated the class api
 key&#8217;s is used to create a call to the TMDB API. All information retrieved must go through the class&#8217;s api call.</p>
 </div>
 <div class="paragraph">
@@ -892,7 +892,7 @@ A list of wrapped movies is given back, which is then read and used to create ne
 <code>Name</code>, <code>Description</code>, and <code>Actor</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 3. To retrieve an image from the database, a image url is downloaded to the computer. The class <code>ImageRetrieval</code> does this. An
+<p>Step 3. To retrieve an image from the database, an image url is downloaded to the computer. The class <code>ImageRetrieval</code> does this. An
 <code>ImageRetrieval</code> instance is created by the method for each image, and is downloaded to a root folder determined by <code>ImageRetrieval#defaultDirectory()</code>.</p>
 </div>
 <div class="paragraph">
@@ -948,8 +948,15 @@ At any point the application might fail due to the application not being connect
 </ul>
 </div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="aspect-image-retrieval-implementation"><a class="link" href="#aspect-image-retrieval-implementation">3.6.3. Aspect: Image retrieval implementation</a></h4>
+<div class="paragraph">
+<p>Images are retrieved through the <code>ImageRetrieval</code> class. Which downloads the image into the computer,
+wrapping a <code>Poster</code> class with the local path of the image, for the application to access images.</p>
+</div>
 <div class="sect4">
-<h5 id="aspect-image-retrieval-implementation"><a class="link" href="#aspect-image-retrieval-implementation">Aspect: Image retrieval implementation</a></h5>
+<h5 id="design-considerations-5"><a class="link" href="#design-considerations-5">Design Considerations</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1017,6 +1024,64 @@ amount of memory used.</p>
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="aspect-recommendations"><a class="link" href="#aspect-recommendations">3.6.4. Aspect: Recommendations</a></h4>
+<div class="paragraph">
+<p>Recommendations are generated through the <code>RecommendationEngine</code> class in the API package. Currently,
+recommendations are retrieved through the <code>ApiInterface</code> implemented in the API package.</p>
+</div>
+<div class="sect4">
+<h5 id="implementation-4"><a class="link" href="#implementation-4">Implementation</a></h5>
+<div class="paragraph">
+<p>Given below is a <em>sequence diagram</em> of how the current Statistics page&#8217;s retrieves recommendations from the class.</p>
+</div>
+<div class="paragraph">
+<div class="title">Sequence Diagram of getMovieRecommendations</div>
+<p><span class="image"><img src="images/getMovieRecommendationsSequenceDiagram.png" alt="getMovieRecommendationsSequenceDiagram"></span></p>
+</div>
+<div class="paragraph">
+<p>Step 1. First an instance of <code>RecommendationEngine</code> is created by passing in the list of movies the user has and the amount of recommendations to be given back.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The method getMovieRecommendations is called in the object and the object will:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Check if the list is valid to generate.</p>
+</li>
+<li>
+<p>Parse the list to get the same online entry in the database.</p>
+</li>
+<li>
+<p>Retrieve recommendations for each entry in the list.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Step 3. The recommendations are then sorted based on the amount of occurrences in appears in the recommendations.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. The top entries limited by the amount of recommendations requested is passed back in a sorted list.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. With the list of movies returned, the application can then display the movie recommendations back to the user.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If no recommendations can be generated, a <code>NoRecommendationsExceptions</code> is thrown. Moreover, an
+<code>OnlineConnectionException</code> is still thrown when not connected to the internet.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.7. Configuration</a></h3>
@@ -1027,7 +1092,7 @@ amount of memory used.</p>
 <div class="sect2">
 <h3 id="Implementation"><a class="link" href="#Implementation">3.8. [Feature] Search feature</a></h3>
 <div class="sect3">
-<h4 id="implementation-4"><a class="link" href="#implementation-4">3.8.1. Implementation</a></h4>
+<h4 id="implementation-5"><a class="link" href="#implementation-5">3.8.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>searchCommand</code> extends <code>Command</code> and uses <code>SearchCommandParser</code> to process the command entered by the user.</p>
 </div>
@@ -1092,7 +1157,7 @@ If the user is not connected online, a new <code>OnlineConnectionException</code
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">3.8.2. Design Considerations</a></h4>
+<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">3.8.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-code-searchcommand-code-takes-in-the-information-to-be-searched-for"><a class="link" href="#aspect-how-code-searchcommand-code-takes-in-the-information-to-be-searched-for">Aspect: How <code>SearchCommand</code> takes in the information to be searched for</a></h5>
 <div class="ulist">
@@ -1141,7 +1206,7 @@ If the user is not connected online, a new <code>OnlineConnectionException</code
 <div class="sect2">
 <h3 id="feature-add-feature"><a class="link" href="#feature-add-feature">3.9. [Feature] Add feature</a></h3>
 <div class="sect3">
-<h4 id="implementation-5"><a class="link" href="#implementation-5">3.9.1. Implementation</a></h4>
+<h4 id="implementation-6"><a class="link" href="#implementation-6">3.9.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>AddCommand</code> extends <code>Command</code> and uses <code>AddCommandParser</code> to process the command entered by the user.</p>
 </div>
@@ -1189,7 +1254,7 @@ If the user is not connected online, a new <code>OnlineConnectionException</code
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">3.9.2. Design Considerations</a></h4>
+<h4 id="design-considerations-7"><a class="link" href="#design-considerations-7">3.9.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-code-addcommand-code-executes"><a class="link" href="#aspect-how-code-addcommand-code-executes">Aspect: How <code>AddCommand</code> executes</a></h5>
 <div class="ulist">
@@ -1241,7 +1306,7 @@ If the user is not connected online, a new <code>OnlineConnectionException</code
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-7"><a class="link" href="#design-considerations-7">3.9.3. Design Considerations</a></h4>
+<h4 id="design-considerations-8"><a class="link" href="#design-considerations-8">3.9.3. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-code-addcommand-code-executes-2"><a class="link" href="#aspect-how-code-addcommand-code-executes-2">Aspect: How <code>AddCommand</code> executes</a></h5>
 <div class="ulist">
@@ -2086,4 +2151,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-31 16:13:51 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-01 05:03:24 UTC</div></div></div></body></html>
