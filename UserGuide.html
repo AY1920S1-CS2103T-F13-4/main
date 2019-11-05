@@ -220,7 +220,7 @@ The statistics function may require some time to load the data from the API.
 <div class="sect3">
 <h4 id="sidebar"><a class="link" href="#sidebar">3.1.5. Sidebar</a></h4>
 <div class="paragraph">
-<p>Ezwatchlist gives users the ability to navigate easily through the <strong>Watchlist, Watchedlist, Search page and Statistics pages</strong> through the use of the graphical user interface at the left of the main page. Alternatively, the user can also make use of keyboard shortcut <code>ctrl + tab</code> to scroll through the different pages. Moreover, keyboard shortcuts <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>, <kbd>4</kbd> bring you to each page respectively.</p>
+<p>Ezwatchlist gives users the ability to navigate easily through the <strong>Watchlist, Watchedlist, Search page and Statistics pages</strong> through the use of the graphical user interface at the left of the main page. Moreover, keyboard shortcuts <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>, <kbd>4</kbd> bring you to each page respectively.</p>
 </div>
 </div>
 <div class="sect3">
@@ -248,7 +248,7 @@ The statistics function may require some time to load the data from the API.
 <p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/SHOW_NAME t/SHOW_TYPE</code>, <code>SHOW_NAME</code> and <code>SHOW_TYPE</code> are parameters which can be used as <code>add n/The Angry Birds Movie 2 t/movie</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>n/SHOW_NAME t/SHOW_TYPE [d/DESCRIPTION]</code> can be used as <code>n/The Angry Birds Movie t/movie 2 d/Oscar-worthy</code> or as <code>n/The Angry Birds Movie t/movie</code>.</p>
+<p>Items in square brackets are optional e.g <code>n/SHOW_NAME t/SHOW_TYPE [s/DESCRIPTION]</code> can be used as <code>n/The Angry Birds Movie t/movie 2 d/Oscar-worthy</code> or as <code>n/The Angry Birds Movie t/movie</code>.</p>
 </li>
 <li>
 <p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[a/ACTOR]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>a/Leonardo Di Carpio</code>, <code>a/Leonardo Di Carpio a/Christian Bale</code> etc.</p>
@@ -274,17 +274,27 @@ The statistics function may require some time to load the data from the API.
 <div class="paragraph">
 <p>Format: <code>add n/SHOW_NAME t/SHOW_TYPE [d/DATE_OF_RELEASE] [w/WATCHED] [r/RUNNING_TIME] [s/DESCRIPTION] [a/ACTOR_NAME]&#8230;&#8203;</code></p>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-A show can have any number of actors (including 0)
-</td>
-</tr>
-</table>
+<div class="ulist">
+<ul>
+<li>
+<p><code>SHOW_NAME</code>, <code>DESCRIPTION</code> and <code>ACTOR_NAME</code> can be any words</p>
+</li>
+<li>
+<p><code>DATE_OF_RELEASE</code> must be in the format dd/MM/yyyy</p>
+</li>
+<li>
+<p><code>SHOW_TYPE</code> can only be 'movie' or 'tv'</p>
+</li>
+<li>
+<p><code>WATCHED</code> can only be 'true' or 'false'</p>
+</li>
+<li>
+<p><code>RUNNING_TIME</code> can be any number above 0</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A show can have any number of actors (including 0)</p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -727,4 +737,4 @@ e.g. <code>search a/Tom</code> searches from shows within the watchlist with act
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-05 03:23:54 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-05 03:32:55 UTC</div></div></div></body></html>
