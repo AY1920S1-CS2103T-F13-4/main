@@ -31,7 +31,7 @@
 <li><a href="#clear-the-watchlist-code-clear-code">3.2.4. Clear the WatchList: <code>clear</code></a></li>
 <li><a href="#mark-unmark-as-watched-code-watch-code">3.2.5. Mark/Unmark as watched : <code>watch</code></a></li>
 <li><a href="#editing-a-show-s-details-code-edit-code">3.2.6. Editing a show&#8217;s details : <code>edit</code></a></li>
-<li><a href="#search-for-a-show-by-name-code-search-code">3.2.7. Search for a show by name: <code>search</code></a></li>
+<li><a href="#search-for-a-show-code-search-code">3.2.7. Search for a show: <code>search</code></a></li>
 <li><a href="#deleting-a-show-code-delete-code">3.2.8. Deleting a show : <code>delete</code></a></li>
 <li><a href="#exiting-the-program-code-exit-code">3.2.9. Exiting the program : <code>exit</code></a></li>
 <li><a href="#saving-the-data">3.2.10. Saving the data</a></li>
@@ -494,7 +494,7 @@ Clears all existing actors of the 2nd show in the list.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="search-for-a-show-by-name-code-search-code"><a class="link" href="#search-for-a-show-by-name-code-search-code">3.2.7. Search for a show by name: <code>search</code></a></h4>
+<h4 id="search-for-a-show-code-search-code"><a class="link" href="#search-for-a-show-code-search-code">3.2.7. Search for a show: <code>search</code></a></h4>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
@@ -503,19 +503,19 @@ Clears all existing actors of the 2nd show in the list.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Finds shows whose names contain any of the given keywords from the watchlist, watched list and online.<br>
+<p>Searches for shows whose names contain any of the given keywords from the watchlist, watched list and online.<br>
 Format:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>by name: <code>search n/SHOW_NAME&#8230;&#8203; [g/GENRE]&#8230;&#8203; [a/ACTOR_NAME]&#8230;&#8203; [i/IS_INTERNAL] [t/TYPE] [w/IS_WATCH]</code></p>
+<p>by name: <code>search n/SHOW_NAME&#8230;&#8203; [g/GENRE]&#8230;&#8203; [a/ACTOR_NAME]&#8230;&#8203; [o/FROM_ONLINE] [t/TYPE] [w/HAS_WATCHED]</code></p>
 </li>
 <li>
-<p>by genre: <code>search g/GENRE&#8230;&#8203; [n/SHOW_NAME]&#8230;&#8203; [a/ACTOR_NAME]&#8230;&#8203; [i/IS_INTERNAL] [t/TYPE] [w/IS_WATCH]</code></p>
+<p>by genre: <code>search g/GENRE&#8230;&#8203; [n/SHOW_NAME]&#8230;&#8203; [a/ACTOR_NAME]&#8230;&#8203; [o/FROM_ONLINE] [t/TYPE] [w/HAS_WATCHED]</code></p>
 </li>
 <li>
-<p>by actor (from watchlist): <code>search a/ACTOR_NAME&#8230;&#8203; [n/SHOW_NAME]&#8230;&#8203; [g/GENRE]&#8230;&#8203; [t/TYPE] [w/IS_WATCH]</code></p>
+<p>by actor (from watchlist): <code>search a/ACTOR_NAME&#8230;&#8203; [n/SHOW_NAME]&#8230;&#8203; [g/GENRE]&#8230;&#8203; [t/TYPE] [w/HAS_WATCHED]</code></p>
 </li>
 </ul>
 </div>
@@ -531,6 +531,9 @@ Format:</p>
 </li>
 <li>
 <p>Not only full words will be matched. e.g. "Joke" will also match with "Joker"</p>
+</li>
+<li>
+<p>For <code>FROM_ONLINE</code> and <code>HAS_WATCHED</code>, only <code>yes</code>, <code>true</code>, <code>no</code> and <code>false</code> would be accepted.</p>
 </li>
 <li>
 <p>When searching based on actor, only shows from the watchlist will be searched.</p>
@@ -775,4 +778,4 @@ e.g. <code>search a/Tom</code> searches from shows within the watchlist with act
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-07 05:29:10 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-07 16:02:49 UTC</div></div></div></body></html>
