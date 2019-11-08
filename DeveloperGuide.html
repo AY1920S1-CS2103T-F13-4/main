@@ -339,23 +339,27 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 <div class="sect2">
 <h3 id="feature-mark-unmark-as-watched-feature"><a class="link" href="#feature-mark-unmark-as-watched-feature">3.1. [Feature] Mark/unmark as watched feature</a></h3>
+<div class="paragraph">
+<p>The watch feature allows users to mark or unmark shows as watched. It also allows users to keep track of the latest episode
+of a TV series that they have watched.</p>
+</div>
 <div class="sect3">
 <h4 id="implementation-2"><a class="link" href="#implementation-2">3.1.1. Implementation</a></h4>
 <div class="paragraph">
-<p>The mark/unmark as watched mechanism is facilitated by <code>WatchCommand</code>.
+<p>The mark/unmark as watched mechanism is facilitated by <code>WatchCommand</code> which can be found under the commands package.
 It extends <code>Command</code> and uses the <code>WatchCommandParser</code> to process the command entered by the user.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the mark/unmark as watched mechanism works at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application, and executes <code>watch 1</code> command to mark the first show in the watch list as watched.</p>
+<p>Step 1. The user launches the application, and executes <code>watch 1 s/2 e/3</code> command to update the latest watched episode of the first show in the list.</p>
 </div>
 <div class="paragraph">
 <p>Step 2. Entering the command calls <code>WatchListParser#parseCommand()</code>, which in turn returns a new <code>WatchCommandParser</code> and the <code>WatchCommandParser#parse()</code> command is called.</p>
 </div>
 <div class="paragraph">
-<p>Step 3. A new <code>WatchCommand</code> is created, with the index of the show to be marked being parsed as a field of the <code>WatchCommand</code>.</p>
+<p>Step 3. A new <code>WatchCommand</code> is created, with the index of the show being parsed as a field of the <code>WatchCommand</code>. A new WatchShowDescriptor is also created to relay the episode number and season number to the WatchCommand object.</p>
 </div>
 <div class="paragraph">
 <p>Step 4. The <code>WatchCommand#execute()</code> method is called, referencing the current <code>model</code>, and the show that is in the current <code>FilteredShowList</code> is referenced based off the current <code>model</code>.</p>
@@ -373,22 +377,11 @@ If the <code>index</code> is out of bounds, a new <code>CommandException</code> 
 </table>
 </div>
 <div class="paragraph">
-<p>Step 5. A copy of the show is created, with its <code>isWatched</code> field being switched to <code>true</code>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The un-marking of a show as watched is similar, except that the <code>isWatched</code> field will be set to <code>false</code>.
-</td>
-</tr>
-</table>
+<p>Step 5. A copy of the show is created through the use of <code>WatchCommand#createEditedShow()</code>, which determines the new total number of episodes watched from the given seasons and episodes.
+A new isWatched value of the show is also determined based on the number of episodes that are watched.</p>
 </div>
 <div class="paragraph">
-<p>Step 6. The show in the current show list is updated to the newly created copy with the updated watched status, and a <code>CommandResult</code> with the new watched status of the show is created.</p>
+<p>Step 6. The show in the current show list is updated to the newly created copy with the updated watched status and latest episode watched, and a <code>CommandResult</code> with the new watched status of the show is created.</p>
 </div>
 <div class="paragraph">
 <p>The following sequence diagram shows how the watch operation works:</p>
@@ -402,48 +395,31 @@ The un-marking of a show as watched is similar, except that the <code>isWatched<
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design Considerations</a></h4>
 <div class="sect4">
-<h5 id="aspect-how-mark-unmark-shows-as-watched-executes"><a class="link" href="#aspect-how-mark-unmark-shows-as-watched-executes">Aspect: How mark/unmark shows as watched executes</a></h5>
+<h5 id="aspect-creating-a-new-watchcommand-instead-of-an-altered-editcommand"><a class="link" href="#aspect-creating-a-new-watchcommand-instead-of-an-altered-editcommand">Aspect: Creating a new WatchCommand instead of an altered EditCommand</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Current choice:</strong> Works in a similar way to the <code>edit</code> command, referencing the index of the show, and creating a new show with the changed <code>isWatched</code> field.</p>
+<p><strong>Alternative 1 (current choice):</strong> Creating a new WatchCommand class for changing the 'watch' status of a show.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy to implement.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="aspect-command-word-for-the-mark-unmark-shows-as-watched-function"><a class="link" href="#aspect-command-word-for-the-mark-unmark-shows-as-watched-function">Aspect: Command word for the mark/unmark shows as watched function</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> The same keyword, <code>watch</code> is used.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy for the user to remember a single word, simpler to implement since only one command will be required.</p>
+<p>Pros: Enables for greater cohesion since there is a specific command for editing the 'watch' status of a show.</p>
 </li>
 <li>
-<p>Cons: Does not make logical sense to <code>watch</code> an already watched show.</p>
+<p>Cons: Requires longer code, and the code is also repetitive since its implementation is similar to that of the edit command</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Use <code>watch</code> and <code>unwatch</code> keywords.</p>
+<p><strong>Alternative 2:</strong> Use the WatchCommandParser to create a new EditCommand object that edits the watch status of the show.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Logical keywords are being used.</p>
+<p>Pros: Less code repetition and shorter code in general.</p>
 </li>
 <li>
-<p>Cons: The same logic will be repeated twice, albeit different command names.</p>
+<p>Cons: This will mean that there is less cohesion of the code and perhaps greater dependencies since more classes depend on the EditCommand class.</p>
 </li>
 </ul>
 </div>
@@ -2151,4 +2127,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-08 08:08:03 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-08 08:09:37 UTC</div></div></div></body></html>
