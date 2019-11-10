@@ -31,6 +31,7 @@
 <li><a href="#Implementation-Configuration">3.7. Configuration</a></li>
 <li><a href="#Implementation">3.8. [Feature] Search feature</a></li>
 <li><a href="#feature-add-feature">3.9. [Feature] Add feature</a></li>
+<li><a href="#feature-synchronise-user-s-show-data">3.10. [Feature] Synchronise user&#8217;s show data</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -1305,6 +1306,117 @@ If the user is not connected online, a new <code>OnlineConnectionException</code
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="feature-synchronise-user-s-show-data"><a class="link" href="#feature-synchronise-user-s-show-data">3.10. [Feature] Synchronise user&#8217;s show data</a></h3>
+<div class="paragraph">
+<p>The synchronise feature allows user to sync a show found in watchlist with online searched show data. It modifies all of the
+parameters/information is user selected show with online searched show data.<br>
+User may have added their show with their own information. However, user might not know some of the parameters such as actors.
+Thus, user can use the search online command <code>search n/</code> to look up information regarding that show.<br>
+Then, Synchronise command <code>sync</code> can be used to update information/modify on that show.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation-7"><a class="link" href="#implementation-7">3.10.1. Implementation</a></h4>
+<div class="paragraph">
+<p>The Synchronise feature is facilitated by <code>SyncCommand</code> object which can be found under the commands package.
+It extends <code>Command</code> and uses the <code>SyncCommandParser</code> to process the command entered by the user.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the Synchronise command work as Sync mechanism works at each step.</p>
+</div>
+<div class="paragraph">
+<p>Pre-Condition: User has already added a certain show into watchlist manually. That show must have at least <code>name</code> and <code>type</code> parameters.
+Example of Pre-Condition: User has added Titanic movie into watchlist.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application, go to Search page and execute <code>search n/titanic</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user execute <code>sync 1</code> command to synchronise index 1 of result page with a show in watchlist with same name (case-insensitive).</p>
+</div>
+<div class="paragraph">
+<p>Step 3. Entering the command calls <code>SyncCommandParser#parseCommand()</code>, which in turn returns a new <code>SyncCommandParser</code> and the <code>SyncCommandParser#parse()</code> command is called.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. A new <code>SyncCommand</code> is created, with the index of the show being parsed as a field of the <code>SyncCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. The <code>SyncCommand#execute()</code> method is called, referencing the current <code>model</code>, and the show that is in the current <code>FilteredShowList</code> is referenced based off the current <code>model</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the <code>index</code> is out of bounds, a new <code>CommandException</code> is thrown.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 6. A list of shows found in search page and watchlist are retrieved from <code>model</code>. The show according to the Index of the <code>searchpagelist</code> are retrieved as well.
+Then, the list of show in watchlist will be checked through to match the name of the index show.</p>
+</div>
+<div class="paragraph">
+<p>Step 7. If a show in watchlist matched with the name of the index show, <code>model.setShow</code> will be called to replace the show found in watchlist with index show.
+<code>CommandResult</code> will be return which contains information regarding the feedback result. Else, <code>CommandException</code> is thrown to notify user no similar show name is found in watchlist as index show.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the sync operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SyncSequenceDiagram.png" alt="SyncSequenceDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarises the workflow of Sync:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SyncActivityDiagram.png" alt="SyncActivityDiagram">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-9"><a class="link" href="#design-considerations-9">3.10.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-creating-a-new-synchronise-instead-of-an-altered-editcommand-and-addcommand"><a class="link" href="#aspect-creating-a-new-synchronise-instead-of-an-altered-editcommand-and-addcommand">Aspect: Creating a new Synchronise instead of an altered EditCommand and AddCommand</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Creating a new Synchronise class for replace information of a certain show found in search page with one in watchlist.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Enables for greater cohesion since there is a specific command for replacing/modifying information of a show in watchlist.</p>
+</li>
+<li>
+<p>Cons: Requires longer code, and the code is also repetitive since its implementation is similar to that of the add and edit command</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Use the SyncCommandParser to create a new EditCommand object that edits the information of a certain show found in search page with one in watchlist.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Less code repetition and shorter code in general.</p>
+</li>
+<li>
+<p>Cons: This will mean that there is less cohesion of the code and perhaps greater dependencies since more classes depend on the EditCommand class.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1684,7 +1796,8 @@ If the user is not connected online, a new <code>OnlineConnectionException</code
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. System shows an error message.</p>
+<p>2a1. System shows an error message.
+image::CommitActivityDiagram.png[]</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2127,4 +2240,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 08:19:18 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 11:52:25 UTC</div></div></div></body></html>
