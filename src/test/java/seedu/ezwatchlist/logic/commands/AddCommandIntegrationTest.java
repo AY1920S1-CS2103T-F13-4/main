@@ -2,7 +2,6 @@ package seedu.ezwatchlist.logic.commands;
 
 import static seedu.ezwatchlist.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.ezwatchlist.logic.commands.CommandTestUtil.assertCommandSuccess;
-import static seedu.ezwatchlist.testutil.TypicalShows.getDatabase;
 import static seedu.ezwatchlist.testutil.TypicalShows.getTypicalWatchList;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -23,14 +22,14 @@ public class AddCommandIntegrationTest {
 
     @BeforeEach
     public void setUp() {
-        model = new ModelManager(getTypicalWatchList(), getDatabase(), new UserPrefs());
+        model = new ModelManager(getTypicalWatchList(), new UserPrefs());
     }
 
     @Test
     public void execute_newShow_success() {
         Show validShow = new ShowBuilder().build();
 
-        Model expectedModel = new ModelManager(model.getWatchList(), getDatabase(), new UserPrefs());
+        Model expectedModel = new ModelManager(model.getWatchList(), new UserPrefs());
         expectedModel.addShow(validShow);
 
         assertCommandSuccess(new AddCommand(validShow), model,

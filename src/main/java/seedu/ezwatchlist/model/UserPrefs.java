@@ -15,7 +15,6 @@ public class UserPrefs implements ReadOnlyUserPrefs {
 
     private GuiSettings guiSettings = new GuiSettings();
     private Path watchListFilePath = Paths.get("data" , "watchlist.json");
-    private Path databaseFilePath = Paths.get("data" , "database.json");
 
     /**
      * Creates a {@code UserPrefs} with default values.
@@ -52,18 +51,9 @@ public class UserPrefs implements ReadOnlyUserPrefs {
         return watchListFilePath;
     }
 
-    public Path getDatabaseFilePath() {
-        return databaseFilePath;
-    }
-
     public void setWatchListFilePath(Path watchListFilePath) {
         requireNonNull(watchListFilePath);
         this.watchListFilePath = watchListFilePath;
-    }
-
-    public void setDatabaseFilePath(Path databaseFilePath) {
-        requireNonNull(databaseFilePath);
-        this.databaseFilePath = databaseFilePath;
     }
 
     @Override
@@ -78,8 +68,7 @@ public class UserPrefs implements ReadOnlyUserPrefs {
         UserPrefs o = (UserPrefs) other;
 
         return guiSettings.equals(o.guiSettings)
-                && watchListFilePath.equals(o.watchListFilePath)
-                && databaseFilePath.equals(o.databaseFilePath);
+                && watchListFilePath.equals(o.watchListFilePath);
     }
 
     @Override

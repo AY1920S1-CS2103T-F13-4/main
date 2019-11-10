@@ -112,17 +112,4 @@ public class TypicalShows {
         return new ArrayList<>(Arrays.asList(JOKER, AVENGERSENDGAME, FIGHTCLUB,
                 GODFATHER2, THEOFFICE));
     }
-
-    // --------------------- Database ---------------------
-    /**
-     * Returns an {@code WatchList} with a small scale database.
-     */
-    public static WatchList getDatabase() {
-        WatchList database = new WatchList();
-        for (Show show : getTypicalShow()) {
-            database.addShow(show);
-        }
-        return database;
-    }
-
 }

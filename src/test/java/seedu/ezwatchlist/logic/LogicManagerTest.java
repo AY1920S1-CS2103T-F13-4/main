@@ -23,7 +23,6 @@ import seedu.ezwatchlist.model.Model;
 import seedu.ezwatchlist.model.ModelManager;
 import seedu.ezwatchlist.model.ReadOnlyWatchList;
 import seedu.ezwatchlist.model.UserPrefs;
-import seedu.ezwatchlist.storage.JsonDatabaseStorage;
 import seedu.ezwatchlist.storage.JsonUserPrefsStorage;
 import seedu.ezwatchlist.storage.JsonWatchListStorage;
 import seedu.ezwatchlist.storage.StorageManager;
@@ -43,10 +42,8 @@ public class LogicManagerTest {
     public void setUp() {
         JsonWatchListStorage watchListStorage =
                 new JsonWatchListStorage(temporaryFolder.resolve("watchList.json"));
-        JsonDatabaseStorage databaseStorage =
-                new JsonDatabaseStorage(temporaryFolder.resolve("database.json"));
         JsonUserPrefsStorage userPrefsStorage = new JsonUserPrefsStorage(temporaryFolder.resolve("userPrefs.json"));
-        StorageManager storage = new StorageManager(watchListStorage, databaseStorage, userPrefsStorage);
+        StorageManager storage = new StorageManager(watchListStorage, userPrefsStorage);
         logic = new LogicManager(model, storage);
     }
 
@@ -138,7 +135,7 @@ public class LogicManagerTest {
      */
     private void assertCommandFailure(String inputCommand, Class<? extends Throwable> expectedException,
             String expectedMessage) {
-        Model expectedModel = new ModelManager(model.getWatchList(), model.getDatabase(), new UserPrefs());
+        Model expectedModel = new ModelManager(model.getWatchList(), new UserPrefs());
         assertCommandFailure(inputCommand, expectedException, expectedMessage, expectedModel);
     }
 
