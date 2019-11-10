@@ -1,9 +1,10 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Project Portfolio Page: EzWatchlist</title><link rel="stylesheet" href="./gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Project Portfolio Page: EzWatchlist</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="./coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">EzWatchlist</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103T-F13-3/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Project Portfolio Page: EzWatchlist</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">EzWatchlist</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103T-F13-3/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Project Portfolio Page: EzWatchlist</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This document serves to show the various contributions Jared has made to the development of <strong>EzWatchlist</strong> in an understandable manner.</p>
+<p>This document serves to show the various contributions that I have made in the development of <a href="https://ay1920s1-cs2103t-f13-4.github.io/main/index.html">EzWatchlist</a>
+in a concise and understandable manner.</p>
 </div>
 </div>
 </div>
@@ -11,28 +12,46 @@
 <h2 id="more-about-the-project"><a class="link" href="#more-about-the-project">More About The Project</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>EzWatchlist is a desktop application that allows users to keep track of movies and tv series that they want to watch or have watched.
+<p>EzWatchlist is a desktop application that allows forgetful users to keep track of movies and tv series that they want to watch or have watched.
 It was developed by a group of 5 students from the National University of Singapore taking the Software Engineering module including
-myself under the premise that we had to either optimize or morph an existing AddressBook application. We chose the latter. Another
-constraint was ensuring that the application had a command-line interface.</p>
+myself under the premise that we had to either optimize or morph an existing <a href="https://github.com/se-edu/addressbook-level3">AddressBook</a> application. We chose the latter. Another
+constraint was ensuring that the application has a command-line interface, which means that all commands should be executable through typing.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Ui.png" alt="Ui" width="790">
+</div>
+<div class="title">Figure 1. Graphical User Interface of EzWacthlist</div>
 </div>
 <div class="sect2">
 <h3 id="main-features"><a class="link" href="#main-features">Main Features</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Adding, editing and deleting Shows</p>
+<p>Adding, editing and deleting shows</p>
 </li>
 <li>
-<p>Keeping track of shows  that are watched</p>
+<p>Keeping track of shows and episodes that are watched</p>
 </li>
 <li>
-<p>Online search functionality</p>
+<p>Online search and syncing of shows</p>
 </li>
 <li>
 <p>Statistics about user&#8217;s watchlist</p>
 </li>
 </ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Highlighted words indicate commands or components of the application. Eg. <code>watch</code> command, <code>WatchCommand</code> class
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -41,30 +60,45 @@ constraint was ensuring that the application had a command-line interface.</p>
 <h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of Contributions</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section provides a summary of my coding, documentation and other helpful contributions to EzWatchlist.</p>
+<p>This section provides an overview of the contributions that I have made to the development of EzWatchlist. It also
+showcases some of my coding and documentation abilities, and the challenges I faced during the development of EzWatchlist.</p>
+</div>
+<div class="sect2">
+<h3 id="role"><a class="link" href="#role">Role</a></h3>
+<div class="paragraph">
+<p>I was tasked with ensuring integration of the features of EzWatchlist. This means that I had to ensure that the commands
+work with one another well and perform their expected functions in the respective pages. This was a challenge
+since our application uses 4 different tabs, each with their unique functions and list of shows, so the implementation
+of the commands would vary from tab to tab.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="major-contributions"><a class="link" href="#major-contributions">Major Contributions</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Implemented of the <strong>watch</strong> feature for users to keep track of episodes of their tv series and movies watched</p>
-<div class="ulist">
-<ul>
-<li>
-<p>The <strong>watch</strong> feature allows users to update the watch list if the show has been watched</p>
-</li>
-<li>
-<p>The watch feature enables users to keep track of shows that they have and have not watched that they can plan
-out what they want to watch in the future</p>
-</li>
-<li>
-<p>The watch feature also enables users to keep track of the episodes in a TV series that have been watched</p>
-</li>
-</ul>
+<div class="sect3">
+<h4 id="implemented-the-code-watch-code-feature"><a class="link" href="#implemented-the-code-watch-code-feature">Implemented the <code>watch</code> feature</a></h4>
+<div class="sect4">
+<h5 id="what-it-does"><a class="link" href="#what-it-does">What it does</a></h5>
+<div class="paragraph">
+<p>The <code>watch</code> feature allows users to update their watch list if a show has been watched.
+It also helps users to keep track of where they are in a TV series in terms
+of seasons and episodes.</p>
 </div>
-</li>
-</ul>
+</div>
+<div class="sect4">
+<h5 id="justification"><a class="link" href="#justification">Justification</a></h5>
+<div class="paragraph">
+<p>The <code>watch</code> feature enables users to keep track of shows that they have and have not watched so that they can plan
+out what they want to watch in the future.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="highlights"><a class="link" href="#highlights">Highlights</a></h5>
+<div class="paragraph">
+<p>This enhancement resulted in a need to change the storage structure of the shows to include the episodes and tv seasons.
+Its implementation was a challenge since it required structural change of the show objects, splitting them into movies and tv shows.
+The addition of the clickable checkbox to mark or unmark shows also increased the difficulty of the implementation.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -72,21 +106,100 @@ out what they want to watch in the future</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Updating to the user and developer guides to make them more readable, including the use of diagrams and screenshots of the application</p>
+<p>Separated the the watchlist into different sections (not watched and watched).</p>
 </li>
 <li>
-<p>Updating to EzWatchlist <strong>Contact Us</strong> page</p>
+<p>Changed the storage structure of the shows to save them as either movies or tv shows. This feature was
+implemented with the intention of possibly retrieving season and episode details future versions.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="code-contributions"><a class="link" href="#code-contributions">Code Contributions</a></h3>
+<div class="paragraph">
+<p>View my code contributions <a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=jcjjjared&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2019-09-06&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">here</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="other-contributions"><a class="link" href="#other-contributions">Other Contributions</a></h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<strong>#Numbers</strong> represent pull requests to the mentioned contributions.
+These links show the code that has been contributed to the team project
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Project Management</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Provided the team with information about the tasks that need to be completed</p>
 </li>
 <li>
-<p>Writing of tests for EzWatchlist to reduce the possibility of bugs when using EzWatchlist</p>
-</li>
-<li>
-<p>Integrating of the features of EzWatchlist to improve the user-experience of the application</p>
+<p>Assigned tasks <a href="https://github.com/AY1920S1-CS2103T-F13-4/main/issues/25">1</a>, <a href="https://github.com/AY1920S1-CS2103T-F13-4/main/issues/42">2</a></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>View code contributions <a href="codeLink">here</a>.</p>
+<p><strong>Enhancements to Features:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Improved <code>add</code> command by reducing amount of information needed to be entered <a href="https://github.com/AY1920S1-CS2103T-F13-4/main/pull/138">#138</a></p>
+</li>
+<li>
+<p>Changed storage structure to save shows as movies or tv shows <a href="https://github.com/AY1920S1-CS2103T-F13-4/main/pull/117">#117</a></p>
+</li>
+<li>
+<p>Writing of various tests for EzWatchlist to reduce the possibility of bugs when using EzWatchlist <a href="https://github.com/AY1920S1-CS2103T-F13-4/main/pull/132">#231</a>, <a href="https://github.com/AY1920S1-CS2103T-F13-4/main/pull/237">#237</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Documentation:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Improved the structure of the user guide <a href="https://github.com/AY1920S1-CS2103T-F13-4/main/pull/15">#15</a>, <a href="https://github.com/AY1920S1-CS2103T-F13-4/main/pull/214">#214</a></p>
+</li>
+<li>
+<p>Updated the developer guide <a href="https://github.com/AY1920S1-CS2103T-F13-4/main/pull/241">#241</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Community:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Reviewed team pull requests <a href="https://github.com/AY1920S1-CS2103T-F13-4/main/pull/77">#74</a>, <a href="https://github.com/AY1920S1-CS2103T-F13-4/main/pull/81">#81</a>, <a href="https://github.com/AY1920S1-CS2103T-F13-4/main/pull/84">#84</a></p>
+</li>
+<li>
+<p>Reported bugs and suggestions for other teams in the class (examples: <a href="https://github.com/jcjjjared/ped/issues/1">1</a>, <a href="https://github.com/jcjjjared/ped/issues/2">2</a>, <a href="https://github.com/jcjjjared/ped/issues/4">3</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Tools:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Set up Travis Continuous Integration</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -95,11 +208,12 @@ out what they want to watch in the future</p>
 <h2 id="contributions-to-user-guide"><a class="link" href="#contributions-to-user-guide">Contributions to User Guide</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section serves to showcase my contributions to the User-Guide, as well as my ability to write
-documentation for users in a concise and understandable manner</p>
+<p>This section serves to showcase my contributions to the User Guide, as well as my ability to write
+documentation for users in a concise and understandable manner. It also shows my ability to use asciidoc and
+markup language for formatting.</p>
 </div>
-<div class="sect2">
-<h3 id="mark-unmark-as-watched-code-watch-code"><a class="link" href="#mark-unmark-as-watched-code-watch-code">Mark/Unmark as watched : <code>watch</code></a></h3>
+<div class="sect3">
+<h4 id="mark-unmark-as-watched-code-watch-code"><a class="link" href="#mark-unmark-as-watched-code-watch-code">Mark/Unmark as watched : <code>watch</code></a></h4>
 <div class="paragraph">
 <p>To mark an unwatched show in the watchlist as watched, use the command format listed below.<br>
 Format: <code>watch INDEX [e/EPISODE_NUMBER] [s/SEASON_NUMBER]</code></p>
@@ -110,46 +224,50 @@ Format: <code>watch INDEX [e/EPISODE_NUMBER] [s/SEASON_NUMBER]</code></p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User wants to mark "The Office" as watched.</p>
+<p>You want to mark "The Office" in the watchlist page as watched. Navigate to the watchlist by clicking on the watchlist tab or hitting the keyboard shortcut <code>1</code>.</p>
 </li>
 </ol>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/WatchTheOffice.png" alt="WatchTheOffice" width="790">
+<img src="../images/WatchTheOffice.png" alt="WatchTheOffice" width="790">
 </div>
+<div class="title">Figure 2. Viewing an unmarked show</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic" start="2">
 <li>
-<p>User enters <code>watch 1</code> into the command box in the watchlist tab.</p>
+<p>Enter <code>watch 1</code> into the command box in the watchlist tab.</p>
 </li>
 </ol>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/Watch1.png" alt="Watch1" width="790">
+<img src="../images/Watch.png" alt="Watch" width="790">
 </div>
+<div class="title">Figure 3. Entering the watch command</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic" start="3">
 <li>
-<p>The show can now be viewed under the watched tab by clicking the watched tab or hitting the keyboard shortcut <code>1</code>.</p>
+<p>You may now view the show under the watched tab by clicking the watched tab or hitting the keyboard shortcut <code>2</code>.</p>
 </li>
 </ol>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/WatchedTheOffice.png" alt="WatchedTheOffice" width="790">
+<img src="../images/WatchedTheOffice.png" alt="WatchedTheOffice" width="790">
 </div>
+<div class="title">Figure 4. Viewing the newly marked show</div>
 </div>
 <div class="paragraph">
-<p>Alternatively, users can click on the watched checkbox to toggle between whether a show is watched as indicated by the red arrow in the image below.</p>
+<p>Alternatively, you may click on the watched checkbox to toggle between whether a show is watched as indicated by the red arrow in the image below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/TheOfficeWatchCommand.png" alt="TheOfficeWatchCommand" width="790">
+<img src="../images/TheOfficeWatchCommand.png" alt="TheOfficeWatchCommand" width="790">
 </div>
+<div class="title">Figure 5. Clicking the checkbox to mark a show as watched</div>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -219,7 +337,9 @@ Marks all episodes up to and including the second episode of the fifth season of
 <h2 id="contributions-to-developer-guide"><a class="link" href="#contributions-to-developer-guide">Contributions to Developer Guide</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This sections showcases my contribution to the EzWatchlist Developer guide for the <code>watch</code> function.</p>
+<p>This sections showcases my contribution to the EzWatchlist Developer Guide. It exhibits my ability to use diagrams
+and technical terms to inform other developers of how the features were implemented and the possibility
+for enhancements.</p>
 </div>
 <div class="sect2">
 <h3 id="feature-mark-unmark-as-watched-feature"><a class="link" href="#feature-mark-unmark-as-watched-feature">[Feature] Mark/unmark as watched feature</a></h3>
@@ -243,7 +363,7 @@ It extends <code>Command</code> and uses the <code>WatchCommandParser</code> to 
 <p>Step 2. Entering the command calls <code>WatchListParser#parseCommand()</code>, which in turn returns a new <code>WatchCommandParser</code> and the <code>WatchCommandParser#parse()</code> command is called.</p>
 </div>
 <div class="paragraph">
-<p>Step 3. A new <code>WatchCommand</code> is created, with the index of the show being parsed as a field of the <code>WatchCommand</code>. A new WatchShowDescriptor is also created to relay the episode number and season number to the WatchCommand object.</p>
+<p>Step 3. A new <code>WatchCommand</code> is created, with the index of the show being parsed as a field of the <code>WatchCommand</code>. A new <code>WatchShowDescriptor</code> is also created to relay the episode number and season number to the <code>WatchCommand</code> object.</p>
 </div>
 <div class="paragraph">
 <p>Step 4. The <code>WatchCommand#execute()</code> method is called, referencing the current <code>model</code>, and the show that is in the current <code>FilteredShowList</code> is referenced based off the current <code>model</code>.</p>
@@ -261,8 +381,17 @@ If the <code>index</code> is out of bounds, a new <code>CommandException</code> 
 </table>
 </div>
 <div class="paragraph">
-<p>Step 5. A copy of the show is created through the use of <code>WatchCommand#createEditedShow()</code>, which determines the new total number of episodes watched from the given seasons and episodes.
-A new isWatched value of the show is also determined based on the number of episodes that are watched.</p>
+<p>Step 5. A copy of the show is created through the use of <code>WatchCommand#createEditedShow()</code>, with the new total number of seasons and episodes updated if there are any changes.
+A new <code>isWatched</code> value of the show is also determined based on the number of episodes that are watched.</p>
+</div>
+<div class="paragraph">
+<p>The following activity diagram below summarizes the calculation of the number of episodes watched:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/WatchActivityDiagram.png" alt="WatchActivityDiagram">
+</div>
+<div class="title">Figure 6. WatchActivityDiagram showing how episodes are calculated</div>
 </div>
 <div class="paragraph">
 <p>Step 6. The show in the current show list is updated to the newly created copy with the updated watched status and latest episode watched, and a <code>CommandResult</code> with the new watched status of the show is created.</p>
@@ -272,8 +401,9 @@ A new isWatched value of the show is also determined based on the number of epis
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/WatchSequenceDiagram.png" alt="WatchSequenceDiagram">
+<img src="../images/WatchSequenceDiagram.png" alt="WatchSequenceDiagram">
 </div>
+<div class="title">Figure 7. WatchSequenceDiagram showing flow of the watch command</div>
 </div>
 </div>
 <div class="sect3">
@@ -283,27 +413,27 @@ A new isWatched value of the show is also determined based on the number of epis
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Creating a new WatchCommand class for changing the 'watch' status of a show.</p>
+<p><strong>Alternative 1 (current choice):</strong> Creating a new <code>WatchCommand</code> class for changing the 'watch' status of a show.</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Pros: Enables for greater cohesion since there is a specific command for editing the 'watch' status of a show.</p>
 </li>
 <li>
-<p>Cons: Requires longer code, and the code is also repetitive since its implementation is similar to that of the edit command</p>
+<p>Cons: Requires longer code, and the code is also repetitive since its implementation is similar to that of the <code>EditCommand</code>.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Use the WatchCommandParser to create a new EditCommand object that edits the watch status of the show.</p>
+<p><strong>Alternative 2:</strong> Use the <code>WatchCommandParser</code> to create a new <code>EditCommand</code> object that edits the watch status of the show.</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Pros: Less code repetition and shorter code in general.</p>
 </li>
 <li>
-<p>Cons: This will mean that there is less cohesion of the code and perhaps greater dependencies since more classes depend on the EditCommand class.</p>
+<p>Cons: This will mean that there is less cohesion of the code and greater dependencies since more classes depend on the <code>EditCommand</code> class.</p>
 </li>
 </ul>
 </div>
@@ -314,4 +444,4 @@ A new isWatched value of the show is also determined based on the number of epis
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 13:03:40 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 14:09:59 UTC</div></div></div></body></html>

@@ -360,7 +360,7 @@ It extends <code>Command</code> and uses the <code>WatchCommandParser</code> to 
 <p>Step 2. Entering the command calls <code>WatchListParser#parseCommand()</code>, which in turn returns a new <code>WatchCommandParser</code> and the <code>WatchCommandParser#parse()</code> command is called.</p>
 </div>
 <div class="paragraph">
-<p>Step 3. A new <code>WatchCommand</code> is created, with the index of the show being parsed as a field of the <code>WatchCommand</code>. A new WatchShowDescriptor is also created to relay the episode number and season number to the WatchCommand object.</p>
+<p>Step 3. A new <code>WatchCommand</code> is created, with the index of the show being parsed as a field of the <code>WatchCommand</code>. A new <code>WatchShowDescriptor</code> is also created to relay the episode number and season number to the <code>WatchCommand</code> object.</p>
 </div>
 <div class="paragraph">
 <p>Step 4. The <code>WatchCommand#execute()</code> method is called, referencing the current <code>model</code>, and the show that is in the current <code>FilteredShowList</code> is referenced based off the current <code>model</code>.</p>
@@ -378,8 +378,17 @@ If the <code>index</code> is out of bounds, a new <code>CommandException</code> 
 </table>
 </div>
 <div class="paragraph">
-<p>Step 5. A copy of the show is created through the use of <code>WatchCommand#createEditedShow()</code>, which determines the new total number of episodes watched from the given seasons and episodes.
-A new isWatched value of the show is also determined based on the number of episodes that are watched.</p>
+<p>Step 5. A copy of the show is created through the use of <code>WatchCommand#createEditedShow()</code>, with the new total number of seasons and episodes updated if there are any changes.
+A new <code>isWatched</code> value of the show is also determined based on the number of episodes that are watched.</p>
+</div>
+<div class="paragraph">
+<p>The following activity diagram below summarizes the calculation of the number of episodes watched:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/WatchActivityDiagram.png" alt="WatchActivityDiagram">
+</div>
+<div class="title">Figure 9. WatchActivityDiagram showing how episodes are calculated</div>
 </div>
 <div class="paragraph">
 <p>Step 6. The show in the current show list is updated to the newly created copy with the updated watched status and latest episode watched, and a <code>CommandResult</code> with the new watched status of the show is created.</p>
@@ -391,6 +400,7 @@ A new isWatched value of the show is also determined based on the number of epis
 <div class="content">
 <img src="images/WatchSequenceDiagram.png" alt="WatchSequenceDiagram">
 </div>
+<div class="title">Figure 10. WatchSequenceDiagram showing flow of the watch command</div>
 </div>
 </div>
 <div class="sect3">
@@ -400,27 +410,27 @@ A new isWatched value of the show is also determined based on the number of epis
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Creating a new WatchCommand class for changing the 'watch' status of a show.</p>
+<p><strong>Alternative 1 (current choice):</strong> Creating a new <code>WatchCommand</code> class for changing the 'watch' status of a show.</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Pros: Enables for greater cohesion since there is a specific command for editing the 'watch' status of a show.</p>
 </li>
 <li>
-<p>Cons: Requires longer code, and the code is also repetitive since its implementation is similar to that of the edit command</p>
+<p>Cons: Requires longer code, and the code is also repetitive since its implementation is similar to that of the <code>EditCommand</code>.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Use the WatchCommandParser to create a new EditCommand object that edits the watch status of the show.</p>
+<p><strong>Alternative 2:</strong> Use the <code>WatchCommandParser</code> to create a new <code>EditCommand</code> object that edits the watch status of the show.</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Pros: Less code repetition and shorter code in general.</p>
 </li>
 <li>
-<p>Cons: This will mean that there is less cohesion of the code and perhaps greater dependencies since more classes depend on the EditCommand class.</p>
+<p>Cons: This will mean that there is less cohesion of the code and greater dependencies since more classes depend on the <code>EditCommand</code> class.</p>
 </li>
 </ul>
 </div>
@@ -2240,4 +2250,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 13:03:40 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 14:09:59 UTC</div></div></div></body></html>
