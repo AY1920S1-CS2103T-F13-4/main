@@ -1,0 +1,705 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Wong Chuan Kai - Project Portfolio for EzWatchList</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">EzWatchlist</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103T-F13-3/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Wong Chuan Kai - Project Portfolio for EzWatchList</h1></div><div id="content"><div class="sect1">
+<h2 id="project-code-ezwatchlist-code"><a class="link" href="#project-code-ezwatchlist-code">PROJECT: <code>Ezwatchlist</code></a></h2>
+<div class="sectionbody">
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="1-introduction"><a class="link" href="#1-introduction">1. Introduction</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The purpose of the Project Portfolio is to document and showcase my contributions to the software project, <code>EzWatchList</code>.</p>
+</div>
+<div class="paragraph">
+<p>Our team was initially tasked with enhancing a basic command line interface(CLI) desktop application
+for our Software Engineering project. We are allowed to morph it to other application that uses command line interface.
+Thus, we chose to morph it into a movie records management system called EzWatchList. This enhanced
+version provides a unique, clean and simple way of organizing and keeping track of movie or TV show watch list.</p>
+</div>
+<div class="sect2">
+<h3 id="1-1-overview"><a class="link" href="#1-1-overview">1.1 Overview</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Ui.png" alt="Ui">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 1. The graphical interface for Ezwatchlist.</p>
+</div>
+<div class="paragraph">
+<p><code>EzWatchList</code> helps users to keep track of movie or TV show in a watch list. User can simply
+interact with the application by inputting commands into the interface.</p>
+</div>
+<div class="paragraph">
+<p>Main features of EzWatchList:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Keep track of shows that users plan to watch</p>
+</li>
+<li>
+<p>Allows users to edit and mark down shows that they have watched</p>
+</li>
+<li>
+<p>Allows users to search for show online using <code>search</code> online function or search within user&#8217;s watch list.</p>
+</li>
+<li>
+<p>Gives users statistics about their watching habits and recommend shows to them.</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Note the following symbols and formatting used in this document:
+This symbol indicates important information.
+API - Application programming interface. A sort of interaction with applications through software intermediaries.
+undo
+A grey highlight (called a mark-up) indicates that this is a command that can be inputted into the command line and executed by the application.
+VersionedAddressBook
+Blue text with grey highlight indicates a component, class or object in the architecture</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The following sections illustrate these enhancements in more detail, as well as the relevant documentation
+I have added to the user and developer guides in relation to these enhancements.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="2-summary-of-contributions"><a class="link" href="#2-summary-of-contributions">2. Summary of contributions</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>This section shows a summary of my coding, documentation, and other helpful contributions to the team project.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>My role was to design and implement the <code>Add</code> and <code>Sync</code> features. These commands are essential to the application as they are the
+building block of the application. Before I can design these features, I have to understand
+the application requirement first such as functional and non-function requirements. I also have to know who my target audience
+is and study the use-cases properly to plan out and design these features.</p>
+</div>
+<div class="sect2">
+<h3 id="strong-major-enhancement-strong"><a class="link" href="#strong-major-enhancement-strong"><strong>Major enhancement</strong>:</a></h3>
+<div class="sect3">
+<h4 id="added-add-and-sync-commands"><a class="link" href="#added-add-and-sync-commands">Added ‘add’ and ‘sync’ commands.</a></h4>
+<div class="paragraph">
+<p>Add command</p>
+</div>
+<div class="paragraph">
+<p><strong>What it does</strong>:</p>
+</div>
+<div class="paragraph">
+<p>There are two functions for <code>Add</code> command.
+Firstly, it allows the user to add movies or TV shows into the watch list.
+User has to input several information of the show such as name, description, and
+name of actors. Beside this core function, the add command also allows user to add a movie found in search
+result page after user has used the <code>search</code> online feature. Search page displays the search result of the movies the user
+is interested to watch. The <code>search</code> feature is implemented by my team mate.</p>
+</div>
+<div class="paragraph">
+<p><strong>Justification</strong>:</p>
+</div>
+<div class="paragraph">
+<p>The purpose of this application is to allow user to track movie list. Thus, adding shows into watch list is a
+fundamental and core function that runs the application. If the user wants to know more about a certain movie, he can
+simply use the <code>search</code> function to search for it. The <code>search</code> function is able to gather information about movies online
+and user can choose to ‘add’ a certain movie from the search list into his own watch list.</p>
+</div>
+<div class="paragraph">
+<p><strong>Highlights</strong>:</p>
+</div>
+<div class="paragraph">
+<p><strong>Credits</strong>:</p>
+</div>
+<div class="paragraph">
+<p>Since we are retrieving information on shows online, we decided to use The Movie Database (TMDB) api.</p>
+</div>
+<div class="paragraph">
+<p>Sync command</p>
+</div>
+<div class="paragraph">
+<p><strong>What it does</strong>:</p>
+</div>
+<div class="paragraph">
+<p>There are two functions for <code>Add</code> command.
+Firstly, it allows the user to add movies or TV shows into the watch list.
+User has to input several information of the show such as name, description, and
+name of actors. Beside this core function, the add command also allows user to add a movie found in search
+result page after user has used the <code>search</code> online feature. Search page displays the search result of the movies the user
+is interested to watch. The <code>search</code> feature is implemented by my team mate.</p>
+</div>
+<div class="paragraph">
+<p><strong>Justification</strong>:</p>
+</div>
+<div class="paragraph">
+<p>The purpose of this application is to allow user to track movie list. Thus, adding shows into watch list is a
+fundamental and core function that runs the application. If the user wants to know more about a certain movie, he can
+simply use the <code>search</code> function to search for it. The <code>search</code> function is able to gather information about movies online
+and user can choose to ‘add’ a certain movie from the search list into his own watch list.</p>
+</div>
+<div class="paragraph">
+<p><strong>Highlights</strong>:</p>
+</div>
+<div class="paragraph">
+<p><strong>Credits</strong>:</p>
+</div>
+<div class="paragraph">
+<p>Since we are retrieving information on shows online, we decided to use The Movie Database (TMDB) api.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="strong-minor-enhancement-strong"><a class="link" href="#strong-minor-enhancement-strong"><strong>Minor enhancement</strong>:</a></h3>
+<div class="sect3">
+<h4 id="added-shortcut-keys-to-move-about-pages-easily"><a class="link" href="#added-shortcut-keys-to-move-about-pages-easily">Added shortcut keys to move about pages easily.</a></h4>
+<div class="paragraph">
+<p><strong>What it does</strong>:</p>
+</div>
+<div class="paragraph">
+<p>Users are able to press a single shortcut key button to move about the panels such as ‘Watchlist’, ‘Watched’, ‘Search’
+and ‘Statistics’ without moving and clicking mouse.</p>
+</div>
+<div class="paragraph">
+<p><strong>Justification</strong>:</p>
+</div>
+<div class="paragraph">
+<p>Our target user is one who prefers to type fast and complete tasks quickly. One of the non-functional requirement is to
+reduce the usage of the mouse as this is mainly a command line application. Adding shortcut keys will reduce the
+usage of the mouse.</p>
+</div>
+<div class="paragraph">
+<p><strong>Highlights</strong>:</p>
+</div>
+<div class="paragraph">
+<p><strong>Code contributed</strong>:</p>
+</div>
+<div class="paragraph">
+<p>My contributions to EzWatchList can be found in the following link: [<a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=wongchuankai&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2019-09-06&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">My Code Contribution</a>]</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="other-contributions"><a class="link" href="#other-contributions">Other contributions:</a></h3>
+<div class="paragraph">
+<p><strong>Project management</strong>:</p>
+</div>
+<div class="paragraph">
+<p><strong>Enhancements to existing features</strong> :</p>
+</div>
+<div class="paragraph">
+<p><strong>Documentation</strong>:</p>
+</div>
+<div class="paragraph">
+<p><strong>Community</strong>:</p>
+</div>
+<div class="paragraph">
+<p><strong>Tools</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Integrated a third party library (TMDB) to the project (<a href="https://www.themoviedb.org/documentation/api">TMDB Api</a>)</p>
+</li>
+<li>
+<p>Integrated a new Github plugin (Java wrapper) to the team repo.</p>
+</li>
+<li>
+<p>Added a successfully merged pull request to the Java Wrapper we are using in our application to fix their issue of not supporting recommendations. (<a href="https://github.com/holgerbrandl/themoviedbapi/pull/111">Pull request merged</a>)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="3-contributions-to-the-user-guide"><a class="link" href="#3-contributions-to-the-user-guide">3. Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>This section is an excerpt from our EzWatchList User Guide, showing additions that I have made for the add and sync
+features. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="adding-a-show-from-search-result-page-code-add-code"><a class="link" href="#adding-a-show-from-search-result-page-code-add-code">Adding a show from search result page: <code>add</code></a></h4>
+<div class="paragraph">
+<p>Adds a show from search result page after user has already search for show<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>add INDEX</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+This add command can only be used if user is currently at search page, and has already search for show using the search online command.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Watchlist page:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Empty</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Result page (after searching online <code>search n/titanic</code>):</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Movie #1: Name: Titanic Actor: Leonardo DiCaprio</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>add 1</code><br>
+Add the movie - Titanic found in search list into watchlist</p>
+</li>
+<li>
+<p>Result of Watchlist page:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Movie #1: Name: Titanic Actor: Leonardo DiCaprio
+==== Synchronise user&#8217;s show data: <code>sync</code>
+Synchronise a show found in watchlist with online searched show data by modifying ALL of the parameters in user selected show with online searched show data.<br>
+Format:</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>sync INDEX</code></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>User may have added their show with their own information. However, user might not know some of the parameters such as actors.</p>
+</li>
+<li>
+<p>Thus, user can use the search online command <code>search n/</code> to look up information regarding that show.</p>
+</li>
+<li>
+<p>Then, Synchronise command <code>sync</code> can be used to update information/modify on that show.</p>
+</li>
+<li>
+<p>Synchronise command will WRITE OVER all the information/parameters of show with same name found in the watchlist.</p>
+</li>
+<li>
+<p>The show in watchlist which is to be synchronised must have the same name as the show found in searched result page.</p>
+</li>
+<li>
+<p>Names of the show are not case-sensitive.</p>
+</li>
+<li>
+<p>User must have at least input the name of the show to use sync command. (Both are same name, case-insensitive)</p>
+</li>
+<li>
+<p>User can use <code>add INDEX</code> command if a selected show in result page is not found in watchlist.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Note: <code>Sync</code> will write over all the information of show with same name found in watchlist.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User has already input Titanic show into watchlist manually.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Watchlist page:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Movie #1: Name: titanic</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Result page (after searching online <code>search n/titanic</code>):</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Movie #1: Name: Titanic Actor: Leonardo DiCaprio</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>sync 1</code> <br>
+Synchronise Titanic show in result page of index 1 with user&#8217;s Titanic show.</p>
+</li>
+<li>
+<p>Result of Watchlist page:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Movie #1: Name: Titanic Actor: Leonardo DiCaprio</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>User has not input Titanic show into watchlist manually.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Watchlist page:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Empty</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Result page (after searching online <code>search n/titanic</code>):</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Movie #1: Name: Titanic Actor: Leonardo DiCaprio</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>sync 1</code> <br>
+returns and display error because Titanic show is not found in watchlist page.</p>
+</li>
+<li>
+<p>User can choose to use <code>add 1</code> command to add Titanic show.</p>
+</li>
+<li>
+<p><code>add 1</code></p>
+</li>
+<li>
+<p>Result of Watchlist page:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Movie #1: Name: Titanic Actor: Leonardo DiCaprio</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation
+and the technical depth of my software engineering skills to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="feature-add-feature"><a class="link" href="#feature-add-feature">[Feature] Add feature</a></h3>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<div class="paragraph">
+<p>The <code>AddCommand</code> extends <code>Command</code> and uses <code>AddCommandParser</code> to process the command entered by the user.</p>
+</div>
+<div class="paragraph">
+<p>There are two different ways of using add feature and both have different outcome.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding show in the WatchList.</p>
+</li>
+<li>
+<p>Adding show found from online search.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage of scenario 1 and how the add mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application and executes <code>add n/Joker&#8230;&#8203;</code> command to add a show in the WatchList with the name "Joker".</p>
+</div>
+<div class="paragraph">
+<p>Step 2. Entering the command calls AddCommandParser#parse().</p>
+</div>
+<div class="paragraph">
+<p>Step 3. A new <code>AddCommand</code> is created, with the show to be added in AddCommand.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. The <code>AddCommand#execute()</code> method is called, referencing the current model and add the show given by user to the <code>filteredShowList</code> found in model.</p>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarises the workflow of Add:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AddActivityDiagram.png" alt="AddActivityDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 3: Activity Diagram of `AddCommand`</em></p>
+</div>
+<div class="paragraph">
+<p>In Figure 3, the user first launches the app. After the user input a add command, the program runs and add the show input by user into WatchList.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-code-addcommand-code-executes"><a class="link" href="#aspect-how-code-addcommand-code-executes">Aspect: How <code>AddCommand</code> executes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Current choice: Create a show object and add it to a <code>filteredShowList</code> found in ModelManager.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement and make use of.</p>
+</li>
+<li>
+<p>Cons: May have performance issues in terms of memory usage.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage of scenario 2 and how the add mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user uses the search(Online) command and executes <code>add INDEX</code> command to add a show from search result page of INDEX in the WatchList.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. Entering the command calls AddCommandParser#parse().</p>
+</div>
+<div class="paragraph">
+<p>Step 3. A new <code>AddCommand</code> is created, with the show to be added in AddCommand.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. The <code>AddCommand#execute()</code> method is called, referencing the current model and add the show given by user to the <code>searchList</code> of INDEX found in model.</p>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarises the workflow of Add:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AddActivityDiagram2.png" alt="AddActivityDiagram2">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4: Activity Diagram of `AddCommand`</em></p>
+</div>
+<div class="paragraph">
+<p>In Figure 4, User input search(online) command. User then input <code>add INDEX</code> command. Show of INDEX found in search result page is added to WatchList.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-code-addcommand-code-executes-2"><a class="link" href="#aspect-how-code-addcommand-code-executes-2">Aspect: How <code>AddCommand</code> executes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Current choice: Retrieve the show object found in <code>searchList</code> of INDEX from ModelManager and add it to <code>filteredShowList</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement and make use of.</p>
+</li>
+<li>
+<p>Cons: May have performance issues in terms of memory usage.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="feature-synchronise-user-s-show-data"><a class="link" href="#feature-synchronise-user-s-show-data">[Feature] Synchronise user&#8217;s show data</a></h3>
+<div class="paragraph">
+<p>The synchronise feature allows user to sync a show found in watchlist with online searched show data. It modifies all of the
+parameters/information is user selected show with online searched show data.<br>
+User may have added their show with their own information. However, user might not know some of the parameters such as actors.
+Thus, user can use the search online command <code>search n/</code> to look up information regarding that show.<br>
+Then, Synchronise command <code>sync</code> can be used to update information/modify on that show.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h4>
+<div class="paragraph">
+<p>The Synchronise feature is facilitated by <code>SyncCommand</code> object which can be found under the commands package.
+It extends <code>Command</code> and uses the <code>SyncCommandParser</code> to process the command entered by the user.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the Synchronise command work as Sync mechanism works at each step.</p>
+</div>
+<div class="paragraph">
+<p>Pre-Condition: User has already added a certain show into watchlist manually. That show must have at least <code>name</code> and <code>type</code> parameters.
+Example of Pre-Condition: User has added Titanic movie into watchlist.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application, go to Search page and execute <code>search n/titanic</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user execute <code>sync 1</code> command to synchronise index 1 of result page with a show in watchlist with same name (case-insensitive).</p>
+</div>
+<div class="paragraph">
+<p>Step 3. Entering the command calls <code>SyncCommandParser#parseCommand()</code>, which in turn returns a new <code>SyncCommandParser</code> and the <code>SyncCommandParser#parse()</code> command is called.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. A new <code>SyncCommand</code> is created, with the index of the show being parsed as a field of the <code>SyncCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. The <code>SyncCommand#execute()</code> method is called, referencing the current <code>model</code>, and the show that is in the current <code>FilteredShowList</code> is referenced based off the current <code>model</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the <code>index</code> is out of bounds, a new <code>CommandException</code> is thrown.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 6. A list of shows found in search page and watchlist are retrieved from <code>model</code>. The show according to the Index of the <code>searchpagelist</code> are retrieved as well.
+Then, the list of show in watchlist will be checked through to match the name of the index show.</p>
+</div>
+<div class="paragraph">
+<p>Step 7. If a show in watchlist matched with the name of the index show, <code>model.setShow</code> will be called to replace the show found in watchlist with index show.
+<code>CommandResult</code> will be return which contains information regarding the feedback result. Else, <code>CommandException</code> is thrown to notify user no similar show name is found in watchlist as index show.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the sync operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/SyncSequenceDiagram.png" alt="SyncSequenceDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarises the workflow of Sync:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/SyncActivityDiagram.png" alt="SyncActivityDiagram">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-creating-a-new-synchronise-instead-of-an-altered-editcommand-and-addcommand"><a class="link" href="#aspect-creating-a-new-synchronise-instead-of-an-altered-editcommand-and-addcommand">Aspect: Creating a new Synchronise instead of an altered EditCommand and AddCommand</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Creating a new Synchronise class for replace information of a certain show found in search page with one in watchlist.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Enables for greater cohesion since there is a specific command for replacing/modifying information of a show in watchlist.</p>
+</li>
+<li>
+<p>Cons: Requires longer code, and the code is also repetitive since its implementation is similar to that of the add and edit command</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Use the SyncCommandParser to create a new EditCommand object that edits the information of a certain show found in search page with one in watchlist.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Less code repetition and shorter code in general.</p>
+</li>
+<li>
+<p>Cons: This will mean that there is less cohesion of the code and perhaps greater dependencies since more classes depend on the EditCommand class.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
+<div class="sectionbody">
+<hr>
+<div class="paragraph">
+<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 16:39:13 UTC</div></div></div></body></html>
