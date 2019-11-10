@@ -121,13 +121,6 @@ Below is a sample of my code:<br>
 <h3 id="1-4-contributions-to-the-user-guide"><a class="link" href="#1-4-contributions-to-the-user-guide">1.4 Contributions to the User Guide</a></h3>
 <div class="sect3">
 <h4 id="search-for-a-show-code-search-code"><a class="link" href="#search-for-a-show-code-search-code">Search for a show: <code>search</code></a></h4>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>Note: Search results will appear in the Search Page, click <kbd>3</kbd> to go straight to the search page.</p>
-</div>
-</div>
-</div>
 <div class="paragraph">
 <p>Searches for shows whose names contain any of the given keywords from the online database, unless specified to be from
 the watchlist or watched list.<br></p>
@@ -139,37 +132,33 @@ the watchlist or watched list.<br></p>
 <ul>
 <li>
 <p>by name:<br>
-<code>search n/SHOW_NAME&#8230;&#8203; [g/GENRE]&#8230;&#8203; [a/ACTOR_NAME]&#8230;&#8203; [o/FROM_ONLINE] [t/TYPE] [w/HAS_WATCHED]</code></p>
+<code>search n/SHOW_NAME&#8230;&#8203; [g/GENRE]&#8230;&#8203; [a/ACTOR_NAME]&#8230;&#8203; [o/FROM_ONLINE] [t/SHOW_TYPE] [w/HAS_WATCHED]</code></p>
 </li>
 <li>
 <p>by genre:<br>
-<code>search g/GENRE&#8230;&#8203; [n/SHOW_NAME]&#8230;&#8203; [a/ACTOR_NAME]&#8230;&#8203; [o/FROM_ONLINE] [t/TYPE] [w/HAS_WATCHED]</code></p>
+<code>search g/GENRE&#8230;&#8203; [n/SHOW_NAME]&#8230;&#8203; [a/ACTOR_NAME]&#8230;&#8203; [o/FROM_ONLINE] [t/SHOW_TYPE] [w/HAS_WATCHED]</code></p>
 </li>
 <li>
-<p>by actor (from watchlist):<br>
-<code>search a/ACTOR_NAME&#8230;&#8203; [n/SHOW_NAME]&#8230;&#8203; [g/GENRE]&#8230;&#8203; [o/FROM_ONLINE] [t/TYPE] [w/HAS_WATCHED]</code></p>
+<p>by actor (from watchlist only):<br>
+<code>search a/ACTOR_NAME&#8230;&#8203; [n/SHOW_NAME]&#8230;&#8203; [g/GENRE]&#8230;&#8203; [o/FROM_ONLINE] [t/SHOW_TYPE] [w/HAS_WATCHED]</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>SHOW_NAME</code>, <code>GENRE</code>, <code>ACTOR_NAME</code> can be any words, as long as it does not contain <code>/</code>.</p>
+</li>
+<li>
+<p><code>FROM_ONLINE</code> and <code>HAS_WATCHED</code> can only be <code>yes</code>, <code>true</code>, <code>no</code> or <code>false</code>.</p>
+</li>
+<li>
+<p><code>SHOW_TYPE</code> can only be <code>movie</code> or <code>tv</code>.</p>
 </li>
 </ul>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-To be able to search from watchlist or watched list, do specify <code>o/no</code>. To search specifically from watchlist, include
-<code>o/no w/no</code> and to search specifically from watchlist, include <code>o/no w/yes</code>.<br>
-Space between prefix and slash is not acceptable. e.g. "n /Avengers" will throw an error.<br>
-For <code>FROM_ONLINE</code> and <code>HAS_WATCHED</code>, only <code>yes</code>, <code>true</code>, <code>no</code> and <code>false</code> would be accepted.<br>
-For <code>[o/FROM_ONLINE] [t/TYPE] [w/HAS_WATCHED]</code>, if multiple entries are entered, only the last would be considered.
-e.g. "search n/Avengers t/movie t/tv" will be interpreted as "search n/Avengers t/tv".<br>
-When searching based on actor, only shows from the watchlist will be searched.<br>
-When searching based on genre online, only movies will be searched.
-</td>
-</tr>
-</table>
+</li>
+</ul>
 </div>
+<div class="exampleblock">
+<div class="content">
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -177,16 +166,60 @@ When searching based on genre online, only movies will be searched.
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The search is case insensitive. e.g "avengers" will match "Avengers".<br>
-The order of the keywords matter. e.g. "Chris Evans" will not match "Evans Chris".<br>
-Not only full words will be matched. e.g. "Joke" will also match with "Joker".<br>
+Special commands to take note of:<br>
+<code>o/no</code>: to search from watchlist or watched list<br>
+<code>o/no w/no</code>: to search from watchlist only<br>
+<code>o/no w/yes</code>: to search from watched list only
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Do take note of the following expected command outputs:<br>
+When searching based on genre online, only movies will be searched.<br>
+ <br>
+For <code>[o/FROM_ONLINE] [t/SHOW_TYPE] [w/HAS_WATCHED]</code>, if multiple entries are entered, only the last would be considered.<br>
+e.g. "search n/Avengers t/movie t/tv" will be interpreted as "search n/Avengers t/tv".<br>
+ <br>
+Space between prefix and slash is not acceptable. e.g. "n /Avengers" will throw an error.<br>
 Space after prefix is acceptable. e.g. "n/   Avengers" will be interpreted as "n/Avengers".
 </td>
 </tr>
 </table>
 </div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The search is case insensitive. e.g "avengers" will match "Avengers".<br>
+The order of the keywords matter. e.g. "Chris Evans" will not match "Evans Chris".<br>
+Not only full words will be matched. e.g. "Joke" will also match with "Joker".
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
 <div class="paragraph">
-<p><strong>Example Usage:</strong><br>
+<p> <br>
+<strong>Example Usage:</strong><br>
 You may want to search for movies named "Avengers" and also movies with an actor called "Tom".
 As shown below, assume that your watchlist only has a movie "Avengers: Endgame" that you have watched.</p>
 </div>
@@ -194,7 +227,10 @@ As shown below, assume that your watchlist only has a movie "Avengers: Endgame" 
 <div class="content">
 <img src="../images/watchedPageWithAvengerEndgame.png" alt="watchedPageWithAvengerEndgame" width="790">
 </div>
-<div class="title">Figure 1. Current <strong>Watched list</strong> with a movie "Avengers: Endgame"</div>
+<div class="title">Figure 1. Current <strong>Watched Page</strong> with a movie watched "Avengers: Endgame"</div>
+</div>
+<div class="paragraph">
+<p> <br></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic" start="1">
@@ -226,13 +262,14 @@ As shown below, assume that your watchlist only has a movie "Avengers: Endgame" 
 <div class="title">Figure 2. Entering of the <code>search</code> command</div>
 </div>
 <div class="paragraph">
-<p>After you have entered the command, you will be led to the <strong>Search page</strong> as shown below.</p>
+<p> <br>
+After you have entered the command, you will be led to the <strong>Search page</strong> as shown below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/emptySearchPage.png" alt="emptySearchPage" width="790">
 </div>
-<div class="title">Figure 3. User Interface of the search page</div>
+<div class="title">Figure 3. User Interface of the <strong>Search Page</strong></div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -241,16 +278,19 @@ As shown below, assume that your watchlist only has a movie "Avengers: Endgame" 
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-You may skip Step 1 as you will be automatically be navigated to the <strong>Search page</strong> when you key in any valid <code>search</code>
-command, such as the one in Step 2.
+You may skip Step 1 as you will be automatically be navigated to the <strong>Search Page</strong> when you key in any valid <code>search</code>
+command, such as the one in Step 2 below.
 </td>
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p> <br></p>
+</div>
 <div class="olist arabic">
 <ol class="arabic" start="2">
 <li>
-<p>Enters <code>search n/Avengers a/Tom t/movie</code> into the command box in the search tab as shown below.</p>
+<p>Enters <code>search n/Avengers a/Tom t/movie</code> into the command box in the <strong>Search Page</strong> as shown below.</p>
 </li>
 </ol>
 </div>
@@ -261,7 +301,8 @@ command, such as the one in Step 2.
 <div class="title">Figure 4. Entering of the <code>search</code> command to search for shows</div>
 </div>
 <div class="paragraph">
-<p>Press <kbd>enter</kbd> after entering the information shown above and wait for the information to load.</p>
+<p> <br>
+Press <kbd>enter</kbd> after entering the information shown above and wait for the information to load.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -284,6 +325,9 @@ You can go to the other pages in the mean time. Do allow some time for the searc
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p> <br></p>
+</div>
 <div class="olist arabic">
 <ol class="arabic" start="3">
 <li>
@@ -292,7 +336,8 @@ You can go to the other pages in the mean time. Do allow some time for the searc
 </ol>
 </div>
 <div class="paragraph">
-<p><strong>Scenario A: You are offline</strong><br>
+<p> <br>
+<strong>Scenario A: You are offline</strong><br>
 Only movies from the watchlist or offline database with the movie name "Avengers" or actor name "Tom" will be shown,
 as seen in the figure below.</p>
 </div>
@@ -303,7 +348,8 @@ as seen in the figure below.</p>
 <div class="title">Figure 6. <strong>Search Page</strong> showing the search results when offline</div>
 </div>
 <div class="paragraph">
-<p><strong>Scenario B: You are online</strong><br>
+<p> <br>
+<strong>Scenario B: You are online</strong><br>
 Only movies from the online database with the movie name "Avengers" or actor name "Tom" will be shown, as seen in the
 figure below.</p>
 </div>
@@ -314,7 +360,8 @@ figure below.</p>
 <div class="title">Figure 7. <strong>Search Page</strong> showing the search results when online</div>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p> <br>
+Examples:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -345,7 +392,7 @@ Returns movies from the online database with the genre "Action"</p>
 </div>
 </li>
 <li>
-<p>By actor:</p>
+<p>By actor: (from watchlist only)</p>
 <div class="ulist">
 <ul>
 <li>
@@ -364,4 +411,4 @@ Returns shows within the watchlist with actor named "Tom"</p>
 
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 19:03:42 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 20:55:28 UTC</div></div></div></body></html>
