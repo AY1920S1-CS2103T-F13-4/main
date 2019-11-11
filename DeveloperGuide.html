@@ -30,7 +30,8 @@
 <li><a href="#Implementation-Configuration">3.5. Configuration</a></li>
 <li><a href="#Implementation">3.6. [Feature] Search Feature</a></li>
 <li><a href="#feature-add-feature">3.7. [Feature] Add feature</a></li>
-<li><a href="#feature-synchronise-user-s-show-data">3.8. [Feature] Synchronise user&#8217;s show data</a></li>
+<li><a href="#feature-add-feature-extension">3.8. [Feature] Add feature (Extension)</a></li>
+<li><a href="#feature-synchronise-user-s-show-data">3.9. [Feature] Synchronise user&#8217;s show data</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -1164,9 +1165,6 @@ instead of shows that have both the name "Avengers" and the genre "Comedy"</p>
 <p>The <code>AddCommand</code> extends <code>Command</code> and uses <code>AddCommandParser</code> to process the command entered by the user.</p>
 </div>
 <div class="paragraph">
-<p>There are two different ways of using add feature and both have different outcome.</p>
-</div>
-<div class="paragraph">
 <p><strong>Scenario 1:</strong> Adding show in the WatchList.</p>
 </div>
 <div class="paragraph">
@@ -1192,7 +1190,7 @@ instead of shows that have both the name "Avengers" and the genre "Comedy"</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/addactivitydiagram.png" alt="addactivitydiagram" width="300">
+<img src="images/AddActivitySequenceDiagram.png" alt="AddActivitySequenceDiagram" width="300">
 </div>
 </div>
 <div class="paragraph">
@@ -1239,11 +1237,19 @@ instead of shows that have both the name "Avengers" and the genre "Comedy"</p>
 <p>Step 4. The <code>AddCommand#execute()</code> method is called, referencing the current model and add the show given by user to the <code>searchList</code> of INDEX found in model.</p>
 </div>
 <div class="paragraph">
+<p>The following sequence diagram shows how the <code>add</code> operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddSequenceDiagram.png" alt="AddSequenceDiagram" width="500">
+</div>
+</div>
+<div class="paragraph">
 <p>The following activity diagram summarises the workflow of Add:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/AddActivityDiagram2.png" alt="AddActivityDiagram2" width="300">
+<img src="images/AddActivitySequenceDiagram.png" alt="AddActivitySequenceDiagram" width="300">
 </div>
 </div>
 <div class="paragraph">
@@ -1268,13 +1274,9 @@ instead of shows that have both the name "Avengers" and the genre "Comedy"</p>
 </li>
 <li>
 <p>Cons: Requires longer code, and the code is also repetitive since its implementation is similar to that of the add and edit command</p>
-<div class="ulist">
-<ul>
+</li>
 <li>
 <p>Cons: May have performance issues in terms of memory usage.</p>
-</li>
-</ul>
-</div>
 </li>
 </ul>
 </div>
@@ -1282,7 +1284,77 @@ instead of shows that have both the name "Avengers" and the genre "Comedy"</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="feature-synchronise-user-s-show-data"><a class="link" href="#feature-synchronise-user-s-show-data">3.8. [Feature] Synchronise user&#8217;s show data</a></h3>
+<h3 id="feature-add-feature-extension"><a class="link" href="#feature-add-feature-extension">3.8. [Feature] Add feature (Extension)</a></h3>
+<div class="sect3">
+<h4 id="implementation-7"><a class="link" href="#implementation-7">3.8.1. Implementation</a></h4>
+<div class="paragraph">
+<p>This <code>add</code> feature is an extension to the <code>add</code> feature found in previous feature.
+It is used after user has searched for a show using <code>search</code> feature and the user wants to add a certain show
+into his watchlist.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage of <code>add</code> feature (Extension) and how the add mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user uses the search(Online) command and executes <code>add INDEX</code> command to add a show from search result page of INDEX in the WatchList.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. Entering the command calls AddCommandParser#parse().</p>
+</div>
+<div class="paragraph">
+<p>Step 3. A new <code>AddCommand</code> is created, with the show to be added in AddCommand.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. The <code>AddCommand#execute()</code> method is called, referencing the current model and add the show given by user to the <code>searchList</code> of INDEX found in model.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the <code>add</code> extension operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddSequenceDiagram2.png" alt="AddSequenceDiagram2" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarises the workflow of Add extension:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddActivitySequenceDiagram2.png" alt="AddActivitySequenceDiagram2" width="350">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4: Activity Diagram of `AddCommand`</em></p>
+</div>
+<div class="paragraph">
+<p>In Figure 4, User input search(online) command. User then input <code>add INDEX</code> command. Show of INDEX found in search result page is added to WatchList.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-8"><a class="link" href="#design-considerations-8">3.8.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-code-addcommand-code-executes-3"><a class="link" href="#aspect-how-code-addcommand-code-executes-3">Aspect: How <code>AddCommand</code> executes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Current choice: Retrieve the show object found in <code>searchList</code> of INDEX from ModelManager and add it to <code>filteredShowList</code>.</p>
+</li>
+<li>
+<p>Pros: Enables for greater cohesion since there is a specific command for adding information of a show in watchlist.</p>
+</li>
+<li>
+<p>Cons: Requires longer code, and the code is also repetitive since its implementation is similar to that of the add and edit command</p>
+</li>
+<li>
+<p>Cons: May have performance issues in terms of memory usage.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="feature-synchronise-user-s-show-data"><a class="link" href="#feature-synchronise-user-s-show-data">3.9. [Feature] Synchronise user&#8217;s show data</a></h3>
 <div class="paragraph">
 <p>The synchronise feature allows user to sync a show found in watchlist with online searched show data. It modifies all of the
 parameters/information is user selected show with online searched show data.<br>
@@ -1291,7 +1363,7 @@ Thus, user can use the search online command <code>search n/</code> to look up i
 Then, Synchronise command <code>sync</code> can be used to update information/modify on that show.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation-7"><a class="link" href="#implementation-7">3.8.1. Implementation</a></h4>
+<h4 id="implementation-8"><a class="link" href="#implementation-8">3.9.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The Synchronise feature is facilitated by <code>SyncCommand</code> object which can be found under the commands package.
 It extends <code>Command</code> and uses the <code>SyncCommandParser</code> to process the command entered by the user.</p>
@@ -1343,7 +1415,7 @@ Then, the list of show in watchlist will be checked through to match the name of
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SyncSequenceDiagram.png" alt="SyncSequenceDiagram" width="790">
+<img src="images/SyncSequenceDiagram.png" alt="SyncSequenceDiagram" width="500">
 </div>
 </div>
 <div class="paragraph">
@@ -1351,12 +1423,12 @@ Then, the list of show in watchlist will be checked through to match the name of
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SyncActivityDiagram.png" alt="SyncActivityDiagram" width="300">
+<img src="images/SyncActivityDiagram.png" alt="SyncActivityDiagram" width="500">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-8"><a class="link" href="#design-considerations-8">3.8.2. Design Considerations</a></h4>
+<h4 id="design-considerations-9"><a class="link" href="#design-considerations-9">3.9.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-creating-a-new-synchronise-instead-of-an-altered-editcommand-and-addcommand"><a class="link" href="#aspect-creating-a-new-synchronise-instead-of-an-altered-editcommand-and-addcommand">Aspect: Creating a new Synchronise instead of an altered EditCommand and AddCommand</a></h5>
 <div class="ulist">
@@ -2108,4 +2180,4 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:24:05 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:40:26 UTC</div></div></div></body></html>
