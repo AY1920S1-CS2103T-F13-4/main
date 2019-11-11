@@ -33,9 +33,7 @@ watched or wish to watch, reducing the hassle of having to search for shows freq
 <div class="content">
 <img src="../images/Ui.png" alt="Ui">
 </div>
-</div>
-<div class="paragraph">
-<p><em>Figure 1: The graphical interface for EzWatchlist</em></p>
+<div class="title">Figure 1. <em>Graphical User Interface</em> of EzWatchlist</div>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -44,7 +42,7 @@ watched or wish to watch, reducing the hassle of having to search for shows freq
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[Note]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[NOTE]</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">This symbol indicates information and tips to take note of.</p></td>
 </tr>
 <tr>
@@ -186,11 +184,9 @@ Special commands to take note of:<br>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Do take note of the following expected command outputs:<br>
 When searching based on genre online, only movies will be searched.<br>
  <br>
-For <code>[o/FROM_ONLINE] [t/SHOW_TYPE] [w/HAS_WATCHED]</code>, if multiple entries are entered, only the last would be considered.<br>
-e.g. "search n/Avengers t/movie t/tv" will be interpreted as "search n/Avengers t/tv".<br>
+For <code>[o/FROM_ONLINE] [t/SHOW_TYPE] [w/HAS_WATCHED]</code>, if multiple entries are entered, only the last would be considered. e.g. "search n/Avengers t/movie t/tv" will be interpreted as "search n/Avengers t/tv".<br>
  <br>
 Space between prefix and slash is not acceptable. e.g. "n /Avengers" will throw an error.<br>
 Space after prefix is acceptable. e.g. "n/   Avengers" will be interpreted as "n/Avengers".
@@ -228,7 +224,7 @@ As shown below, assume that your watchlist only has a movie "Avengers: Endgame" 
 <div class="content">
 <img src="../images/watchedPageWithAvengerEndgame.png" alt="watchedPageWithAvengerEndgame" width="790">
 </div>
-<div class="title">Figure 1. Current <strong>Watched Page</strong> with a movie watched "Avengers: Endgame"</div>
+<div class="title">Figure 2. Current <strong>Watched Page</strong> with a movie watched "Avengers: Endgame"</div>
 </div>
 <div class="paragraph">
 <p> <br></p>
@@ -260,7 +256,7 @@ As shown below, assume that your watchlist only has a movie "Avengers: Endgame" 
 <div class="content">
 <img src="../images/searchCommand.png" alt="searchCommand" width="790">
 </div>
-<div class="title">Figure 2. Entering of the <code>search</code> command</div>
+<div class="title">Figure 3. Entering of the <code>search</code> command</div>
 </div>
 <div class="paragraph">
 <p> <br>
@@ -270,7 +266,7 @@ After you have entered the command, you will be led to the <strong>Search page</
 <div class="content">
 <img src="../images/emptySearchPage.png" alt="emptySearchPage" width="790">
 </div>
-<div class="title">Figure 3. Graphical Interface of the <strong>Search Page</strong></div>
+<div class="title">Figure 4. Graphical Interface of the <strong>Search Page</strong></div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -299,7 +295,7 @@ command, such as the one in Step 2 below.
 <div class="content">
 <img src="../images/searchAvengerUserInput.png" alt="searchAvengerUserInput" width="790">
 </div>
-<div class="title">Figure 4. Entering of the <code>search</code> command to search for shows</div>
+<div class="title">Figure 5. Entering of the <code>search</code> command to search for shows</div>
 </div>
 <div class="paragraph">
 <p> <br>
@@ -309,7 +305,7 @@ Press <kbd>enter</kbd> after entering the information shown above and wait for t
 <div class="content">
 <img src="../images/searchPageLoadingScreen.png" alt="searchPageLoadingScreen" width="790">
 </div>
-<div class="title">Figure 5. Loading Screen of the <strong>Search page</strong></div>
+<div class="title">Figure 6. Loading Screen of the <strong>Search page</strong></div>
 </div>
 <div class="paragraph">
 <p>The loading page as shown above will appear while EzWatchlist searches for your shows.</p>
@@ -346,7 +342,7 @@ as seen in the figure below.</p>
 <div class="content">
 <img src="../images/searchPageSearchedForAvengersWhenOffline.png" alt="searchPageSearchedForAvengersWhenOffline" width="790">
 </div>
-<div class="title">Figure 6. <strong>Search Page</strong> showing the search results when offline</div>
+<div class="title">Figure 7. <strong>Search Page</strong> showing the search results when offline</div>
 </div>
 <div class="paragraph">
 <p> <br>
@@ -358,7 +354,7 @@ figure below.</p>
 <div class="content">
 <img src="../images/searchPageSearchedForAvengersWhenOnline.png" alt="searchPageSearchedForAvengersWhenOnline" width="790">
 </div>
-<div class="title">Figure 7. <strong>Search Page</strong> showing the search results when online</div>
+<div class="title">Figure 8. <strong>Search Page</strong> showing the search results when online</div>
 </div>
 <div class="paragraph">
 <p> <br>
@@ -376,7 +372,8 @@ Returns shows with the name "Joker" within the watchlist</p>
 </li>
 <li>
 <p><code>search n/Avengers g/Science Fiction t/movie n/Spiderman</code><br>
-Returns movies from the online database with the name "Avenger" or "Spiderman" and movies with the genre "Science Fiction"</p>
+(If online) Returns movies from the online database with the name "Avenger" or "Spiderman" and movies with the genre "Science Fiction"<br>
+(If offline) Returns movies from the internal database, watchlist and watched-list with the name "Avenger" or "Spiderman" and movies with the genre "Science Fiction"</p>
 </li>
 </ul>
 </div>
@@ -387,7 +384,8 @@ Returns movies from the online database with the name "Avenger" or "Spiderman" a
 <ul>
 <li>
 <p><code>search g/Action t/movie</code><br>
-Returns movies from the online database with the genre "Action"</p>
+(If online) Returns movies from the online database with the genre "Action"<br>
+(If offline) Returns movies from the internal database, watchlist and watched-list with the genre "Action"</p>
 </li>
 </ul>
 </div>
@@ -427,7 +425,7 @@ based on the show type.</p>
 <div class="content">
 <img src="../images/SearchActivityDiagram.png" alt="SearchActivityDiagram" width="450">
 </div>
-<div class="title">Figure 8. Activity Diagram for the <code>Search</code> Feature</div>
+<div class="title">Figure 9. Activity Diagram for the <code>Search</code> Feature</div>
 </div>
 <div class="paragraph">
 <p> <br></p>
@@ -510,7 +508,7 @@ The following <em>sequence diagram</em> summarizes how the search operation work
 <div class="content">
 <img src="../images/SearchSequenceDiagram.png" alt="SearchSequenceDiagram">
 </div>
-<div class="title">Figure 9. Sequence Diagram for the <code>Search</code> Operation</div>
+<div class="title">Figure 10. Sequence Diagram for the <code>Search</code> Operation</div>
 </div>
 <div class="paragraph">
 <p> <br></p>
@@ -643,4 +641,4 @@ instead of shows that have both the name "Avengers" and the genre "Comedy"</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:06:33 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:15:53 UTC</div></div></div></body></html>

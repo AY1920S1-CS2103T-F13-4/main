@@ -911,11 +911,9 @@ Special commands to take note of:<br>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Do take note of the following expected command outputs:<br>
 When searching based on genre online, only movies will be searched.<br>
  <br>
-For <code>[o/FROM_ONLINE] [t/SHOW_TYPE] [w/HAS_WATCHED]</code>, if multiple entries are entered, only the last would be considered.<br>
-e.g. "search n/Avengers t/movie t/tv" will be interpreted as "search n/Avengers t/tv".<br>
+For <code>[o/FROM_ONLINE] [t/SHOW_TYPE] [w/HAS_WATCHED]</code>, if multiple entries are entered, only the last would be considered. e.g. "search n/Avengers t/movie t/tv" will be interpreted as "search n/Avengers t/tv".<br>
  <br>
 Space between prefix and slash is not acceptable. e.g. "n /Avengers" will throw an error.<br>
 Space after prefix is acceptable. e.g. "n/   Avengers" will be interpreted as "n/Avengers".
@@ -1101,7 +1099,8 @@ Returns shows with the name "Joker" within the watchlist</p>
 </li>
 <li>
 <p><code>search n/Avengers g/Science Fiction t/movie n/Spiderman</code><br>
-Returns movies from the online database with the name "Avenger" or "Spiderman" and movies with the genre "Science Fiction"</p>
+(If online) Returns movies from the online database with the name "Avenger" or "Spiderman" and movies with the genre "Science Fiction"<br>
+(If offline) Returns movies from the internal database, watchlist and watched-list with the name "Avenger" or "Spiderman" and movies with the genre "Science Fiction"</p>
 </li>
 </ul>
 </div>
@@ -1112,7 +1111,8 @@ Returns movies from the online database with the name "Avenger" or "Spiderman" a
 <ul>
 <li>
 <p><code>search g/Action t/movie</code><br>
-Returns movies from the online database with the genre "Action"</p>
+(If online) Returns movies from the online database with the genre "Action"<br>
+(If offline) Returns movies from the internal database, watchlist and watched-list with the genre "Action"</p>
 </li>
 </ul>
 </div>
@@ -1366,4 +1366,4 @@ e.g. <code>search a/Tom</code> searches from shows within the watchlist with act
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:06:33 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:15:53 UTC</div></div></div></body></html>
