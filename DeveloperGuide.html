@@ -24,7 +24,7 @@
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#feature-mark-unmark-as-watched-feature">3.1. [Feature] Mark/Unmark as Watched Feature</a></li>
-<li><a href="#proposed-statistics-feature">3.2. [Proposed] Statistics Feature</a></li>
+<li><a href="#statistics-feature">3.2. Statistics Feature</a></li>
 <li><a href="#logging">3.3. Logging</a></li>
 <li><a href="#online-data">3.4. Online Data</a></li>
 <li><a href="#Implementation-Configuration">3.5. Configuration</a></li>
@@ -478,7 +478,7 @@ A new <code>isWatched</code> value of the show is also determined based on the n
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-statistics-feature"><a class="link" href="#proposed-statistics-feature">3.2. [Proposed] Statistics Feature</a></h3>
+<h3 id="statistics-feature"><a class="link" href="#statistics-feature">3.2. Statistics Feature</a></h3>
 <div class="sect3">
 <h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">3.2.1. Proposed Implementation</a></h4>
 <div class="paragraph">
@@ -516,7 +516,7 @@ statistics panel will be populated with the result.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/getFavouriteGenre.png" alt="getFavouriteGenre">
+<img src="images/GetFavouriteSequenceDiagram.png" alt="GetFavouriteSequenceDiagram">
 </div>
 </div>
 <div class="paragraph">
@@ -524,7 +524,7 @@ statistics panel will be populated with the result.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/getForgotten.png" alt="getForgotten">
+<img src="images/GetForgottenSequenceDiagram.png" alt="GetForgottenSequenceDiagram">
 </div>
 </div>
 <div class="paragraph">
@@ -532,7 +532,7 @@ statistics panel will be populated with the result.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/getRecommendation.png" alt="getRecommendation">
+<img src="images/GetRecommendationSequenceDiagram.png" alt="GetRecommendationSequenceDiagram">
 </div>
 </div>
 <div class="paragraph">
@@ -540,7 +540,7 @@ statistics panel will be populated with the result.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/activityDiagram.png" alt="activityDiagram">
+<img src="images/StatisticsActivityDiagram.png" alt="StatisticsActivityDiagram">
 </div>
 </div>
 </div>
@@ -584,27 +584,28 @@ statistics panel will be populated with the result.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Calculate when the application starts and update when there are changes.</p>
+<p><strong>Alternative 1 (current choice):</strong> Calculate when the user navigate to Statistics panel and the user has made changes
+to the watchlist.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Statistics results is more up to date.</p>
+</li>
+<li>
+<p>Cons: Appear less responsive as the API needs to retrieve information during calculation.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2 :</strong> Calculate when the application starts and update when there are changes.</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Pros: It appears more responsive in terms of navigating around the application.</p>
 </li>
 <li>
-<p>Cons: Need to constantly recalculate and update the results.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Calculate when the user navigate to Statistics panel.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Less calculation needed.</p>
-</li>
-<li>
-<p>Cons: Appear less responsive.</p>
+<p>Cons: The statistics information will not be updated realtime if the user has changed the watchlist.</p>
 </li>
 </ul>
 </div>
@@ -2110,4 +2111,4 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 13:51:52 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:06:33 UTC</div></div></div></body></html>

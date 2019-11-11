@@ -25,12 +25,13 @@
 <ul class="sectlevel2">
 <li><a href="#user-interface">3.1. User-Interface</a>
 <ul class="sectlevel3">
-<li><a href="#watchlist-page">3.1.1. Watchlist Page</a></li>
-<li><a href="#watched-list-page">3.1.2. Watched List Page</a></li>
-<li><a href="#search-page">3.1.3. Search Page</a></li>
-<li><a href="#statistics-page">3.1.4. Statistics Page</a></li>
-<li><a href="#sidebar">3.1.5. Sidebar</a></li>
-<li><a href="#details-page-coming-in-v2-0">3.1.6. Details Page (Coming in v2.0)</a></li>
+<li><a href="#sidebar">3.1.1. Sidebar</a></li>
+<li><a href="#command-bar">3.1.2. Command bar</a></li>
+<li><a href="#watchlist-page">3.1.3. Watchlist Page</a></li>
+<li><a href="#watched-list-page">3.1.4. Watched List Page</a></li>
+<li><a href="#search-page">3.1.5. Search Page</a></li>
+<li><a href="#statistics-page">3.1.6. Statistics Page</a></li>
+<li><a href="#details-page-coming-in-v2-0">3.1.7. Details Page (Coming in v2.0)</a></li>
 </ul>
 </li>
 <li><a href="#advanced-features">3.2. Advanced Features</a>
@@ -259,13 +260,35 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="user-interface"><a class="link" href="#user-interface">3.1. User-Interface</a></h3>
-<div class="sect3">
-<h4 id="watchlist-page"><a class="link" href="#watchlist-page">3.1.1. Watchlist Page</a></h4>
 <div class="paragraph">
-<p>The watchlist is the default page that is opened upon start-up of <code>EzWatchlist</code>.
+<p>The UI consists of three parts: sidebar, command bar and various pages that could appear in the main panel.
+The following sections introduce these UI parts in details.</p>
+</div>
+<div class="sect3">
+<h4 id="sidebar"><a class="link" href="#sidebar">3.1.1. Sidebar</a></h4>
+<div class="paragraph">
+<p>EzWatchlist gives users the ability to navigate easily through the <strong>Watchlist, Watchedlist, Search page and Statistics pages</strong> through the use of the side bar at the left of the main page of the graphical user interface. Moreover, keyboard shortcuts <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>, <kbd>4</kbd> bring you to each page respectively.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Note: If user has selected the command box, type <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>, <kbd>4</kbd> and enter to bring you to each page respectively.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="command-bar"><a class="link" href="#command-bar">3.1.2. Command bar</a></h4>
+<div class="paragraph">
+<p>Users input commands in the command bar and any feedback will be displayed below the text area of command bar.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="watchlist-page"><a class="link" href="#watchlist-page">3.1.3. Watchlist Page</a></h4>
+<div class="paragraph">
+<p>The watchlist page is the default page that is opened upon start-up of <code>EzWatchlist</code>.
 It shows the user’s unwatched movies and television series.
-The watchlist page also contains a command bar to allow the user to input commands.
-The user can navigate to this list by clicking the “Watched” tab on the side bar or by using the keyboard short-cut <code>1</code>.</p>
+The user can navigate to this list by clicking the “Watchlist” tab on the side bar or by using the keyboard short-cut <code>1</code>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Characteristics of the watchlist page:</strong></p>
@@ -306,15 +329,15 @@ The user can navigate to this list by clicking the “Watched” tab on the side
 </div>
 </div>
 <div class="sect3">
-<h4 id="watched-list-page"><a class="link" href="#watched-list-page">3.1.2. Watched List Page</a></h4>
+<h4 id="watched-list-page"><a class="link" href="#watched-list-page">3.1.4. Watched List Page</a></h4>
 <div class="paragraph">
 <p>The user has the option to view the list of shows that have been marked as watched in the watched list. The user can navigate to this list by clicking the “Watched” tab on the side bar or by using the keyboard short-cut <code>2</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="search-page"><a class="link" href="#search-page">3.1.3. Search Page</a></h4>
+<h4 id="search-page"><a class="link" href="#search-page">3.1.5. Search Page</a></h4>
 <div class="paragraph">
-<p>The user can navigate to the search page to find a specific movie or television by searching for its name. The user can navigate to this list by clicking the “Watched” tab on the side bar or by using the keyboard short-cut <code>3</code>.</p>
+<p>The user can navigate to the search page to find a specific movie or television by searching for its name. The user can navigate to this list by clicking the “Search” tab on the side bar or by using the keyboard short-cut <code>3</code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -332,15 +355,31 @@ The search function may require some time to load the data from the API.
 <div class="content">
 <img src="images/search_page.png" alt="search page" width="790">
 </div>
+<div class="title">Figure 6. Main page of the UI: search page</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="statistics-page"><a class="link" href="#statistics-page">3.1.4. Statistics Page</a></h4>
+<h4 id="statistics-page"><a class="link" href="#statistics-page">3.1.6. Statistics Page</a></h4>
 <div class="paragraph">
 <p>The user can navigate to the statistics page to find a summary of his watching habits,
 preferences and history according to what is present in his lists.
-Examples include: movies he added but might have forgotten to watch,
-up to 3 most favourite genres of the user and recommendations etc.</p>
+Examples include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Movies added but might have forgotten to watch</p>
+</li>
+<li>
+<p>Up to 3 most favourite genres</p>
+</li>
+<li>
+<p>Recommendations</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The user can navigate to this list by clicking the “Statistics” tab on the side bar or by using the keyboard short-cut <code>4</code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -349,35 +388,21 @@ up to 3 most favourite genres of the user and recommendations etc.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The statistics function may require some time to load the data from the API.
+The statistics function may require some time to load the data from the API the first time you start the application,
+or after you have made changes to your watchlist.
 </td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<p>The user can navigate to the statistics page to find a summary of his watching habits, preferences and history according to what is present in his lists. Examples include: Ten most recent movies he watched, ten favourite movies of the user etc. The user can navigate to this list by clicking the “Watched” tab on the side bar or by using the keyboard short-cut <code>4</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/statistics_page.png" alt="statistics page" width="790">
 </div>
+<div class="title">Figure 7. Main page of the UI: statistics page</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="sidebar"><a class="link" href="#sidebar">3.1.5. Sidebar</a></h4>
-<div class="paragraph">
-<p>EzWatchlist gives users the ability to navigate easily through the <strong>Watchlist page</strong>, <strong>Watchedlist page</strong>, <strong>Search page</strong> and <strong>Statistics pages</strong> through the use of the graphical user interface at the left of the main page. Moreover, keyboard shortcuts <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>, <kbd>4</kbd> bring you to each page respectively.</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>Note: If user has selected the command box, type <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>, <kbd>4</kbd> and enter to bring you to each page respectively.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="details-page-coming-in-v2-0"><a class="link" href="#details-page-coming-in-v2-0">3.1.6. Details Page (Coming in v2.0)</a></h4>
+<h4 id="details-page-coming-in-v2-0"><a class="link" href="#details-page-coming-in-v2-0">3.1.7. Details Page (Coming in v2.0)</a></h4>
 <div class="paragraph">
 <p>Upon clicking a movie or tv show title, a pop-up window will emerge, with a detailed view of the movie or tv show. This page provides the user with more information about the show, like the year, cast and ratings. The user also has the ability to edit the details here.</p>
 </div>
@@ -440,7 +465,7 @@ in the interface.</p>
 <div class="content">
 <img src="images/recommendations.png" alt="recommendations" width=""900">
 </div>
-<div class="title">Figure 6. Recommendations shown in the Statistics Page.</div>
+<div class="title">Figure 8. Recommendations shown in the Statistics Page.</div>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -652,7 +677,7 @@ command to ensure that the TV show&#8217;s season and episode details are up to 
 <div class="content">
 <img src="images/WatchTheOffice.png" alt="WatchTheOffice" width="790">
 </div>
-<div class="title">Figure 7. Viewing an unmarked show</div>
+<div class="title">Figure 9. Viewing an unmarked show</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic" start="2">
@@ -665,7 +690,7 @@ command to ensure that the TV show&#8217;s season and episode details are up to 
 <div class="content">
 <img src="images/Watch.png" alt="Watch" width="790">
 </div>
-<div class="title">Figure 8. Entering the watch command</div>
+<div class="title">Figure 10. Entering the watch command</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic" start="3">
@@ -678,7 +703,7 @@ command to ensure that the TV show&#8217;s season and episode details are up to 
 <div class="content">
 <img src="images/WatchedTheOffice.png" alt="WatchedTheOffice" width="790">
 </div>
-<div class="title">Figure 9. Viewing the newly marked show</div>
+<div class="title">Figure 11. Viewing the newly marked show</div>
 </div>
 <div class="paragraph">
 <p>Alternatively, you may click on the watched checkbox to toggle between whether a show is watched as indicated by the red arrow in the image below.</p>
@@ -687,7 +712,7 @@ command to ensure that the TV show&#8217;s season and episode details are up to 
 <div class="content">
 <img src="images/TheOfficeWatchCommand.png" alt="TheOfficeWatchCommand" width="790">
 </div>
-<div class="title">Figure 10. Marking a show using the checkbox</div>
+<div class="title">Figure 12. Marking a show using the checkbox</div>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -928,7 +953,7 @@ As shown below, assume that your watchlist only has a movie "Avengers: Endgame" 
 <div class="content">
 <img src="images/watchedPageWithAvengerEndgame.png" alt="watchedPageWithAvengerEndgame" width="790">
 </div>
-<div class="title">Figure 11. Current <strong>Watched Page</strong> with a movie watched "Avengers: Endgame"</div>
+<div class="title">Figure 13. Current <strong>Watched Page</strong> with a movie watched "Avengers: Endgame"</div>
 </div>
 <div class="paragraph">
 <p> <br></p>
@@ -960,7 +985,7 @@ As shown below, assume that your watchlist only has a movie "Avengers: Endgame" 
 <div class="content">
 <img src="images/searchCommand.png" alt="searchCommand" width="790">
 </div>
-<div class="title">Figure 12. Entering of the <code>search</code> command</div>
+<div class="title">Figure 14. Entering of the <code>search</code> command</div>
 </div>
 <div class="paragraph">
 <p> <br>
@@ -970,7 +995,7 @@ After you have entered the command, you will be led to the <strong>Search page</
 <div class="content">
 <img src="images/emptySearchPage.png" alt="emptySearchPage" width="790">
 </div>
-<div class="title">Figure 13. Graphical Interface of the <strong>Search Page</strong></div>
+<div class="title">Figure 15. Graphical Interface of the <strong>Search Page</strong></div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -999,7 +1024,7 @@ command, such as the one in Step 2 below.
 <div class="content">
 <img src="images/searchAvengerUserInput.png" alt="searchAvengerUserInput" width="790">
 </div>
-<div class="title">Figure 14. Entering of the <code>search</code> command to search for shows</div>
+<div class="title">Figure 16. Entering of the <code>search</code> command to search for shows</div>
 </div>
 <div class="paragraph">
 <p> <br>
@@ -1009,7 +1034,7 @@ Press <kbd>enter</kbd> after entering the information shown above and wait for t
 <div class="content">
 <img src="images/searchPageLoadingScreen.png" alt="searchPageLoadingScreen" width="790">
 </div>
-<div class="title">Figure 15. Loading Screen of the <strong>Search page</strong></div>
+<div class="title">Figure 17. Loading Screen of the <strong>Search page</strong></div>
 </div>
 <div class="paragraph">
 <p>The loading page as shown above will appear while EzWatchlist searches for your shows.</p>
@@ -1046,7 +1071,7 @@ as seen in the figure below.</p>
 <div class="content">
 <img src="images/searchPageSearchedForAvengersWhenOffline.png" alt="searchPageSearchedForAvengersWhenOffline" width="790">
 </div>
-<div class="title">Figure 16. <strong>Search Page</strong> showing the search results when offline</div>
+<div class="title">Figure 18. <strong>Search Page</strong> showing the search results when offline</div>
 </div>
 <div class="paragraph">
 <p> <br>
@@ -1058,7 +1083,7 @@ figure below.</p>
 <div class="content">
 <img src="images/searchPageSearchedForAvengersWhenOnline.png" alt="searchPageSearchedForAvengersWhenOnline" width="790">
 </div>
-<div class="title">Figure 17. <strong>Search Page</strong> showing the search results when online</div>
+<div class="title">Figure 19. <strong>Search Page</strong> showing the search results when online</div>
 </div>
 <div class="paragraph">
 <p> <br>
@@ -1341,4 +1366,4 @@ e.g. <code>search a/Tom</code> searches from shows within the watchlist with act
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 13:51:52 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:06:33 UTC</div></div></div></body></html>

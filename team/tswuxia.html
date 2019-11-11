@@ -14,117 +14,103 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>EzWatchlist is a desktop application where the user can systematically record down what movie/TV series he/she wants to
-watch or has watched. It is developed based on the Addressbook level 3 provided in the software engineering course.
-The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 10 kLoC.</p>
+watch or has watched. It is developed by a group of 5 NUS Computer Science students for the software engineering course
+based on the Addressbook level 3 codebase provided. One specification is that the user prefers command line interface
+(CLI), hence the CLI in the application. However, we also implemented a graphical user interface (GUI) created with
+JavaFX. The project is written in Java.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="strong-major-enhancement-strong"><a class="link" href="#strong-major-enhancement-strong"><strong>Major enhancement</strong>:</a></h3>
+<div class="paragraph">
+<p>Changed the <strong>GUI</strong> to better suit EzWatchlist</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: added <strong>the ability to undo/redo previous commands</strong></p>
+<p><strong>What it does:</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: allows the user to undo all previous commands one at a time. Preceding undo commands can be reversed by using the redo command.</p>
+<p>Structures the features into 4 tabs and links them together with the main logic which allows the user to easily
+navigate around the tabs and execute commands.</p>
 </li>
 <li>
-<p>Justification: This feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.</p>
+<p>Ensures that each visible component is displayed with an appropriate size, appearance, space and position.</p>
 </li>
 <li>
-<p>Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.</p>
+<p>Enhances user experience through user-friendly layout and placeholder text and loading signs to keep the user informed.</p>
 </li>
 <li>
-<p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
+<p>Enhances user experience through a creative theme.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: added a history command that allows the user to navigate to previous commands using up/down keys.</p>
-</li>
-<li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
-</li>
-<li>
-<p><strong>Other contributions</strong>:</p>
+<p><strong>Justification:</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Project management:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
+<p>This feature improves the product significantly because a user would like to use an application that is user friendly
+and has an appealing appearance.</p>
 </li>
 </ul>
 </div>
 </li>
+<li>
+<p><strong>Highlights:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>This enhancement requires deep understanding of both the implementation of the application itself and also how to use
+javafx flexibly in order to effectively communicate between the user and the application and present the message in a
+desirable manner. It also requires repetitive adjustments and testing of the appearance of the elements to produce a
+final result.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="strong-minor-enhancement-strong"><a class="link" href="#strong-minor-enhancement-strong"><strong>Minor enhancement</strong>:</a></h3>
+<div class="paragraph">
+<p>Added a <code>Statistics</code> feature that reflects the user&#8217;s personal preferences.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="strong-code-contributed-strong"><a class="link" href="#strong-code-contributed-strong"><strong>Code contributed</strong>:</a></h3>
+<div class="paragraph">
+<p>Code contributed can be found here: [<a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=tswuxia&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2019-09-06&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false&amp;tabOpen=true&amp;tabType=authorship&amp;tabAuthor=tswuxia&amp;tabRepo=AY1920S1-CS2103T-F13-4%2Fmain%5Bmaster%5D">My Code Contribution</a>]</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="strong-other-contributions-strong"><a class="link" href="#strong-other-contributions-strong"><strong>Other contributions</strong>:</a></h3>
+<div class="ulist">
+<ul>
 <li>
 <p>Enhancements to existing features:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
+<p>Updated the GUI color scheme (Pull request <a href="https://github.com/AY1920S1-CS2103T-F13-4/main/pull/123">#123</a>)</p>
 </li>
 <li>
-<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Documentation:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Community:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
-</li>
-<li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
-</li>
-<li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
-</li>
-<li>
-<p>Some parts of the history feature I added was adopted by several other class mates (<a href="https://github.com">1</a>, <a href="https://github.com">2</a>)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Tools:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Integrated a third party library (Natty) to the project (<a href="https://github.com">#42</a>)</p>
-</li>
-<li>
-<p>Integrated a new Github plugin (CircleCI) to the team repo</p>
+<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com/tswuxia/ped/issues/7">1</a>,
+<a href="https://github.com/tswuxia/ped/issues/6">2</a>, <a href="https://github.com/tswuxia/ped/issues/5">3</a>, <a href="https://github.com/tswuxia/ped/issues/4">4</a>,
+<a href="https://github.com/tswuxia/ped/issues/3">5</a>, <a href="https://github.com/tswuxia/ped/issues/2">6</a>, <a href="https://github.com/tswuxia/ped/issues/1">7</a>)</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><em>{you can add/remove categories in the list above}</em></p>
 </div>
 </div>
 </div>
@@ -137,32 +123,91 @@ The user interacts with it using a CLI, and it has a GUI created with JavaFX. It
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write user documentation targeting normal
+application users in a clear and understandable manner.</em></p></td>
 </tr>
 </tbody>
 </table>
-<div class="sect3">
-<h4 id="deleting-a-show-code-delete-code"><a class="link" href="#deleting-a-show-code-delete-code">Deleting a show : <code>delete</code></a></h4>
+<div class="sect2">
+<h3 id="user-interface"><a class="link" href="#user-interface">User-Interface</a></h3>
 <div class="paragraph">
-<p>Deletes the specified show from the watchlist.<br>
-Format: <code>delete INDEX</code></p>
+<p>The UI consists of three parts: sidebar, command bar and various pages that could appear in the main panel.
+The following sections introduce these UI parts in details.</p>
 </div>
-<div class="sidebarblock">
+<div class="sect3">
+<h4 id="sidebar"><a class="link" href="#sidebar">Sidebar</a></h4>
+<div class="paragraph">
+<p>EzWatchlist gives users the ability to navigate easily through the <strong>Watchlist, Watchedlist, Search page and Statistics pages</strong> through the use of the side bar at the left of the main page of the graphical user interface. Moreover, keyboard shortcuts <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>, <kbd>4</kbd> bring you to each page respectively.</p>
+</div>
+<div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Note: If user has selected the command box, type <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>, <kbd>4</kbd> and enter to bring you to each page respectively.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="command-bar"><a class="link" href="#command-bar">Command bar</a></h4>
+<div class="paragraph">
+<p>Users input commands in the command bar and any feedback will be displayed below the text area of command bar.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="watchlist-page"><a class="link" href="#watchlist-page">Watchlist Page</a></h4>
+<div class="paragraph">
+<p>The watchlist page is the default page that is opened upon start-up of <code>EzWatchlist</code>.
+It shows the user’s unwatched movies and television series.
+The user can navigate to this list by clicking the “Watchlist” tab on the side bar or by using the keyboard short-cut <code>1</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Characteristics of the watchlist page:</strong></p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes the show at the specified <code>INDEX</code>.</p>
+<p>Movie/TV show poster</p>
 </li>
 <li>
-<p>The index refers to the index number shown in the displayed watchlist.</p>
+<p>Name of show</p>
 </li>
 <li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>Genres</p>
+</li>
+<li>
+<p>Actors</p>
+</li>
+<li>
+<p>Description of the show</p>
+</li>
+<li>
+<p>Running Time</p>
+</li>
+<li>
+<p>Last watched episode (For TV series that have been updated using the <code>watch</code> command)</p>
+</li>
+<li>
+<p>Checkbox to indicate if the show has been watched</p>
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Ui.png" alt="Ui" width="790">
 </div>
+<div class="title">Figure 1. Main page of the UI: watchlist page</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="watched-list-page"><a class="link" href="#watched-list-page">Watched List Page</a></h4>
+<div class="paragraph">
+<p>The user has the option to view the list of shows that have been marked as watched in the watched list. The user can navigate to this list by clicking the “Watched” tab on the side bar or by using the keyboard short-cut <code>2</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="search-page"><a class="link" href="#search-page">Search Page</a></h4>
+<div class="paragraph">
+<p>The user can navigate to the search page to find a specific movie or television by searching for its name. The user can navigate to this list by clicking the “Search” tab on the side bar or by using the keyboard short-cut <code>3</code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -171,26 +216,66 @@ Format: <code>delete INDEX</code></p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<code>delete</code> would only work in <strong>Watchlist page</strong> and <strong>Watched page</strong>.
+The search function may require some time to load the data from the API.
 </td>
 </tr>
 </table>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/search_page.png" alt="search page" width="790">
+</div>
+<div class="title">Figure 2. Main page of the UI: search page</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="statistics-page"><a class="link" href="#statistics-page">Statistics Page</a></h4>
 <div class="paragraph">
-<p>Examples:</p>
+<p>The user can navigate to the statistics page to find a summary of his watching habits,
+preferences and history according to what is present in his lists.
+Examples include:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete 2</code><br>
-Deletes the 2nd show in the watchlist.</p>
+<p>Movies added but might have forgotten to watch</p>
 </li>
 <li>
-<p><code>search Angry</code><br>
-<code>delete 1</code><br>
-Deletes the 1st show in the results of the <code>search</code> command.</p>
+<p>Up to 3 most favourite genres</p>
+</li>
+<li>
+<p>Recommendations</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>The user can navigate to this list by clicking the “Statistics” tab on the side bar or by using the keyboard short-cut <code>4</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The statistics function may require some time to load the data from the API the first time you start the application,
+or after you have made changes to your watchlist.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/statistics_page.png" alt="statistics page" width="790">
+</div>
+<div class="title">Figure 3. Main page of the UI: statistics page</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="details-page-coming-in-v2-0"><a class="link" href="#details-page-coming-in-v2-0">Details Page (Coming in v2.0)</a></h4>
+<div class="paragraph">
+<p>Upon clicking a movie or tv show title, a pop-up window will emerge, with a detailed view of the movie or tv show. This page provides the user with more information about the show, like the year, cast and ratings. The user also has the ability to edit the details here.</p>
+</div>
 </div>
 </div>
 </div>
@@ -204,10 +289,149 @@ Deletes the 1st show in the results of the <code>search</code> command.</p>
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation
+and the technical depth of my contributions to the project.</em></p></td>
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="statistics-feature"><a class="link" href="#statistics-feature">Statistics Feature</a></h3>
+<div class="sect3">
+<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">Proposed Implementation</a></h4>
+<div class="paragraph">
+<p>The statistics feature is facilitated by <code>Statistics</code> object. It extends <code>EzWatchlist</code> with a summary of the users' personal
+preferences and footprint including the most watched genre, shows that you might have forgotten to watch, and the
+recommendations generated for you. It is stored internally as an <code>Statistics</code> object containing a <code>ModelManager</code>.
+Additionally, it implements the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Statistics#getFavouriteGenre()</code>&#8201;&#8212;&#8201;Gives the genre that appears the most number of times in the list of watched shows.</p>
+</li>
+<li>
+<p><code>Statistics#getForgotten()</code>&#8201;&#8212;&#8201;Gives the 3 shows that were added the earliest but have not been watched.</p>
+</li>
+<li>
+<p><code>Statistics#getRecommendation()</code>&#8201;&#8212;&#8201;Gives 3 recommendations according to the watched shows.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Given below is a usage scenario of a user checking his/her statistics page.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application. The Statistics object will be initialized with ModelManager
+containing the current watchlist and watched list. Behind the scenes, the 3 statistics will be calculated and the
+statistics panel will be populated with the result.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user clicks on the statistic button and sees the content.</p>
+</div>
+<div class="paragraph">
+<p>This is the sequence diagram of <code>getFavouriteGenre()</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/GetFavouriteSequenceDiagram.png" alt="GetFavouriteSequenceDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>This is the sequence diagram of <code>getForgotten()</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/GetForgottenSequenceDiagram.png" alt="GetForgottenSequenceDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>This is the sequence diagram of <code>getRecommendation()</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/GetRecommendationSequenceDiagram.png" alt="GetRecommendationSequenceDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes the workflow of Statistics:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StatisticsActivityDiagram.png" alt="StatisticsActivityDiagram">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-statistics-stores-the-watchlist-and-watched-list"><a class="link" href="#aspect-how-statistics-stores-the-watchlist-and-watched-list">Aspect: How Statistics stores the watchlist and watched list</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Saves the whole ModelManager as a field.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement and make use of.</p>
+</li>
+<li>
+<p>Cons: More dependency on ModelManager.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Saves the watchlist and watched list as fields respectively.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Less dependency on ModelManager.</p>
+</li>
+<li>
+<p>Cons: Less potential functionality and the lists might not be up-to-date.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-when-the-results-are-calculated"><a class="link" href="#aspect-when-the-results-are-calculated">Aspect: When the results are calculated</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Calculate when the user navigate to Statistics panel and the user has made changes
+to the watchlist.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Statistics results is more up to date.</p>
+</li>
+<li>
+<p>Cons: Appear less responsive as the API needs to retrieve information during calculation.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2 :</strong> Calculate when the application starts and update when there are changes.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: It appears more responsive in terms of navigating around the application.</p>
+</li>
+<li>
+<p>Cons: The statistics information will not be updated realtime if the user has changed the watchlist.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -218,4 +442,4 @@ Deletes the 1st show in the results of the <code>search</code> command.</p>
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 13:51:52 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:06:33 UTC</div></div></div></body></html>
