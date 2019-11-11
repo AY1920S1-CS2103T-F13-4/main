@@ -23,12 +23,12 @@
 </li>
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#feature-mark-unmark-as-watched-feature">3.1. [Feature] Mark/unmark as watched feature</a></li>
-<li><a href="#proposed-statistics-feature">3.2. [Proposed] Statistics feature</a></li>
+<li><a href="#feature-mark-unmark-as-watched-feature">3.1. [Feature] Mark/Unmark as Watched Feature</a></li>
+<li><a href="#proposed-statistics-feature">3.2. [Proposed] Statistics Feature</a></li>
 <li><a href="#logging">3.3. Logging</a></li>
 <li><a href="#online-data">3.4. Online Data</a></li>
 <li><a href="#Implementation-Configuration">3.5. Configuration</a></li>
-<li><a href="#Implementation">3.6. [Feature] Search feature</a></li>
+<li><a href="#Implementation">3.6. [Feature] Search Feature</a></li>
 <li><a href="#feature-add-feature">3.7. [Feature] Add feature</a></li>
 <li><a href="#feature-synchronise-user-s-show-data">3.8. [Feature] Synchronise user&#8217;s show data</a></li>
 </ul>
@@ -54,6 +54,9 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="SettingUp.html">here</a>.</p>
+</div>
+<div class="paragraph">
+<p> <br></p>
 </div>
 </div>
 </div>
@@ -109,7 +112,7 @@ The following class plays an important role at the architecture level:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The rest of the App consists of give components.</p>
+<p>The rest of the App consists of five components.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -360,6 +363,9 @@ As a more OOP model, we can store a <code>Actor</code> list in <code>Watch List<
 <div class="paragraph">
 <p>Classes used by multiple components are in the <code>seedu.EzWatchlist.commons</code> package.</p>
 </div>
+<div class="paragraph">
+<p> <br></p>
+</div>
 </div>
 </div>
 </div>
@@ -370,7 +376,7 @@ As a more OOP model, we can store a <code>Actor</code> list in <code>Watch List<
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="feature-mark-unmark-as-watched-feature"><a class="link" href="#feature-mark-unmark-as-watched-feature">3.1. [Feature] Mark/unmark as watched feature</a></h3>
+<h3 id="feature-mark-unmark-as-watched-feature"><a class="link" href="#feature-mark-unmark-as-watched-feature">3.1. [Feature] Mark/Unmark as Watched Feature</a></h3>
 <div class="paragraph">
 <p>The watch feature allows users to mark or unmark shows as watched. It also allows users to keep track of the latest episode
 of a TV series that they have watched.</p>
@@ -472,7 +478,7 @@ A new <code>isWatched</code> value of the show is also determined based on the n
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-statistics-feature"><a class="link" href="#proposed-statistics-feature">3.2. [Proposed] Statistics feature</a></h3>
+<h3 id="proposed-statistics-feature"><a class="link" href="#proposed-statistics-feature">3.2. [Proposed] Statistics Feature</a></h3>
 <div class="sect3">
 <h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">3.2.1. Proposed Implementation</a></h4>
 <div class="paragraph">
@@ -709,7 +715,7 @@ A list of wrapped movies is given back, which is then read and used to create ne
 <p>Step 4. A <code>poster</code> class is then created with the image path of the downloaded image. At any point, the <code>poster</code> object can be used to load images in the application.</p>
 </div>
 <div class="paragraph">
-<p>Step 5. With the list of movies returned, the application can then read the internal <code>Movie</code> object returned. The <code>Poster</code> object in the <code>Movie</code> object can be used to load the poster of the movie, and the other fields can be shown to the user as seen in Figure 12.</p>
+<p>Step 5. With the list of movies returned, the application can then read the internal <code>Movie</code> object returned. The <code>Poster</code> object in the <code>Movie</code> object can be used to load the poster of the movie, and the other fields can be shown to the user as seen in the figure below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -731,7 +737,7 @@ At any point the application might fail due to the application not being connect
 </table>
 </div>
 <div class="paragraph">
-<p>The relationship between all the classes, and their methods are shown in the following class diagram in Figure 13:</p>
+<p>The relationship between all the classes, and their methods are shown in the following class diagram in the figure below:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -854,7 +860,7 @@ recommendations are retrieved through the <code>ApiInterface</code> implemented 
 <div class="sect4">
 <h5 id="implementation-4"><a class="link" href="#implementation-4">Implementation</a></h5>
 <div class="paragraph">
-<p>Given below in Figure 14 is a <em>sequence diagram</em> of how the recommendations are generated when called from the <code>ApiManager</code>.</p>
+<p>The figure below is a <em>sequence diagram</em> of how the recommendations are generated when called from the <code>ApiManager</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -916,41 +922,44 @@ If no recommendations can be generated, a <code>NoRecommendationsExceptions</cod
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation"><a class="link" href="#Implementation">3.6. [Feature] Search feature</a></h3>
+<h3 id="Implementation"><a class="link" href="#Implementation">3.6. [Feature] Search Feature</a></h3>
+<div class="paragraph">
+<p>The <code>Search</code> feature allows users to search for shows from the <strong>online database</strong>, the <strong>internal database</strong>, their <strong>watchlist</strong> or
+<strong>watched-list</strong>.
+It allows users to search for shows based on either "<strong>name</strong>", "<strong>genre</strong>" or "<strong>actors</strong>", or a combination of them.<br>
+Users can choose to search from the online database or their watchlist and watched-list, and also filter their search
+based on the show type.</p>
+</div>
+<div class="paragraph">
+<p>The following <em>activity diagram</em> summarises the workflow of the <code>Search</code> feature:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SearchActivityDiagram.png" alt="][width=400&quot;">
+</div>
+<div class="title">Figure 15. Activity Diagram for the <code>Search</code> Feature</div>
+</div>
+<div class="paragraph">
+<p> <br></p>
+</div>
 <div class="sect3">
 <h4 id="implementation-5"><a class="link" href="#implementation-5">3.6.1. Implementation</a></h4>
 <div class="paragraph">
-<p>The <code>searchCommand</code> extends <code>Command</code> and uses <code>SearchCommandParser</code> to process the command entered by the user.</p>
+<p>The search mechanism is facilitated by <code>SearchCommand</code> which can be found under the commands package.
+It extends <code>Command</code> and uses the <code>SearchCommandParser</code> to process the command entered by the user.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the search mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application and executes <code>search n/Joker</code> command to search for a show with the name "Joker".</p>
+<p>Step 1. The user launches the application, goes to the <strong>Search page</strong> and executes <code>search n/Avengers o/no</code>
+command to search for shows named "Avengers" from the watchlist and watched-list.</p>
 </div>
 <div class="paragraph">
-<p>Step 2. Entering the command calls SearchCommandParser#parse().</p>
+<p>Step 2. Entering the command calls <code>LogicManager#execute()</code>, which in turns calls the <code>WatchListParser#parseCommand()</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 3. A new <code>SearchCommand</code> is created, with the list containing the name of the show to be searched as a field of <code>SearchCommand</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 4. The <code>SearchCommand#execute()</code> method is called, referencing the current model.</p>
-</div>
-<div class="paragraph">
-<p>Step 5. The <code>SearchCommand#searchByName()</code> method is called, referencing the current model.</p>
-</div>
-<div class="paragraph">
-<p>Step 6. The <code>SearchCommand#addShowFromWatchListIfSameNameAs()</code> method is called, referencing the current model and name of search to be searched from the list of names.</p>
-</div>
-<div class="paragraph">
-<p>Step 7. The <code>Model#getShowIfHasName()</code> method is called and any show with the name to be searched is added to the <code>filteredShowList</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 8. The <code>SearchCommand#addShowToSearchResult()</code> method is called and shows from the <code>filteredShowList</code> is added to the <code>searchResult</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 9. The <code>SearchCommand#addShowFromOnlineIfSameNameAs()</code> method is also called, referencing the name of show to be searched from the list of names.</p>
+<p>Step 3. <code>WatchListParser#parseCommand()</code> returns a new <code>SearchCommandParser</code> and the <code>SearchCommandParser#parse()</code> command is called.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -959,44 +968,136 @@ If no recommendations can be generated, a <code>NoRecommendationsExceptions</cod
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the user is not connected online, a new <code>OnlineConnectionException</code> is thrown.
+If the user enters a wrong command, such as incorrect prefixes or keywords, a new <code>ParseException</code> is thrown.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Step 10. The <code>SearchCommand#addOnlineMovieSearchedByNameToResults()</code> method is called, referencing the name of show to be searched.</p>
+<p>Step 4. A new <code>SearchCommand</code> is created, with the hash map containing the contents to be searched as a field of
+<code>SearchCommand</code>.</p>
 </div>
 <div class="paragraph">
-<p>The following activity diagram summarises the workflow of Search:</p>
+<p>Step 5. The <code>SearchCommand#execute()</code> method is called, referencing the current model.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the user is not connected online, a new <code>OnlineConnectionException</code> is caught and search would be done using the
+<strong>internal database</strong>, <strong>watchlist</strong> and <strong>watched-list</strong> instead of the <strong>online database</strong>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 6. The <code>SearchCommand#searchByName()</code> method is called, referencing the current model.</p>
+</div>
+<div class="paragraph">
+<p>Step 7. The <code>SearchCommand#addShowFromWatchListIfSameNameAs()</code> method is called, referencing the current model and name
+of the show to be searched from the list of shows.</p>
+</div>
+<div class="paragraph">
+<p>Step 8. The <code>Model#getShowFromWatchlistIfHasName()</code> method is called, referencing the name of the show to be searched.
+A list of shows with the name "Avengers" is retrieved.</p>
+</div>
+<div class="paragraph">
+<p>Step 9. The <code>SearchCommand#addShowToSearchResult()</code> method is called, referencing the list of the shows found in Step 7.
+Shows are filtered based on the possible filters and added the the <code>SearchCommand#searchResult</code></p>
+</div>
+<div class="paragraph">
+<p>Step 10. A new <code>CommandResult</code> is created, referencing the search message to be shown to user. This <code>CommandResult</code> is
+returned to the <code>LogicManager</code>.</p>
+</div>
+<div class="paragraph">
+<p> <br>
+The following <em>sequence diagram</em> summarizes how the search operation works based on the example above:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SearchActivityDiagram.png" alt="SearchActivityDiagram">
+<img src="images/SearchSequenceDiagram.png" alt="][width=&quot;790&quot;">
 </div>
-</div>
-<div class="paragraph">
-<p><em>Figure 2: Activity Diagram of `SearchCommand`</em></p>
+<div class="title">Figure 16. Sequence Diagram for the <code>Search</code> Operation</div>
 </div>
 <div class="paragraph">
-<p>In Figure 2, the user first launches the app. After the user input a search command, the program runs and shows the list of shows found in the search page.</p>
+<p> <br></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">3.6.2. Design Considerations</a></h4>
 <div class="sect4">
-<h5 id="aspect-how-code-searchcommand-code-takes-in-the-information-to-be-searched-for"><a class="link" href="#aspect-how-code-searchcommand-code-takes-in-the-information-to-be-searched-for">Aspect: How <code>SearchCommand</code> takes in the information to be searched for</a></h5>
+<h5 id="aspect-how-code-searchcommand-code-reference-the-information-to-be-searched-for"><a class="link" href="#aspect-how-code-searchcommand-code-reference-the-information-to-be-searched-for">Aspect: How <code>SearchCommand</code> reference the information to be searched for</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p>Current choice: Takes in a hash map from <code>SearchCommandParser</code> and gets the list of information to be searched for.</p>
+<p>Alternative 1 (current choice): Takes reference to the hash map from <code>SearchCommandParser</code>, consisting of all the
+possible methods to search for shows</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy to implement and make use of.</p>
+<p>Pros:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Easy to implement</p>
 </li>
 <li>
-<p>Cons: Certain list might be redundant as there might have no information in them.</p>
+<p>Can be easily made use of by retrieving the list of what the user want to search from the hash map</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Cons:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Command may be longer and user would be required to be familiarize with the prefix, such as <code>n/</code> when searching by name</p>
+</li>
+<li>
+<p>Certain list might be redundant as the user might not have requested to search by certain fields</p>
+</li>
+<li>
+<p>Higher run time in checking through all the lists</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Alternative 2: Takes reference to a string from <code>SearchCommandParser</code> and by <strong>name</strong>, <strong>genre</strong>, and <strong>actor</strong> using that string</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Easy to parse the information from <code>SearchCommandParser</code> to <code>SearchCommand</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Cons:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Does not allow the user to have the freedom to choose what they would like to search by</p>
+</li>
+<li>
+<p>May return irrelevant results back to the user as the user did not specify what they would like to search based on</p>
+</li>
+<li>
+<p>Higher run time as there would be a need to search based on all 3 methods</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1005,26 +1106,51 @@ If the user is not connected online, a new <code>OnlineConnectionException</code
 </div>
 </div>
 <div class="sect4">
-<h5 id="aspect-how-search-searches-for-the-shows"><a class="link" href="#aspect-how-search-searches-for-the-shows">Aspect: How Search searches for the shows</a></h5>
+<h5 id="aspect-how-code-searchcommand-code-is-executed"><a class="link" href="#aspect-how-code-searchcommand-code-is-executed">Aspect: How <code>SearchCommand</code> is executed</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p>Current choice: Checks if the user choose to search by name, actor or both, then filter them accordingly.</p>
+<p>Current choice: Search by name, followed by genre then actor, when the user chooses to search with any combinations of the 3 methods</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy to implement and make use of.</p>
+<p>Pros:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Easy to implement and make use of.</p>
 </li>
 <li>
-<p>Cons: User has to input either a name or actor to be searched.</p>
+<p>Shows all the shows from the combination of the search results</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Cons: Logic is repetitive when searching based on actor or name.</p>
+<p>Cons:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The user has to input either a name, genre or actor in order for the search to work</p>
+</li>
+<li>
+<p>Logic is repetitive when searching based on name, actor and genre</p>
+</li>
+<li>
+<p>Does not allow the user to search for shows that has a combination of the names, genres and actors<br>
+e.g. <code>search n/Avengers g/Comedy</code> would show a search result with shows that either have the name "Avengers" or the genre "Comedy",
+instead of shows that have both the name "Avengers" and the genre "Comedy"</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p> <br></p>
 </div>
 </div>
 </div>
@@ -1882,25 +2008,13 @@ image::CommitActivityDiagram.png[]</p>
 <dd>
 <p>The page that shows the details of shows, which the user may then add it to the watchlist if interested.</p>
 </dd>
-<dt class="hdlist1"><a id="edit-page"></a> Edit page</dt>
+<dt class="hdlist1"><a id="main-page"></a> Main Page</dt>
 <dd>
-<p>The page where the user can edit the shows that they have added.</p>
-</dd>
-<dt class="hdlist1"><a id="main-page"></a> Main Page / Watchlist page</dt>
-<dd>
-<p>The default main page with the WatchList tab that contains a list of shows that the user wishes to watch</p>
+<p>The default main page with the WatchList tab that contains a list of shows that the user wishes to watch (same as <em>Watchlist Page</em>)</p>
 </dd>
 <dt class="hdlist1"><a id="movies"></a> Movie</dt>
 <dd>
 <p>A cinema film</p>
-</dd>
-<dt class="hdlist1"><a id="progress-bar"></a> Progress Bar</dt>
-<dd>
-<p>A visible bar for users to see how many episodes of TV Series have been watched</p>
-</dd>
-<dt class="hdlist1"><a id="search-command"></a> Search command <code>search [keyword]</code></dt>
-<dd>
-<p>This command brings the user to a search page with keyword input</p>
 </dd>
 <dt class="hdlist1"><a id="search-page"></a> Search page</dt>
 <dd>
@@ -1908,7 +2022,7 @@ image::CommitActivityDiagram.png[]</p>
 </dd>
 <dt class="hdlist1"><a id="show-index"></a> Show index</dt>
 <dd>
-<p>The number reference for the show in the pages</p>
+<p>The number reference for the show on the page in EzWatchlist</p>
 </dd>
 <dt class="hdlist1"><a id="shows"></a> Shows</dt>
 <dd>
@@ -1918,19 +2032,19 @@ image::CommitActivityDiagram.png[]</p>
 <dd>
 <p>The page that shows the statistics of user, such as total number of movies / TV series watched</p>
 </dd>
-<dt class="hdlist1"><a id="tag"></a> Tag</dt>
-<dd>
-<p>A short remark about the show or user’s feelings towards the show</p>
-</dd>
 <dt class="hdlist1"><a id="tv-series"></a> TV Series</dt>
 <dd>
-<p>A television program which consists of several episodes that are broadcast in regular intervals</p>
+<p>A television program which consists of possibly several episodes and seasons that are broadcast on regular intervals</p>
 </dd>
 <dt class="hdlist1"><a id="view-command"></a> View command <code>view [index]</code></dt>
 <dd>
 <p>This command brings the user to the details page of the show with the specified show index</p>
 </dd>
-<dt class="hdlist1"><a id="watched-page"></a> Watched page</dt>
+<dt class="hdlist1"><a id="watched-list"></a> Watched-list</dt>
+<dd>
+<p>The list of shows that the user has watched.</p>
+</dd>
+<dt class="hdlist1"><a id="watched-page"></a> Watched Page</dt>
 <dd>
 <p>The page where the user can access to view the list of shows indicated as watched</p>
 </dd>
@@ -1996,4 +2110,4 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 13:22:00 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 13:28:48 UTC</div></div></div></body></html>
